@@ -11,7 +11,7 @@ public class Row {
         this.rowLocation = rowLocation;
     }
 
-    public ArrayList<Card> getRowList() {
+    public ArrayList<Card> getCardList() {
         return rowList;
     }
 

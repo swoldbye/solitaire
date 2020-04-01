@@ -14,7 +14,7 @@ public class View {
         updateView();
     }
 
-    private void updateView() {
+    public void updateView() {
         topline = gameBoard.getDiamondStack().getTop() + " " + gameBoard.getHeartStack().getTop() + " " +
                 gameBoard.getSpadeStack().getTop() + " " + gameBoard.getClubStack().getTop() + "      " +
                 gameBoard.getPile().getTopCard().getCard();
@@ -24,7 +24,7 @@ public class View {
                 if (r.getRowLocation() <= i) {
                     rows += "  ";
                 } else {
-                    rows += r.getRowList().get(i).getCard();
+                    rows += r.getCardList().get(i).getCard();
                 }
                 rows += "  ";
             }
