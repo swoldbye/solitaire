@@ -1,4 +1,4 @@
 package controller;
 
-public class moveController {
+public class MoveController {
 }
