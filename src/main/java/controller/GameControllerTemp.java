@@ -5,16 +5,17 @@ import model.GameBoard;
 import model.Row;
 import view.View;
 
-public class GameController {
+public class GameControllerTemp {
 
     private GameBoard gameBoard;
 
     private View view;
 
-    public GameController(GameBoard gameBoard) {
+    public GameControllerTemp(GameBoard gameBoard) {
         this.gameBoard = gameBoard;
         setUpGame();
         initView();
+        System.out.println("fuck you git");
     }
 
     public void initView() {
