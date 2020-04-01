@@ -12,8 +12,8 @@ public class Deck {
 
     private static void createDeck(){
         for(int i = 0; i < 4; i++){
-            for(int j = 0; i < 13; j++){
-                cardList[i][j] = new Card(i, j);
+            for(int j = 0; j < 13; j++){
+                cardList[i][j] = new Card(i, j+1, true);
             }
         }
     }
