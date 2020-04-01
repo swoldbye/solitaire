@@ -37,6 +37,15 @@ public class Card {
         this.location = location;
     }
 
+    public String getColour() {
+        if (suit < 2) {
+            return "Red";
+        } else if (suit < 4) {
+            return "Black";
+        }
+        return "Empty";
+    }
+
     public void setSuit(int suit) {
         this.suit = suit;
     }

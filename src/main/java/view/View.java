@@ -28,7 +28,7 @@ public class View {
                 gameBoard.getPile().getTopCard().getCard();
 
         rows = "";
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < gameBoard.getMaxRowSize(); i++) {
             for (Row r : gameBoard.getRowList()) {
                 if (r.getCardList().size() <= i) {
                     rows += "   ";

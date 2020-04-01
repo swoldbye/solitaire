@@ -39,9 +39,9 @@ public class GameController {
     /**
      * As the cards are shuffled in the pile model class, to se up the game all we need to do is take from this pile
      * and put in the respective rows. The final card is then placed face up
-     *
+     * <p>
      * Of course this will be replaced with our crazy lit opencv python greatness
-     *
+     * <p>
      * - Alex
      */
 
@@ -60,9 +60,8 @@ public class GameController {
      * The recursive call inside a method that first checks to see if the game is won, if not, asks the
      * MoveController what to do next. Im thinking of adding in the movecontroller something to say there are no
      * more available moves and to sout you have lost.
-     *
+     * <p>
      * - Alex
-     *
      */
 
     public void isGameWon() {
@@ -80,9 +79,10 @@ public class GameController {
 
     /**
      * Method that moves a card c from row r into a stack
+     *
      * @param c card to be moved
      * @param r row the card is in
-     *
+     *          <p>
      *          - Alex
      */
 
@@ -108,8 +108,9 @@ public class GameController {
     /**
      * A method that called whenever a move is made to know wether there is a card on the table that needs
      * to be flipped before going on the next turn
-     * @param r the row where a card has been moved
      *
+     * @param r the row where a card has been moved
+     *          <p>
      *          - Alex
      */
 
@@ -125,6 +126,7 @@ public class GameController {
      * As many of the moves are dependent on which row has most downfacing cards, this method returns an
      * arraylist that has them in decending order, so in the moveController class we can do a foreach where it
      * checks the ones with highest amount downcards first
+     *
      * @return arraylist of rows in decending order of how many downfacing cards they have
      * - Alex
      */
@@ -147,22 +149,24 @@ public class GameController {
                 faceDownList.add(position, gameBoard.getRowList().get(i));
             }
         }
-
-
         return faceDownList;
     }
+
+    public void moveCardRowToRow(Row sender, Row receiver) {
+        for (int i = 0; i < sender.getCardList().size(); i++) {
+            if (sender.getCardList().get(i).isFaceUp()) {
+                receiver.addCard(sender.getCardList().get(i));
+                sender.getCardList().remove(sender.getCardList().get(i));
+                i--;
+                if (sender.getCardList().size() == sender.getFaceDownCards()) {
+                    flipCard(sender);
+                    return;
+                }
+            }
+        }
+    }
+
 }
 
 
 
-  /*public void moveCardRow (Card c,int moveLocation){
-            for (Row r : gameBoard.getRowList()) {
-                if (r.getRowLocation() == c.getLocation()) {
-                    r.getRowList().remove(c);
-                }
-                if (r.getRowLocation() == moveLocation) {
-                    r.getRowList().add(c);
-                }
-                c.setLocation(moveLocation);
-            }
-        }*/

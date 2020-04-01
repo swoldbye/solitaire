@@ -90,4 +90,28 @@ public class GameBoard {
     public Stack getClubStack() {
         return clubStack;
     }
+
+    public int getMaxRowSize(){
+        int max = row1.getCardList().size();
+        if(row2.getCardList().size() > max){
+            max = row2.getCardList().size();
+        }
+        if(row3.getCardList().size() > max){
+            max = row3.getCardList().size();
+        }
+        if(row4.getCardList().size() > max){
+            max = row4.getCardList().size();
+        }
+        if(row5.getCardList().size() > max){
+            max = row5.getCardList().size();
+        }
+        if(row6.getCardList().size() > max){
+            max = row6.getCardList().size();
+        }
+        if(row7.getCardList().size() > max){
+            max = row7.getCardList().size();
+        }
+
+        return max;
+    }
 }
