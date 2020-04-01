@@ -16,9 +16,6 @@ public class Card {
     int location;
     boolean isFaceUp;
 
-    public Card() {
-    }
-
     public Card(int suit, int level, boolean isFaceUp) {
         this.suit = suit;
         this.level = level;

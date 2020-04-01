@@ -5,14 +5,14 @@ import java.util.List;
 
 public class Row {
     int rowLocation;
-    ArrayList<Card> rowList = new ArrayList<Card>();
+    ArrayList<Card> cards = new ArrayList<Card>();
 
     public Row(int rowLocation) {
         this.rowLocation = rowLocation;
     }
 
     public ArrayList<Card> getCardList() {
-        return rowList;
+        return cards;
     }
 
     public int getRowLocation() {
@@ -20,17 +20,17 @@ public class Row {
     }
 
     public Card getTop(){
-        return rowList.get(rowList.size()-1);
+        return cards.get(cards.size()-1);
     }
 
     public void addCard(Card c){
-        rowList.add(c);
+        cards.add(c);
         c.setLocation(rowLocation);
     }
 
     public int getFaceDownCards(){
         int faceDown = 0;
-        for(Card c: rowList){
+        for(Card c: cards){
             if (!c.isFaceUp){
                 faceDown++;
             }

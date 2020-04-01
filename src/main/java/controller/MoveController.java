@@ -19,6 +19,8 @@ public class MoveController {
 
     private GameController gameController;
 
+    private boolean isKingAvailiable = false;
+
     private int aceCounter = 0;
 
     public MoveController(GameBoard gameBoard, GameController gameController) {
@@ -34,10 +36,11 @@ public class MoveController {
         if (aceCounter < 4) {
             int foundAce = aceCounter;
             checkForAce();
-            if(aceCounter > foundAce){
+            if (aceCounter > foundAce) {
                 return;
             }
         }
+        checkForAvailableKing();
         checkForMoveCard();
 
 
@@ -72,5 +75,21 @@ public class MoveController {
                 }
             }
         }
+    }
+
+    /**
+     * check face up cards if there is a king. This effects the decisions made.
+     */
+    private void checkForAvailableKing() {
+        for (Row r : gameBoard.getRowList()) {
+            for (Card c : r.getCardList()) {
+                if(c.isFaceUp() && c.getLevel() == 13){
+                    isKingAvailiable = true;
+                    return;
+                }
+            }
+        }
+        isKingAvailiable = false;
+        return;
     }
 }

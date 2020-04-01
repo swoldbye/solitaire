@@ -152,6 +152,12 @@ public class GameController {
         return faceDownList;
     }
 
+
+    /**
+     * Used to move a card or multiple cars in a row to another.
+     * @param sender
+     * @param receiver
+     */
     public void moveCardRowToRow(Row sender, Row receiver) {
         for (int i = 0; i < sender.getCardList().size(); i++) {
             if (sender.getCardList().get(i).isFaceUp()) {
