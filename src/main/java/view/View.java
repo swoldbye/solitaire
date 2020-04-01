@@ -14,6 +14,13 @@ public class View {
         updateView();
     }
 
+    /**
+     * To help visualise everything so we can work on logic while the legend huge eggshead and crazybigpussybeard face
+     * make the sexy opencv
+     *
+     * - Mark
+     */
+
     public void updateView() {
 
         topline = gameBoard.getDiamondStack().getTop() + " " + gameBoard.getHeartStack().getTop() + " " +

@@ -5,6 +5,12 @@ import model.Row;
 
 import java.util.ArrayList;
 
+/**
+ * Controller that decides what to move next, based on the ChessandPoker.com solitare Stategy guide
+ * This class does NOT move any cards, but tells the GameController Which cards to move.
+ *
+ */
+
 public class MoveController {
 
     private ArrayList<Row> faceDownList = new ArrayList<Row>();
@@ -20,17 +26,23 @@ public class MoveController {
         this.gameController = gameController;
     }
 
+    /**
+     * Main make move method that calls other methods in this class in the order we want to check
+     */
+
     public void makeMove(){
         if(aceCounter < 4) {
             checkForAce();
         }
-        faceDownList = gameController.faceDownList();
-        for(Row r: faceDownList){
-            System.out.println(r.getTop().getCard());
-        }
+        faceDownList = gameController.getFaceDownList();
+
 
 
     }
+
+    /**
+     * First check to see if there are any aces face up
+     */
 
     private void checkForAce() {
         for(Row r: gameBoard.getRowList()){
