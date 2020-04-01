@@ -11,24 +11,40 @@ public class GameController {
 
     private View view;
 
-    public GameController(){
-        gameBoard = new GameBoard();
+    public GameController(GameBoard gameBoard) {
+        this.gameBoard = gameBoard;
+        setUpGame();
+        initView();
     }
 
-    public void initView(){
+    public void initView() {
         this.view = new View(gameBoard);
     }
 
-    public void moveCardRow(Card c, int moveLocation){
-        for(Row r: rowList){
-            if(r.rowLocation == c.getLocation()){
-                r.getRowList().remove(c);
+    public void setUpGame() {
+        int counter = 0;
+        for (Row r : gameBoard.getRowList()) {
+            for (int i = 0; i < r.getRowLocation(); i++) {
+                r.addCard(gameBoard.getPile().takeTopCard());
+                counter++;
+                if (i + 1 == r.getRowLocation()) {
+                    r.getRowList().get(i).setFaceUp(true);
+                }
             }
-            if(r.rowLocation == moveLocation){
-                r.rowList.add(c);
-            }
-            c.setLocation(moveLocation);
         }
     }
-
 }
+
+
+
+  /*public void moveCardRow (Card c,int moveLocation){
+            for (Row r : gameBoard.getRowList()) {
+                if (r.getRowLocation() == c.getLocation()) {
+                    r.getRowList().remove(c);
+                }
+                if (r.getRowLocation() == moveLocation) {
+                    r.getRowList().add(c);
+                }
+                c.setLocation(moveLocation);
+            }
+        }*/
