@@ -25,7 +25,12 @@ public class GameBoard {
 
     private Random randomGenerator = new Random();
 
-    public GameBoard(){
+    public GameBoard() {
+        initRowList();
+    }
+
+
+    private void initRowList() {
         rowList.add(row1);
         rowList.add(row2);
         rowList.add(row3);
@@ -33,13 +38,6 @@ public class GameBoard {
         rowList.add(row5);
         rowList.add(row6);
         rowList.add(row7);
-        for(Row r: rowList){
-            for (int i = 0; i < r.rowLocation; i++){
-                pile.getPile().get(randomGenerator.nextInt(pile.getPile().size())).setLocation(r.rowLocation);
-                if(i +1 == r.rowLocation){
-                }
-            }
-        }
-
     }
+
 }

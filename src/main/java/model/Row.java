@@ -5,12 +5,21 @@ import java.util.List;
 
 public class Row {
     int rowLocation;
+    ArrayList<Card> rowList = new ArrayList<Card>();
 
     public Row(int rowLocation) {
         this.rowLocation = rowLocation;
     }
 
-    public ArrayList<Card> getRow() {
+    public ArrayList<Card> getRowList() {
+        return rowList;
+    }
+
+
+}
+
+
+/*public ArrayList<Card> getRow() {
         Card[][] deckList = Deck.getDeck().getCardList();
         ArrayList<Card> rowList = new ArrayList<Card>();
 
@@ -22,5 +31,4 @@ public class Row {
             }
         }
         return rowList;
-    }
-}
+    }*/

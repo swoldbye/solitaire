@@ -13,15 +13,15 @@ public class Card {
     int suit;
     int level;
     int location;
-    boolean isFaceDown;
+    boolean isFaceUp;
 
     public Card() {
     }
 
-    public Card(int suit, int level, boolean isFaceDown) {
+    public Card(int suit, int level, boolean isFaceUp) {
         this.suit = suit;
         this.level = level;
-        this.isFaceDown = isFaceDown;
+        this.isFaceUp = isFaceUp;
     }
 
     public int getSuit() {
@@ -70,11 +70,11 @@ public class Card {
         return s;
     }
 
-    public boolean isFaceDown() {
-        return isFaceDown;
+    public boolean isFaceUp() {
+        return isFaceUp;
     }
 
-    public void setFaceDown(boolean faceDown) {
-        isFaceDown = faceDown;
+    public void setFaceUp(boolean faceUp) {
+        isFaceUp = faceUp;
     }
 }
