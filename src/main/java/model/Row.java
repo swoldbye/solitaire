@@ -10,7 +10,7 @@ public class Row {
         this.rowLocation = rowLocation;
     }
 
-    public List<Card> getRow() {
+    public ArrayList<Card> getRow() {
         Card[][] deckList = Deck.getDeck().getCardList();
         ArrayList<Card> rowList = new ArrayList<Card>();
 
