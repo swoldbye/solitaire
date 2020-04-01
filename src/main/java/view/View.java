@@ -7,7 +7,7 @@ public class View {
 
     private GameBoard gameBoard;
 
-    private String topline, rows = "";
+    private String topline, rows;
 
     public View(GameBoard gameBoard) {
         this.gameBoard = gameBoard;
@@ -15,22 +15,23 @@ public class View {
     }
 
     public void updateView() {
+
         topline = gameBoard.getDiamondStack().getTop() + " " + gameBoard.getHeartStack().getTop() + " " +
-                gameBoard.getSpadeStack().getTop() + " " + gameBoard.getClubStack().getTop() + "      " +
+                gameBoard.getSpadeStack().getTop() + " " + gameBoard.getClubStack().getTop() + "              " +
                 gameBoard.getPile().getTopCard().getCard();
 
+        rows = "";
         for (int i = 0; i < 7; i++) {
             for (Row r : gameBoard.getRowList()) {
-                if (r.getRowLocation() <= i) {
-                    rows += "  ";
+                if (r.getCardList().size() <= i) {
+                    rows += "   ";
                 } else {
                     rows += r.getCardList().get(i).getCard();
                 }
-                rows += "  ";
+                rows += "   ";
             }
             rows += "\n";
         }
-
 
         System.out.println(topline + "\n\n" + rows);
     }

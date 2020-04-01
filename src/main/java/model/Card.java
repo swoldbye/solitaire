@@ -6,6 +6,7 @@ package model;
  * 1 = Heart
  * 2 = Spade
  * 3 = Clubs
+ * 4 = Empty Field
  */
 
 public class Card {
@@ -49,7 +50,7 @@ public class Card {
     }
 
     public String getCard() {
-        if(isFaceUp) {
+        if (isFaceUp) {
             String s = "";
             switch (suit) {
                 case 0:
@@ -64,19 +65,20 @@ public class Card {
                 case 3:
                     s += "C";
                     break;
+                case 4:
+                    s += "E";
+                    break;
             }
-            if(level >= 10){
+            if (level >= 10) {
                 s += level;
             } else {
                 s = " " + s + level;
             }
 
 
-
             return s;
-        }
-        else{
-            return " x";
+        } else {
+            return "  x";
         }
     }
 

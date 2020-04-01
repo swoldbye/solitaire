@@ -28,6 +28,16 @@ public class Row {
         c.setLocation(rowLocation);
     }
 
+    public int getFaceDownCards(){
+        int faceDown = 0;
+        for(Card c: rowList){
+            if (!c.isFaceUp){
+                faceDown++;
+            }
+        }
+        return faceDown;
+    }
+
 }
 
 
