@@ -84,6 +84,23 @@ public class GameController {
 
     public ArrayList<Row> faceDownList() {
         ArrayList<Row> faceDownList = new ArrayList<Row>();
+        int position = 0;
+
+        for (int i = 0; i < gameBoard.getRowList().size(); i++) {
+            position = i;
+            if (faceDownList.isEmpty()) {
+                faceDownList.add(0, gameBoard.getRowList().get(0));
+            } else {
+                while (gameBoard.getRowList().get(i).getFaceDownCards() > faceDownList.get(position - 1).getFaceDownCards()) {
+                    position--;
+                    if (position == 0) {
+                        break;
+                    }
+                }
+                faceDownList.add(position, gameBoard.getRowList().get(i));
+            }
+        }
+
 
         return faceDownList;
     }
