@@ -5,13 +5,13 @@ import model.GameBoard;
 import model.Row;
 import view.View;
 
-public class GameControllerTemp {
+public class GameController {
 
     private GameBoard gameBoard;
 
     private View view;
 
-    public GameControllerTemp(GameBoard gameBoard) {
+    public GameController(GameBoard gameBoard) {
         this.gameBoard = gameBoard;
         setUpGame();
         initView();

@@ -1,11 +1,11 @@
-import controller.GameControllerTemp;
+import controller.GameController;
 import model.GameBoard;
 
 public class main {
 
     public static void main(String[] args) {
         GameBoard gameBoard = new GameBoard();
-        GameControllerTemp gameControllerTemp = new GameControllerTemp(gameBoard);
+        GameController gameController = new GameController(gameBoard);
     }
 
 }
