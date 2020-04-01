@@ -2,9 +2,9 @@ package model;
 
 /**
  * Suit Numbers:
- * 0 = Hearts
- * 1 = Spades
- * 2 = Diamonds
+ * 0 = Diamonds
+ * 1 = Heart
+ * 2 = Spade
  * 3 = Clubs
  */
 
@@ -49,25 +49,35 @@ public class Card {
     }
 
     public String getCard() {
-        String s = "";
-        switch (suit) {
-            case 0:
-                s += "H";
-                break;
-            case 1:
-                s += "S";
-                break;
-            case 2:
-                s += "D";
-                break;
-            case 3:
-                s += "C";
-                break;
+        if(isFaceUp) {
+            String s = "";
+            switch (suit) {
+                case 0:
+                    s += "D";
+                    break;
+                case 1:
+                    s += "H";
+                    break;
+                case 2:
+                    s += "S";
+                    break;
+                case 3:
+                    s += "C";
+                    break;
+            }
+            if(level >= 10){
+                s += level;
+            } else {
+                s = " " + s + level;
+            }
+
+
+
+            return s;
         }
-
-        s += " " + level;
-
-        return s;
+        else{
+            return " x";
+        }
     }
 
     public boolean isFaceUp() {

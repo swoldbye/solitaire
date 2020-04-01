@@ -15,6 +15,18 @@ public class Row {
         return rowList;
     }
 
+    public int getRowLocation() {
+        return rowLocation;
+    }
+
+    public Card getTop(){
+        return rowList.get(rowList.size()-1);
+    }
+
+    public void addCard(Card c){
+        rowList.add(c);
+        c.setLocation(rowLocation);
+    }
 
 }
 

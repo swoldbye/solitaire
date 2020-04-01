@@ -5,8 +5,8 @@ import model.Pile;
 public class main {
 
     public static void main(String[] args) {
-        GameController gameController = new GameController();
-        gameController.initView();
+        GameBoard gameBoard = new GameBoard();
+        GameController gameController = new GameController(gameBoard);
     }
 
 }

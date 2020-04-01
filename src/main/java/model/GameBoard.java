@@ -29,7 +29,6 @@ public class GameBoard {
         initRowList();
     }
 
-
     private void initRowList() {
         rowList.add(row1);
         rowList.add(row2);
@@ -40,4 +39,55 @@ public class GameBoard {
         rowList.add(row7);
     }
 
+    public Pile getPile() {
+        return pile;
+    }
+
+    public Row getRow1() {
+        return row1;
+    }
+
+    public Row getRow2() {
+        return row2;
+    }
+
+    public Row getRow3() {
+        return row3;
+    }
+
+    public Row getRow4() {
+        return row4;
+    }
+
+    public Row getRow5() {
+        return row5;
+    }
+
+    public Row getRow6() {
+        return row6;
+    }
+
+    public Row getRow7() {
+        return row7;
+    }
+
+    public ArrayList<Row> getRowList() {
+        return rowList;
+    }
+
+    public Stack getDiamondStack() {
+        return diamondStack;
+    }
+
+    public Stack getHeartStack() {
+        return heartStack;
+    }
+
+    public Stack getSpadeStack() {
+        return spadeStack;
+    }
+
+    public Stack getClubStack() {
+        return clubStack;
+    }
 }

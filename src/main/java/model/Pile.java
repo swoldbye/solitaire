@@ -22,6 +22,17 @@ public class Pile {
         return pileList;
     }
 
+    public Card getTopCard(){
+        Card c = pileList.get(pileList.size()-1);
+        return c;
+    }
+
+    public Card takeTopCard(){
+        Card c = pileList.get(pileList.size()-1);
+        pileList.remove(c);
+        return c;
+    }
+
     public int getPileLocation() {
         return pileLocation;
     }
