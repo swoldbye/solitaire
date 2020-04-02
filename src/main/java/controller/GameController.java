@@ -3,14 +3,14 @@ package controller;
 import model.Card;
 import model.GameBoard;
 import model.Row;
-import model.Stack;
 import view.View;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * 'Main' Controller in charge of setting up the game and moving the cards
+ * 'Main' Controller in charge of setting up the game and moving the cards. This class is only usefull for testing
+ * purposes that can move the cards so the move logic can make the next move.
  * - Alex
  */
 
@@ -54,6 +54,12 @@ public class GameController {
                 }
             }
         }
+
+        for(int i = 0; i < gameBoard.getPile().getPileList().size(); i++){
+            gameBoard.getCardPile().addCard(gameBoard.getPile().takeTopCard());
+            i--;
+        }
+
     }
 
     /**
@@ -105,6 +111,26 @@ public class GameController {
         flipCard(r);
     }
 
+
+    /**
+     * Used to move a card or multiple cars in a row to another.
+     * @param sender
+     * @param receiver
+     */
+    public void moveCardRowToRow(Row sender, Row receiver) {
+        for (int i = 0; i < sender.getCardList().size(); i++) {
+            if (sender.getCardList().get(i).isFaceUp()) {
+                receiver.addCard(sender.getCardList().get(i));
+                sender.getCardList().remove(sender.getCardList().get(i));
+                i--;
+                if (sender.getCardList().size() == sender.getFaceDownCards()) {
+                    flipCard(sender);
+                    return;
+                }
+            }
+        }
+    }
+
     /**
      * A method that called whenever a move is made to know wether there is a card on the table that needs
      * to be flipped before going on the next turn
@@ -153,23 +179,8 @@ public class GameController {
     }
 
 
-    /**
-     * Used to move a card or multiple cars in a row to another.
-     * @param sender
-     * @param receiver
-     */
-    public void moveCardRowToRow(Row sender, Row receiver) {
-        for (int i = 0; i < sender.getCardList().size(); i++) {
-            if (sender.getCardList().get(i).isFaceUp()) {
-                receiver.addCard(sender.getCardList().get(i));
-                sender.getCardList().remove(sender.getCardList().get(i));
-                i--;
-                if (sender.getCardList().size() == sender.getFaceDownCards()) {
-                    flipCard(sender);
-                    return;
-                }
-            }
-        }
+    public void flipCardPile(){
+        gameBoard.getCardPile().getTop().setFaceUp(true);
     }
 
 }

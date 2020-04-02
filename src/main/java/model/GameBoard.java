@@ -8,6 +8,8 @@ public class GameBoard {
 
     Pile pile = new Pile(0);
 
+    Row cardPile = new Row(0);
+
     Row row1 = new Row(1);
     Row row2 = new Row(2);
     Row row3 = new Row(3);
@@ -41,6 +43,10 @@ public class GameBoard {
 
     public Pile getPile() {
         return pile;
+    }
+
+    public Row getCardPile() {
+        return cardPile;
     }
 
     public Row getRow1() {
@@ -91,24 +97,24 @@ public class GameBoard {
         return clubStack;
     }
 
-    public int getMaxRowSize(){
+    public int getMaxRowSize() {
         int max = row1.getCardList().size();
-        if(row2.getCardList().size() > max){
+        if (row2.getCardList().size() > max) {
             max = row2.getCardList().size();
         }
-        if(row3.getCardList().size() > max){
+        if (row3.getCardList().size() > max) {
             max = row3.getCardList().size();
         }
-        if(row4.getCardList().size() > max){
+        if (row4.getCardList().size() > max) {
             max = row4.getCardList().size();
         }
-        if(row5.getCardList().size() > max){
+        if (row5.getCardList().size() > max) {
             max = row5.getCardList().size();
         }
-        if(row6.getCardList().size() > max){
+        if (row6.getCardList().size() > max) {
             max = row6.getCardList().size();
         }
-        if(row7.getCardList().size() > max){
+        if (row7.getCardList().size() > max) {
             max = row7.getCardList().size();
         }
 

@@ -25,7 +25,7 @@ public class View {
 
         topline = gameBoard.getDiamondStack().getTop() + " " + gameBoard.getHeartStack().getTop() + " " +
                 gameBoard.getSpadeStack().getTop() + " " + gameBoard.getClubStack().getTop() + "              " +
-                gameBoard.getPile().getTopCard().getCard();
+                gameBoard.getCardPile().getTop().getCard();
 
         rows = "";
         for (int i = 0; i < gameBoard.getMaxRowSize(); i++) {

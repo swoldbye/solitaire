@@ -9,6 +9,10 @@ import java.util.ArrayList;
 /**
  * Controller that decides what to move next, based on the ChessandPoker.com solitare Stategy guide
  * This class does NOT move any cards, but tells the GameController Which cards to move.
+ * <p>
+ * This logic in this is class is what mainly can be used for the final system as we wont need a controller to move
+ * cards, that we will do ourselves :)
+ * - Alex
  */
 
 public class MoveController {
@@ -19,9 +23,9 @@ public class MoveController {
 
     private GameController gameController;
 
-    private boolean isKingAvailiable = false;
+    private boolean isKingAvailiable = false, moveMade, pilecardUsed;
 
-    private int aceCounter = 0;
+    private int aceCounter = 0, kingCounter = 0;
 
     public MoveController(GameBoard gameBoard, GameController gameController) {
         this.gameBoard = gameBoard;
@@ -33,15 +37,34 @@ public class MoveController {
      */
 
     public void makeMove() {
-        if (aceCounter < 4) {
-            int foundAce = aceCounter;
+        moveMade = false;
+        faceDownList = gameController.getFaceDownList();
+
+        if (aceCounter != 4) {
             checkForAce();
-            if (aceCounter > foundAce) {
+            if (moveMade) {
                 return;
             }
         }
+
         checkForAvailableKing();
+        if (isKingAvailiable && kingCounter < 4) {
+            moveKingToEmpty();
+        }
+
+        if (moveMade) {
+            return;
+        }
+
         checkForMoveCard();
+
+        if (moveMade) {
+            return;
+        }
+
+
+        gameController.flipCardPile();
+        //pilecardUsed = false;
 
 
     }
@@ -51,10 +74,11 @@ public class MoveController {
      */
 
     private void checkForAce() {
-        for (Row r : gameBoard.getRowList()) {
+        for (Row r : faceDownList) {
             if (r.getTop().getLevel() == 1) {
                 gameController.moveToStack(r.getTop(), r);
                 aceCounter++;
+                moveMade = true;
                 break;
             }
         }
@@ -65,13 +89,19 @@ public class MoveController {
      * that frees the row with most downcards
      */
     public void checkForMoveCard() {
-        faceDownList = gameController.getFaceDownList();
+
         for (Row r : faceDownList) {
             Card c = r.getCardList().get(r.getCardList().size() - (r.getCardList().size() - r.getFaceDownCards()));
-            for (Row r2 : faceDownList) {
-                if (!r2.getTop().getColour().equals(c.getColour()) && r2.getTop().getLevel() == c.getLevel() + 1) {
-                    gameController.moveCardRowToRow(r, r2);
-                    return;
+            //If card to be moved will leave empty stack, it is only moved if there is a king ready to take it
+            if (r.getFaceDownCards() == 0 && !isKingAvailiable) {
+                continue;
+            } else {
+                for (Row r2 : faceDownList) {
+                    if (!r2.getTop().getColour().equals(c.getColour()) && r2.getTop().getLevel() == c.getLevel() + 1) {
+                        gameController.moveCardRowToRow(r, r2);
+                        moveMade = true;
+                        return;
+                    }
                 }
             }
         }
@@ -81,9 +111,13 @@ public class MoveController {
      * check face up cards if there is a king. This effects the decisions made.
      */
     private void checkForAvailableKing() {
+        if (kingCounter == 4) {
+            isKingAvailiable = true;
+            return;
+        }
         for (Row r : gameBoard.getRowList()) {
             for (Card c : r.getCardList()) {
-                if(c.isFaceUp() && c.getLevel() == 13){
+                if (c.isFaceUp() && c.getLevel() == 13 && r.getFaceDownCards() > 0) {
                     isKingAvailiable = true;
                     return;
                 }
@@ -92,4 +126,30 @@ public class MoveController {
         isKingAvailiable = false;
         return;
     }
+
+    private void moveKingToEmpty() {
+        for (Row r : gameBoard.getRowList()) {
+            if (r.getTop().getLevel() == 0) {
+                for (Row r2 : gameBoard.getRowList()) {
+                    Card c = r2.getCardList().get(r2.getCardList().size() - (r2.getCardList().size() - r2.getFaceDownCards()));
+                    if (c.getLevel() == 13 && r2.getFaceDownCards() > 0) {
+                        r.getCardList().remove(0);
+                        gameController.moveCardRowToRow(r2, r);
+                        kingCounter++;
+                        moveMade = true;
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
+    public void useFlipCard(){
+        Card c = gameBoard.getPile().getTopCard();
+        switch (c.getLevel()){
+            case 1:
+
+        }
+    }
+
 }
