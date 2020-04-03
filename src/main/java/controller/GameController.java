@@ -121,7 +121,9 @@ public class GameController {
                 }
                 break;
         }
-        r.getCardList().remove(c);
+        if (moveMade) {
+            r.getCardList().remove(c);
+        }
         flipCard(r);
     }
 
@@ -133,9 +135,9 @@ public class GameController {
      * @param receiver
      */
     public void moveCardRowToRow(Row sender, Row receiver) {
-        if(receiver.getTop().getLevel() == 0){
+        /*if (receiver.getTop().getLevel() == 0) {
             receiver.getCardList().remove(0);
-        }
+        }*/
         for (int i = 0; i < sender.getCardList().size(); i++) {
             if (sender.getCardList().get(i).isFaceUp()) {
                 receiver.addCard(sender.getCardList().get(i));
@@ -163,9 +165,10 @@ public class GameController {
         if (r.getRowLocation() == 0) {
             return;
         }
-        if (r.getCardList().isEmpty()) {
+       /* if (r.getCardList().isEmpty()) {
             r.getCardList().add(new Card(4, 0, true));
-        } else if (!r.getTop().isFaceUp()) {
+        } else*/
+        if (!r.getTop().isFaceUp()) {
             r.getTop().setFaceUp(true);
         }
     }
@@ -202,6 +205,9 @@ public class GameController {
 
 
     public void flipCardPile() {
+        if (gameBoard.getPile().getPileList().isEmpty()) {
+            return;
+        }
         if (!gameBoard.getCardPileRow().getCardList().isEmpty()) {
             Card c = gameBoard.getCardPileRow().getTop();
             c.setFaceUp(false);
@@ -214,8 +220,16 @@ public class GameController {
     }
 
     public void victoryFormation() {
+        while (gameBoard.getDiamondStack().getTop() != 13 && gameBoard.getHeartStack().getTop() != 13
+                && gameBoard.getSpadeStack().getTop() != 13 && gameBoard.getClubStack().getTop() != 13){
+            for(Row r: gameBoard.getRowList()){
+                moveMade = false;
+                moveToStack(r.getTop(),r);
+                view.updateView();
+            }
 
-        isGameWon = true;
+        }
+            isGameWon = true;
         return;
     }
 
@@ -223,7 +237,7 @@ public class GameController {
         return moveMade;
     }
 
-    public void gameLost(){
+    public void gameLost() {
         System.out.println("Computer loses cause it's not smoking a fat one");
         System.exit(0);
     }

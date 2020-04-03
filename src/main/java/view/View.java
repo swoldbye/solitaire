@@ -27,18 +27,24 @@ public class View {
                 gameBoard.getSpadeStack().getTop() + " " + gameBoard.getClubStack().getTop() +
                 "                 ";
 
-        if(!gameBoard.getCardPileRow().getCardList().isEmpty()){
+        if (!gameBoard.getCardPileRow().getCardList().isEmpty()) {
             topline += gameBoard.getCardPileRow().getTop().getCard();
         } else {
             topline += "  ";
         }
-        topline += gameBoard.getPile().getTopCard().getCard();
+        if (gameBoard.getPile().getPileList().isEmpty()) {
+            topline += "  0";
+        } else {
+            topline += gameBoard.getPile().getTopCard().getCard();
+        }
 
 
         rows = "";
-        for (int i = 0; i < gameBoard.getMaxRowSize()+1; i++) {
+        for (int i = 0; i < gameBoard.getMaxRowSize() + 1; i++) {
             for (Row r : gameBoard.getRowList()) {
-                if (r.getCardList().size() <= i) {
+                if (r.getCardList().isEmpty() && i == 0) {
+                    rows += r.getTop().getCard();
+                } else if (r.getCardList().size() <= i) {
                     rows += "   ";
                 } else {
                     rows += r.getCardList().get(i).getCard();

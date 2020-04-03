@@ -20,6 +20,9 @@ public class Row {
     }
 
     public Card getTop(){
+        if(cards.isEmpty()){
+            return new Card(4,0,true);
+        }
         return cards.get(cards.size()-1);
     }
 
@@ -30,6 +33,9 @@ public class Row {
 
     public int getFaceDownCards(){
         int faceDown = 0;
+        if (cards.isEmpty()){
+            return faceDown;
+        }
         for(Card c: cards){
             if (!c.isFaceUp){
                 faceDown++;

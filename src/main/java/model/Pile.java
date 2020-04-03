@@ -23,6 +23,9 @@ public class Pile {
     }
 
     public Card getTopCard(){
+        if(pileList.isEmpty()){
+            return new Card(4,0,true);
+        }
         Card c = pileList.get(pileList.size()-1);
         return c;
     }

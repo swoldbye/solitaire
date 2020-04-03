@@ -23,9 +23,9 @@ public class MoveController {
 
     private GameController gameController;
 
-    private boolean isKingAvailiable = false;
+    private boolean isKingAvailiable = false, gameWon = false;
 
-    private int aceCounter = 0, kingCounter = 0, usedPileCardCounter = 0;
+    private int kingCounter = 0, usedPileCardCounter = 0;
 
     public MoveController(GameBoard gameBoard, GameController gameController) {
         this.gameBoard = gameBoard;
@@ -39,13 +39,11 @@ public class MoveController {
     public void makeMove() {
         faceDownList = gameController.getFaceDownList();
 
-        // if (aceCounter != 8) {
         checkForAceDeuce();
         if (gameController.isMoveMade()) {
             usedPileCardCounter = 0;
             return;
         }
-        // }
 
         checkForAvailableKing();
 
@@ -74,9 +72,14 @@ public class MoveController {
 
         usedPileCardCounter++;
 
+        if (gameWon && gameBoard.getCardPileRow().getCardList().isEmpty()) {
+            gameController.victoryFormation();
+        }
+
+        checkForWin();
 
 
-        if (usedPileCardCounter > gameBoard.getPile().getPileList().size()+2) {
+        if (usedPileCardCounter > gameBoard.getPile().getPileList().size() + 2) {
             gameController.gameLost();
         }
 
@@ -91,13 +94,13 @@ public class MoveController {
         for (Row r : faceDownList) {
             if (r.getTop().getLevel() == 1) {
                 gameController.moveToStack(r.getTop(), r);
-                //aceCounter++;
-                break;
+                return;
             }
+        }
+        for (Row r : faceDownList) {
             if (r.getTop().getLevel() == 2) {
                 gameController.moveToStack(r.getTop(), r);
-                // aceCounter++;
-                break;
+                return;
             }
         }
     }
@@ -109,6 +112,9 @@ public class MoveController {
     public void checkForMoveCard() {
 
         for (Row r : faceDownList) {
+            if (r.getCardList().isEmpty()) {
+                continue;
+            }
             Card c = r.getCardList().get(r.getCardList().size() - (r.getCardList().size() - r.getFaceDownCards()));
             //If card to be moved will leave empty stack, it is only moved if there is a king ready to take it
             if (r.getFaceDownCards() == 0 && !isKingAvailiable && r.getRowLocation() != 0) {
@@ -143,6 +149,7 @@ public class MoveController {
         if (!gameBoard.getCardPileRow().getCardList().isEmpty()) {
             if (gameBoard.getCardPileRow().getTop().getLevel() == 13) {
                 isKingAvailiable = true;
+                return;
             }
         }
         isKingAvailiable = false;
@@ -150,14 +157,19 @@ public class MoveController {
     }
 
     private void moveKingToEmpty() {
+        if(gameBoard.getCardPileRow().getTop().getLevel() == 13){
+            return;
+        }
         for (Row r : gameBoard.getRowList()) {
             if (r.getTop().getLevel() == 0) {
                 for (Row r2 : gameBoard.getRowList()) {
-                    Card c = r2.getCardList().get(r2.getCardList().size() - (r2.getCardList().size() - r2.getFaceDownCards()));
-                    if (c.getLevel() == 13 && r2.getFaceDownCards() > 0) {
-                        gameController.moveCardRowToRow(r2, r);
-                        kingCounter++;
-                        return;
+                    if (r2 != r) {
+                        Card c = r2.getCardList().get(r2.getCardList().size() - (r2.getCardList().size() - r2.getFaceDownCards()));
+                        if (c.getLevel() == 13 && r2.getFaceDownCards() > 0) {
+                            gameController.moveCardRowToRow(r2, r);
+                            kingCounter++;
+                            return;
+                        }
                     }
                 }
             }
@@ -205,6 +217,22 @@ public class MoveController {
                     }
                 }
         }
+    }
+
+    public void checkForWin() {
+        for (Row r : gameBoard.getRowList()) {
+            if (r.getCardList().isEmpty()) {
+                continue;
+            } else if (!r.getCardList().get(0).isFaceUp()) {
+                return;
+            }
+        }
+        if (!gameBoard.getPile().getPileList().isEmpty() && !gameBoard.getCardPileRow().getCardList().isEmpty()) {
+            return;
+        }
+
+        gameWon = true;
+        return;
     }
 
 }
