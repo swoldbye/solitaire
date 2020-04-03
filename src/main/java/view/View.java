@@ -36,7 +36,7 @@ public class View {
 
 
         rows = "";
-        for (int i = 0; i < gameBoard.getMaxRowSize(); i++) {
+        for (int i = 0; i < gameBoard.getMaxRowSize()+1; i++) {
             for (Row r : gameBoard.getRowList()) {
                 if (r.getCardList().size() <= i) {
                     rows += "   ";

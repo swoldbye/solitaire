@@ -23,9 +23,9 @@ public class MoveController {
 
     private GameController gameController;
 
-    private boolean isKingAvailiable = false, moveMade, pilecardUsed = true;
+    private boolean isKingAvailiable = false;
 
-    private int aceCounter = 0, kingCounter = 0;
+    private int aceCounter = 0, kingCounter = 0, usedPileCardCounter = 0;
 
     public MoveController(GameBoard gameBoard, GameController gameController) {
         this.gameBoard = gameBoard;
@@ -37,38 +37,48 @@ public class MoveController {
      */
 
     public void makeMove() {
-        moveMade = false;
         faceDownList = gameController.getFaceDownList();
 
-        if (aceCounter != 4) {
-            checkForAce();
-            if (moveMade) {
-                return;
-            }
+        // if (aceCounter != 8) {
+        checkForAceDeuce();
+        if (gameController.isMoveMade()) {
+            usedPileCardCounter = 0;
+            return;
         }
+        // }
 
         checkForAvailableKing();
+
         if (isKingAvailiable && kingCounter < 4) {
             moveKingToEmpty();
         }
 
-        if (moveMade) {
+        if (gameController.isMoveMade()) {
+            usedPileCardCounter = 0;
             return;
         }
 
         checkForMoveCard();
 
-        if (moveMade) {
+        if (!gameBoard.getCardPileRow().getCardList().isEmpty()) {
+            useFlipCard();
+        }
+
+        if (gameController.isMoveMade()) {
+            usedPileCardCounter = 0;
             return;
         }
 
-        if(pilecardUsed) {
-            gameController.flipCardPile();
-            pilecardUsed = false;
-            return;
-        }
 
-        useFlipCard();
+        gameController.flipCardPile();
+
+        usedPileCardCounter++;
+
+
+
+        if (usedPileCardCounter > gameBoard.getPile().getPileList().size()+2) {
+            gameController.gameLost();
+        }
 
 
     }
@@ -77,12 +87,16 @@ public class MoveController {
      * First check to see if there are any aces face up
      */
 
-    private void checkForAce() {
+    private void checkForAceDeuce() {
         for (Row r : faceDownList) {
             if (r.getTop().getLevel() == 1) {
                 gameController.moveToStack(r.getTop(), r);
-                aceCounter++;
-                moveMade = true;
+                //aceCounter++;
+                break;
+            }
+            if (r.getTop().getLevel() == 2) {
+                gameController.moveToStack(r.getTop(), r);
+                // aceCounter++;
                 break;
             }
         }
@@ -103,7 +117,6 @@ public class MoveController {
                 for (Row r2 : faceDownList) {
                     if (!r2.getTop().getColour().equals(c.getColour()) && r2.getTop().getLevel() == c.getLevel() + 1) {
                         gameController.moveCardRowToRow(r, r2);
-                        moveMade = true;
                         return;
                     }
                 }
@@ -127,8 +140,8 @@ public class MoveController {
                 }
             }
         }
-        if(!gameBoard.getCardPileRow().getCardList().isEmpty()){
-            if(gameBoard.getCardPileRow().getTop().getLevel() == 13){
+        if (!gameBoard.getCardPileRow().getCardList().isEmpty()) {
+            if (gameBoard.getCardPileRow().getTop().getLevel() == 13) {
                 isKingAvailiable = true;
             }
         }
@@ -142,10 +155,8 @@ public class MoveController {
                 for (Row r2 : gameBoard.getRowList()) {
                     Card c = r2.getCardList().get(r2.getCardList().size() - (r2.getCardList().size() - r2.getFaceDownCards()));
                     if (c.getLevel() == 13 && r2.getFaceDownCards() > 0) {
-                        r.getCardList().remove(0);
                         gameController.moveCardRowToRow(r2, r);
                         kingCounter++;
-                        moveMade = true;
                         return;
                     }
                 }
@@ -158,26 +169,42 @@ public class MoveController {
         switch (c.getLevel()) {
             case 1:
                 gameController.moveToStack(c, gameBoard.getCardPileRow());
-                moveMade = true;
                 break;
-            case 2: case 3: case 4: case 5: case 6: case 7: case 8: case 9: case 10: case 11: case 12:
+            case 2:
+                gameController.moveToStack(c, gameBoard.getCardPileRow());
+                if (!gameController.isMoveMade()) {
+                    for (Row r : gameBoard.getRowList()) {
+                        if (!r.getTop().getColour().equals(c.getColour()) && r.getTop().getLevel() == c.getLevel() + 1) {
+                            gameController.moveCardRowToRow(gameBoard.getCardPileRow(), r);
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+            case 12:
                 for (Row r : gameBoard.getRowList()) {
                     if (!r.getTop().getColour().equals(c.getColour()) && r.getTop().getLevel() == c.getLevel() + 1) {
                         gameController.moveCardRowToRow(gameBoard.getCardPileRow(), r);
-                        moveMade = true;
-                        break;
                     }
                 }
+                break;
             case 13:
-                for(Row r: gameBoard.getRowList()){
-                    if(r.getTop().getLevel() == 0){
-                        gameController.moveCardRowToRow(gameBoard.getCardPileRow(),r);
-                        moveMade = true;
+                for (Row r : gameBoard.getRowList()) {
+                    if (r.getTop().getLevel() == 0) {
+                        gameController.moveCardRowToRow(gameBoard.getCardPileRow(), r);
                         break;
                     }
                 }
         }
-        pilecardUsed = true;
     }
 
 }

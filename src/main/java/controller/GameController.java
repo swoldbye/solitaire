@@ -24,7 +24,7 @@ public class GameController {
 
     private Scanner scan = new Scanner(System.in);
 
-    private boolean isGameWon = false;
+    private boolean isGameWon = false, moveMade;
 
     public GameController(GameBoard gameBoard) {
         this.gameBoard = gameBoard;
@@ -77,7 +77,8 @@ public class GameController {
             System.out.println("Cpu wins");
             System.exit(0);
         } else {
-            scan.nextLine();
+            //scan.nextLine();
+            moveMade = false;
             moveController.makeMove();
             view.updateView();
             isGameWon();
@@ -96,16 +97,28 @@ public class GameController {
     public void moveToStack(Card c, Row r) {
         switch (c.getSuit()) {
             case 0:
-                gameBoard.getDiamondStack().addCard(c);
+                if (gameBoard.getDiamondStack().getTop() == c.getLevel() - 1) {
+                    gameBoard.getDiamondStack().addCard(c);
+                    moveMade = true;
+                }
                 break;
             case 1:
-                gameBoard.getHeartStack().addCard(c);
+                if (gameBoard.getHeartStack().getTop() == c.getLevel() - 1) {
+                    gameBoard.getHeartStack().addCard(c);
+                    moveMade = true;
+                }
                 break;
             case 2:
-                gameBoard.getSpadeStack().addCard(c);
+                if (gameBoard.getSpadeStack().getTop() == c.getLevel() - 1) {
+                    gameBoard.getSpadeStack().addCard(c);
+                    moveMade = true;
+                }
                 break;
             case 3:
-                gameBoard.getClubStack().addCard(c);
+                if (gameBoard.getClubStack().getTop() == c.getLevel() - 1) {
+                    gameBoard.getClubStack().addCard(c);
+                    moveMade = true;
+                }
                 break;
         }
         r.getCardList().remove(c);
@@ -120,10 +133,14 @@ public class GameController {
      * @param receiver
      */
     public void moveCardRowToRow(Row sender, Row receiver) {
+        if(receiver.getTop().getLevel() == 0){
+            receiver.getCardList().remove(0);
+        }
         for (int i = 0; i < sender.getCardList().size(); i++) {
             if (sender.getCardList().get(i).isFaceUp()) {
                 receiver.addCard(sender.getCardList().get(i));
                 sender.getCardList().remove(sender.getCardList().get(i));
+                moveMade = true;
                 i--;
                 if (sender.getCardList().size() == sender.getFaceDownCards()) {
                     flipCard(sender);
@@ -143,7 +160,9 @@ public class GameController {
      */
 
     public void flipCard(Row r) {
-        if(r.getRowLocation() == 0){return;}
+        if (r.getRowLocation() == 0) {
+            return;
+        }
         if (r.getCardList().isEmpty()) {
             r.getCardList().add(new Card(4, 0, true));
         } else if (!r.getTop().isFaceUp()) {
@@ -183,20 +202,30 @@ public class GameController {
 
 
     public void flipCardPile() {
-        if(!gameBoard.getCardPileRow().getCardList().isEmpty()){
-           Card c = gameBoard.getCardPileRow().getTop();
-           c.setFaceUp(false);
-            gameBoard.getPile().getPileList().add(0,c);
+        if (!gameBoard.getCardPileRow().getCardList().isEmpty()) {
+            Card c = gameBoard.getCardPileRow().getTop();
+            c.setFaceUp(false);
+            gameBoard.getPile().getPileList().add(0, c);
             gameBoard.getCardPileRow().getCardList().remove(0);
         }
         gameBoard.getCardPileRow().addCard(gameBoard.getPile().takeTopCard());
         gameBoard.getCardPileRow().getTop().setFaceUp(true);
+        moveMade = true;
     }
 
     public void victoryFormation() {
 
         isGameWon = true;
         return;
+    }
+
+    public boolean isMoveMade() {
+        return moveMade;
+    }
+
+    public void gameLost(){
+        System.out.println("Computer loses cause it's not smoking a fat one");
+        System.exit(0);
     }
 
 }
