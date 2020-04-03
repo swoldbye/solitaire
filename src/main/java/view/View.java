@@ -17,15 +17,23 @@ public class View {
     /**
      * To help visualise everything so we can work on logic while the legend huge eggshead and crazybigpussybeard face
      * make the sexy opencv
-     *
+     * <p>
      * - Mark
      */
 
     public void updateView() {
 
         topline = gameBoard.getDiamondStack().getTop() + " " + gameBoard.getHeartStack().getTop() + " " +
-                gameBoard.getSpadeStack().getTop() + " " + gameBoard.getClubStack().getTop() + "              " +
-                gameBoard.getCardPile().getTop().getCard();
+                gameBoard.getSpadeStack().getTop() + " " + gameBoard.getClubStack().getTop() +
+                "                 ";
+
+        if(!gameBoard.getCardPileRow().getCardList().isEmpty()){
+            topline += gameBoard.getCardPileRow().getTop().getCard();
+        } else {
+            topline += "  ";
+        }
+        topline += gameBoard.getPile().getTopCard().getCard();
+
 
         rows = "";
         for (int i = 0; i < gameBoard.getMaxRowSize(); i++) {

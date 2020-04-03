@@ -24,6 +24,8 @@ public class GameController {
 
     private Scanner scan = new Scanner(System.in);
 
+    private boolean isGameWon = false;
+
     public GameController(GameBoard gameBoard) {
         this.gameBoard = gameBoard;
         this.moveController = new MoveController(gameBoard, this);
@@ -55,10 +57,10 @@ public class GameController {
             }
         }
 
-        for(int i = 0; i < gameBoard.getPile().getPileList().size(); i++){
+       /* for (int i = 0; i < gameBoard.getPile().getPileList().size(); i++) {
             gameBoard.getCardPile().addCard(gameBoard.getPile().takeTopCard());
             i--;
-        }
+        }*/
 
     }
 
@@ -71,8 +73,7 @@ public class GameController {
      */
 
     public void isGameWon() {
-        if (gameBoard.getDiamondStack().getTop() == 13 && gameBoard.getHeartStack().getTop() == 13 &&
-                gameBoard.getSpadeStack().getTop() == 13 && gameBoard.getClubStack().getTop() == 13) {
+        if (isGameWon) {
             System.out.println("Cpu wins");
             System.exit(0);
         } else {
@@ -114,6 +115,7 @@ public class GameController {
 
     /**
      * Used to move a card or multiple cars in a row to another.
+     *
      * @param sender
      * @param receiver
      */
@@ -141,6 +143,7 @@ public class GameController {
      */
 
     public void flipCard(Row r) {
+        if(r.getRowLocation() == 0){return;}
         if (r.getCardList().isEmpty()) {
             r.getCardList().add(new Card(4, 0, true));
         } else if (!r.getTop().isFaceUp()) {
@@ -179,8 +182,21 @@ public class GameController {
     }
 
 
-    public void flipCardPile(){
-        gameBoard.getCardPile().getTop().setFaceUp(true);
+    public void flipCardPile() {
+        if(!gameBoard.getCardPileRow().getCardList().isEmpty()){
+           Card c = gameBoard.getCardPileRow().getTop();
+           c.setFaceUp(false);
+            gameBoard.getPile().getPileList().add(0,c);
+            gameBoard.getCardPileRow().getCardList().remove(0);
+        }
+        gameBoard.getCardPileRow().addCard(gameBoard.getPile().takeTopCard());
+        gameBoard.getCardPileRow().getTop().setFaceUp(true);
+    }
+
+    public void victoryFormation() {
+
+        isGameWon = true;
+        return;
     }
 
 }

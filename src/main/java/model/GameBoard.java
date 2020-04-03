@@ -8,7 +8,7 @@ public class GameBoard {
 
     Pile pile = new Pile(0);
 
-    Row cardPile = new Row(0);
+    Row cardPileRow = new Row(0);
 
     Row row1 = new Row(1);
     Row row2 = new Row(2);
@@ -25,7 +25,6 @@ public class GameBoard {
     Stack spadeStack = new Stack(3, 10);
     Stack clubStack = new Stack(4, 11);
 
-    private Random randomGenerator = new Random();
 
     public GameBoard() {
         initRowList();
@@ -45,8 +44,8 @@ public class GameBoard {
         return pile;
     }
 
-    public Row getCardPile() {
-        return cardPile;
+    public Row getCardPileRow() {
+        return cardPileRow;
     }
 
     public Row getRow1() {
