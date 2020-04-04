@@ -23,13 +23,16 @@ public class MoveController {
 
     private GameController gameController;
 
-    private boolean isKingAvailiable = false, gameWon = false;
+    private boolean isKingAvailable = false, gameWon = false;
 
     private int kingCounter = 0, usedPileCardCounter = 0;
+
+    private AILolController aiLolController;
 
     public MoveController(GameBoard gameBoard, GameController gameController) {
         this.gameBoard = gameBoard;
         this.gameController = gameController;
+
     }
 
     /**
@@ -37,9 +40,20 @@ public class MoveController {
      */
 
     public void makeMove() {
+        //gets list with rows with most face down cards in decending order
         faceDownList = gameController.getFaceDownList();
 
+        //is the game won lol? no need to continue lol?
+        checkForWin();
+
+        //lets get this dub !!
+        if (gameWon && gameBoard.getCardPileRow().getCardList().isEmpty()) {
+            gameController.victoryFormation();
+        }
+
+        //Here starts the 'regular' moves
         checkForAceDeuce();
+
         if (gameController.isMoveMade()) {
             usedPileCardCounter = 0;
             return;
@@ -47,7 +61,7 @@ public class MoveController {
 
         checkForAvailableKing();
 
-        if (isKingAvailiable && kingCounter < 4) {
+        if (isKingAvailable && kingCounter < 4) {
             moveKingToEmpty();
         }
 
@@ -68,18 +82,24 @@ public class MoveController {
         }
 
 
+        //no move can be made with cards on the table, so another card is flipped.
         gameController.flipCardPile();
+
 
         usedPileCardCounter++;
 
-        checkForWin();
+        //after all the cards in the pile have been around once, and no move has been made. Then we need
+        //to make a multiple moves to free a downcard. To find out what to move we use AI lOL.
 
-        if (gameWon && gameBoard.getCardPileRow().getCardList().isEmpty()) {
-            gameController.victoryFormation();
+        if ((gameBoard.getPile().getPileList().size() + 2)*2 > usedPileCardCounter  && usedPileCardCounter > gameBoard.getPile().getPileList().size() + 2) {
+            aiLolController = new AILolController(faceDownList,gameBoard);
+            aiLolController.lookForMove();
         }
 
+        //When all the cards in the deck have been at least once and no move has been made we are whats called
+        //fucked
 
-        if (usedPileCardCounter > gameBoard.getPile().getPileList().size() + 2) {
+        if (usedPileCardCounter > (gameBoard.getPile().getPileList().size() + 2)*2) {
             gameController.gameLost();
         }
 
@@ -87,7 +107,10 @@ public class MoveController {
     }
 
     /**
-     * First check to see if there are any aces face up
+     * First check to see if there are any aces or deuces face up, first it searches all rows for aces
+     * then deuce
+     * <p>
+     * - Alex
      */
 
     private void checkForAceDeuce() {
@@ -108,6 +131,8 @@ public class MoveController {
     /**
      * Second, check to see if there can be freed a downcard, if there are multiple possibilites, move the card
      * that frees the row with most downcards
+     * <p>
+     * - Alex
      */
     public void checkForMoveCard() {
 
@@ -115,12 +140,17 @@ public class MoveController {
             if (r.getCardList().isEmpty()) {
                 continue;
             }
+
+            //Gets the last face up card before the downcards
             Card c = r.getCardList().get(r.getCardList().size() - (r.getCardList().size() - r.getFaceDownCards()));
+
             //If card to be moved will leave empty stack, it is only moved if there is a king ready to take it
-            if (r.getFaceDownCards() == 0 && !isKingAvailiable && r.getRowLocation() != 0) {
+            if (r.getFaceDownCards() == 0 && !isKingAvailable) {
                 continue;
             } else {
                 for (Row r2 : faceDownList) {
+
+                    //now looks to see if the above found card c can be moved
                     if (!r2.getTop().getColour().equals(c.getColour()) && r2.getTop().getLevel() == c.getLevel() + 1) {
                         gameController.moveCardRowToRow(r, r2);
                         return;
@@ -132,32 +162,33 @@ public class MoveController {
 
     /**
      * check face up cards if there is a king. This effects the decisions made.
+     * - Alex
      */
     private void checkForAvailableKing() {
         if (kingCounter == 4) {
-            isKingAvailiable = true;
+            isKingAvailable = true;
             return;
         }
         for (Row r : gameBoard.getRowList()) {
             for (Card c : r.getCardList()) {
                 if (c.isFaceUp() && c.getLevel() == 13 && r.getFaceDownCards() > 0) {
-                    isKingAvailiable = true;
+                    isKingAvailable = true;
                     return;
                 }
             }
         }
         if (!gameBoard.getCardPileRow().getCardList().isEmpty()) {
             if (gameBoard.getCardPileRow().getTop().getLevel() == 13) {
-                isKingAvailiable = true;
+                isKingAvailable = true;
                 return;
             }
         }
-        isKingAvailiable = false;
+        isKingAvailable = false;
         return;
     }
 
     private void moveKingToEmpty() {
-        if(gameBoard.getCardPileRow().getTop().getLevel() == 13){
+        if (gameBoard.getCardPileRow().getTop().getLevel() == 13) {
             return;
         }
         for (Row r : gameBoard.getRowList()) {
