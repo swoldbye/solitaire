@@ -258,7 +258,7 @@ public class MoveController {
                 return;
             }
         }
-        if (!gameBoard.getPile().getPileList().isEmpty() && !gameBoard.getCardPileRow().getCardList().isEmpty()) {
+        if (!gameBoard.getPile().getPileList().isEmpty() || !gameBoard.getCardPileRow().getCardList().isEmpty()) {
             return;
         }
 
