@@ -31,7 +31,7 @@ public class GameController {
         this.moveController = new MoveController(gameBoard, this);
         setUpGame();
         initView();
-        isGameWon();
+        startTurn();
     }
 
     public void initView() {
@@ -56,7 +56,6 @@ public class GameController {
                 }
             }
         }
-
        /* for (int i = 0; i < gameBoard.getPile().getPileList().size(); i++) {
             gameBoard.getCardPile().addCard(gameBoard.getPile().takeTopCard());
             i--;
@@ -72,18 +71,18 @@ public class GameController {
      * - Alex
      */
 
-    public void isGameWon() {
+    public void startTurn() {
+
+        moveMade = false;
+        moveController.makeMove();
         if (isGameWon) {
             System.out.println("Cpu wins");
             System.exit(0);
-        } else {
-            //scan.nextLine();
-            moveMade = false;
-            moveController.makeMove();
-            view.updateView();
-            isGameWon();
         }
+        view.updateView();
+        startTurn();
     }
+
 
     /**
      * Method that moves a card c from row r into a stack
@@ -165,9 +164,6 @@ public class GameController {
         if (r.getRowLocation() == 0) {
             return;
         }
-       /* if (r.getCardList().isEmpty()) {
-            r.getCardList().add(new Card(4, 0, true));
-        } else*/
         if (!r.getTop().isFaceUp()) {
             r.getTop().setFaceUp(true);
         }
@@ -220,17 +216,22 @@ public class GameController {
     }
 
     public void victoryFormation() {
-        while (gameBoard.getDiamondStack().getTop() != 13 && gameBoard.getHeartStack().getTop() != 13
-                && gameBoard.getSpadeStack().getTop() != 13 && gameBoard.getClubStack().getTop() != 13){
-            for(Row r: gameBoard.getRowList()){
+        view.victoryFormationBaby();
+        while (!isGameWon) {
+            for (Row r : gameBoard.getRowList()) {
+                if (moveMade) {
+                    view.updateView();
+                }
+                if (gameBoard.getDiamondStack().getTop() == 13 && gameBoard.getHeartStack().getTop() == 13
+                        && gameBoard.getSpadeStack().getTop() == 13 && gameBoard.getClubStack().getTop() == 13) {
+                    isGameWon = true;
+                    return;
+                }
                 moveMade = false;
-                moveToStack(r.getTop(),r);
-                view.updateView();
+                moveToStack(r.getTop(), r);
             }
-
         }
-            isGameWon = true;
-        return;
+
     }
 
     public boolean isMoveMade() {

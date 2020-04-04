@@ -57,4 +57,8 @@ public class View {
         System.out.println(topline + "\n\n" + rows);
     }
 
+    public void victoryFormationBaby(){
+        System.out.println("VICTORY FORMATION BABY");
+    }
+
 }

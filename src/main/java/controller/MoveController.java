@@ -72,11 +72,11 @@ public class MoveController {
 
         usedPileCardCounter++;
 
+        checkForWin();
+
         if (gameWon && gameBoard.getCardPileRow().getCardList().isEmpty()) {
             gameController.victoryFormation();
         }
-
-        checkForWin();
 
 
         if (usedPileCardCounter > gameBoard.getPile().getPileList().size() + 2) {
