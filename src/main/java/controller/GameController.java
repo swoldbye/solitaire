@@ -243,6 +243,12 @@ public class GameController {
         System.exit(0);
     }
 
+    public void doAIMoves(ArrayList<String> moves){
+        for (String s: moves){
+            System.out.println(s);
+        }
+    }
+
 }
 
 

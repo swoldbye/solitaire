@@ -6,6 +6,10 @@ import model.Row;
 
 import java.util.ArrayList;
 
+/**
+ * Controller that searches for card in row with most downcards can be moved and if it is possible
+ */
+
 public class AILolController {
 
     private ArrayList<Row> faceDownList;
@@ -18,10 +22,12 @@ public class AILolController {
     }
 
 
-    public void lookForMove() {
-        Card c = new Card(4,0,true);
-        Row chosenRow = new Row(69);
+    public ArrayList<String> lookForMove() {
+        Card c;
+        ArrayList<Row> availableRows = new ArrayList<Row>();
         ArrayList<String> movesToBeMade = new ArrayList<String>();
+
+
         for (Row r : faceDownList) {
             if (r.getCardList().isEmpty()) {
                 continue;
@@ -29,32 +35,40 @@ public class AILolController {
 
             //Gets the last face up card before the downcards
             c = r.getCardList().get(r.getCardList().size() - (r.getCardList().size() - r.getFaceDownCards()));
-            chosenRow = findRowForMove(c);
+            availableRows = findRowsForMove(c);
 
-            if (chosenRow.getRowLocation() != 69) {
-                break;
-            }
-
-        }
-
-        //Ses if theres a card in the card pile can be moved.
-        if (chosenRow.getRowLocation() == 69) {
-            gameBoard.getCardPileRow().addCard(gameBoard.getCardPileRow().getTop());
-            for (int i = gameBoard.getCardPileRow().getCardList().size() - 1; i >= 0; i--) {
-                while (chosenRow.getRowLocation() == 69) {
-                    chosenRow = findRowForMove(gameBoard.getCardPileRow().getCardList().get(i));
+            //goes through the rows to see if they can be moved
+            if (!availableRows.isEmpty()) {
+                for (Row r2 : availableRows) {
+                    movesToBeMade = isMovePossible(c, r2);
+                    if (!movesToBeMade.isEmpty()) {
+                        return movesToBeMade;
+                    }
                 }
             }
         }
 
-        movesToBeMade = isMovePossible(c,chosenRow);
+        //Ses if theres a card in the card pile can be moved.
 
+        gameBoard.getCardPileRow().addCard(gameBoard.getCardPileRow().getTop());
+
+        for (int i = gameBoard.getCardPileRow().getCardList().size() - 1; i >= 0; i--) {
+                availableRows = findRowsForMove(gameBoard.getCardPileRow().getCardList().get(i));
+            for (Row r2 : availableRows) {
+                movesToBeMade = isMovePossible(gameBoard.getCardPileRow().getCardList().get(i), r2);
+                if (!movesToBeMade.isEmpty()) {
+                    return movesToBeMade;
+                }
+            }
+        }
+
+        return movesToBeMade;
     }
 
 
-    public Row findRowForMove(Card c) {
-        Row chosenRow = new Row(69);
-        int cardsInWayTemp = 0, cardsInWay = 100;
+    public ArrayList<Row> findRowsForMove(Card c) {
+        ArrayList<Row> chosenRows = new ArrayList<Row>();
+        int cardsInWayTemp = 0, cardsInWay = 0;
         for (Row r : faceDownList) {
             if (r.getRowLocation() != c.getLocation() && !r.getCardList().isEmpty()) {
                 cardsInWayTemp = 0;
@@ -66,24 +80,73 @@ public class AILolController {
                     if (c2.getLevel() > c.getLevel() + 1) {
                         break;
                     }
-                    if (c.getLevel() == c2.getLevel() - 1 && !c.getColour().equals(c2.getColour()) && cardsInWay > cardsInWayTemp) {
-                        chosenRow = r;
-                        cardsInWay = cardsInWayTemp;
+                    if (c.getLevel() == c2.getLevel() - 1 && !c.getColour().equals(c2.getColour())) {
+                        if (cardsInWay <= cardsInWayTemp) {
+                            chosenRows.add(r);
+                            cardsInWay = cardsInWayTemp;
+                        } else {
+                            chosenRows.add(0, r);
+                            cardsInWay = cardsInWayTemp;
+                        }
                     }
                     cardsInWayTemp++;
                 }
             }
         }
-        return chosenRow;
+        return chosenRows;
     }
 
 
-
     public ArrayList<String> isMovePossible(Card cardToBeMoved, Row receiver) {
+
         ArrayList<String> movesToBeMade = new ArrayList<String>();
+        int i;
 
 
-        return movesToBeMade;
+        for (i = receiver.getCardList().size() - 1; i > 0; i--) {
+            Card c = receiver.getCardList().get(i);
+            if (c.getLevel() > cardToBeMoved.getLevel()) {
+                return movesToBeMade;
+            }
+            Row r = findRowsForMove(c);
+
+
+            switch (c.getSuit()) {
+                case 0:
+                    if (c.getLevel() == gameBoard.getDiamondStack().getTop() - 1) {
+                        movesToBeMade.add("" + receiver.getRowLocation() + " to stack");
+                    }
+                    break;
+                case 1:
+                    if (c.getLevel() == gameBoard.getHeartStack().getTop() - 1) {
+                        movesToBeMade.add("" + receiver.getRowLocation() + " to stack");
+                    }
+                    break;
+
+                case 2:
+                    if (c.getLevel() == gameBoard.getSpadeStack().getTop() - 1) {
+                        movesToBeMade.add("" + receiver.getRowLocation() + " to stack");
+                    }
+                    break;
+                case 3:
+                    if (c.getLevel() == gameBoard.getClubStack().getTop() - 1) {
+                        movesToBeMade.add("" + receiver.getRowLocation() + " to stack");
+                    }
+                    break;
+            }
+
+            return new ArrayList<String>();
+        }
+
+        return new ArrayList<String>();
+    }
+
+
+    public boolean checkIfCardsForStack(Card c) {
+        boolean available = false;
+
+
+        return available;
     }
 
 }

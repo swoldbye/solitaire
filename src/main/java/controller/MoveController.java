@@ -29,6 +29,8 @@ public class MoveController {
 
     private AILolController aiLolController;
 
+    private ArrayList<String> aiMoves = new ArrayList<String>();
+
     public MoveController(GameBoard gameBoard, GameController gameController) {
         this.gameBoard = gameBoard;
         this.gameController = gameController;
@@ -93,7 +95,10 @@ public class MoveController {
 
         if ((gameBoard.getPile().getPileList().size() + 2)*2 > usedPileCardCounter  && usedPileCardCounter > gameBoard.getPile().getPileList().size() + 2) {
             aiLolController = new AILolController(faceDownList,gameBoard);
-            aiLolController.lookForMove();
+            aiMoves = aiLolController.lookForMove();
+            if (!aiMoves.isEmpty()){
+                gameController.doAIMoves(aiMoves);
+            }
         }
 
         //When all the cards in the deck have been at least once and no move has been made we are whats called
@@ -194,7 +199,7 @@ public class MoveController {
         for (Row r : gameBoard.getRowList()) {
             if (r.getTop().getLevel() == 0) {
                 for (Row r2 : gameBoard.getRowList()) {
-                    if (r2 != r) {
+                    if (r2 != r && !r2.getCardList().isEmpty()) {
                         Card c = r2.getCardList().get(r2.getCardList().size() - (r2.getCardList().size() - r2.getFaceDownCards()));
                         if (c.getLevel() == 13 && r2.getFaceDownCards() > 0) {
                             gameController.moveCardRowToRow(r2, r);
