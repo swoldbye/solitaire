@@ -9,6 +9,8 @@ public class View {
 
     private String topline, rows;
 
+    private int moveCounter = 0;
+
     public View(GameBoard gameBoard) {
         this.gameBoard = gameBoard;
         updateView();
@@ -22,6 +24,7 @@ public class View {
      */
 
     public void updateView() {
+
 
         topline = gameBoard.getDiamondStack().getTop() + " " + gameBoard.getHeartStack().getTop() + " " +
                 gameBoard.getSpadeStack().getTop() + " " + gameBoard.getClubStack().getTop() +
@@ -54,10 +57,12 @@ public class View {
             rows += "\n";
         }
 
-        System.out.println(topline + "\n\n" + rows);
+        System.out.println("Moves: " + moveCounter + "\n" + topline + "\n\n" + rows);
+        moveCounter++;
+
     }
 
-    public void victoryFormationBaby(){
+    public void victoryFormationBaby() {
         System.out.println("VICTORY FORMATION BABY");
     }
 

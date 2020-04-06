@@ -24,12 +24,12 @@ public class AILolController {
 
     public ArrayList<String> lookForMove() {
         Card c;
-        ArrayList<Row> availableRows = new ArrayList<Row>();
+        ArrayList<Row> availableRows;
         ArrayList<String> movesToBeMade = new ArrayList<String>();
 
 
         for (Row r : faceDownList) {
-            if (r.getCardList().isEmpty()) {
+            if (r.getCardList().isEmpty() || r.getFaceDownCards() == 0) {
                 continue;
             }
 
@@ -42,25 +42,39 @@ public class AILolController {
                 for (Row r2 : availableRows) {
                     movesToBeMade = isMovePossible(c, r2);
                     if (!movesToBeMade.isEmpty()) {
+                        System.out.println("Move Can be done!");
                         return movesToBeMade;
                     }
                 }
             }
         }
 
+        for(Row r: faceDownList){
+            if (r.getCardList().isEmpty() || r.getFaceDownCards() == 0) {
+                continue;
+            }
+            c = r.getCardList().get(r.getFaceDownCards());
+            if(checkIfCardsForStack(c)){
+                System.out.println(c.getCard() + " can be moved to stack");
+                return movesToBeMade;
+            } else {
+                System.out.println(c.getCard() + " cant be moved to stack");
+            }
+        }
+
         //Ses if theres a card in the card pile can be moved.
 
-        gameBoard.getCardPileRow().addCard(gameBoard.getCardPileRow().getTop());
+       /* gameBoard.getCardPileRow().addCard(gameBoard.getCardPileRow().getTop());
 
         for (int i = gameBoard.getCardPileRow().getCardList().size() - 1; i >= 0; i--) {
-                availableRows = findRowsForMove(gameBoard.getCardPileRow().getCardList().get(i));
+            availableRows = findRowsForMove(gameBoard.getCardPileRow().getCardList().get(i));
             for (Row r2 : availableRows) {
                 movesToBeMade = isMovePossible(gameBoard.getCardPileRow().getCardList().get(i), r2);
                 if (!movesToBeMade.isEmpty()) {
                     return movesToBeMade;
                 }
             }
-        }
+        }*/
 
         return movesToBeMade;
     }
@@ -108,44 +122,60 @@ public class AILolController {
             if (c.getLevel() > cardToBeMoved.getLevel()) {
                 return movesToBeMade;
             }
-            Row r = findRowsForMove(c);
 
+            System.out.println(cardToBeMoved.getCard() + " to " + receiver.getRowLocation());
 
-            switch (c.getSuit()) {
-                case 0:
-                    if (c.getLevel() == gameBoard.getDiamondStack().getTop() - 1) {
-                        movesToBeMade.add("" + receiver.getRowLocation() + " to stack");
-                    }
-                    break;
-                case 1:
-                    if (c.getLevel() == gameBoard.getHeartStack().getTop() - 1) {
-                        movesToBeMade.add("" + receiver.getRowLocation() + " to stack");
-                    }
-                    break;
-
-                case 2:
-                    if (c.getLevel() == gameBoard.getSpadeStack().getTop() - 1) {
-                        movesToBeMade.add("" + receiver.getRowLocation() + " to stack");
-                    }
-                    break;
-                case 3:
-                    if (c.getLevel() == gameBoard.getClubStack().getTop() - 1) {
-                        movesToBeMade.add("" + receiver.getRowLocation() + " to stack");
-                    }
-                    break;
+            if (checkIfCardsForStack(c)) {
+                System.out.println("True fam init" + c.getCard());
+                movesToBeMade.add(c.getCard() + " to stack");
+            } else {
+                movesToBeMade = new ArrayList<String>();
+                System.out.println(c.getCard() + " cannot be moved");
+                break;
             }
-
-            return new ArrayList<String>();
         }
-
-        return new ArrayList<String>();
+        return movesToBeMade;
     }
 
 
     public boolean checkIfCardsForStack(Card c) {
+        int cardsMissing = 0, cardToFind;
         boolean available = false;
+        switch (c.getSuit()) {
+            case 0:
+                cardsMissing = c.getLevel() - gameBoard.getDiamondStack().getTop() - 1;
+                break;
+            case 1:
+                cardsMissing = c.getLevel() - gameBoard.getHeartStack().getTop() - 1;
+                break;
+            case 2:
+                cardsMissing = c.getLevel() - gameBoard.getSpadeStack().getTop() - 1;
+                break;
+            case 3:
+                cardsMissing = c.getLevel() - gameBoard.getClubStack().getTop() - 1;
+                break;
+        }
 
+        if (cardsMissing == 0){
+            return true;
+        }
 
+        while (cardsMissing > 0) {
+            available = false;
+            cardToFind = c.getLevel() - cardsMissing;
+            for (Row r : gameBoard.getRowList()) {
+                for (Card card2 : r.getCardList()) {
+                    if (card2.getSuit() == c.getSuit() && card2.getLevel() == cardToFind && card2.isFaceUp()) {
+                        cardsMissing--;
+                        available = true;
+                        break;
+                    }
+                }
+            }
+            if(!available){
+                return false;
+            }
+        }
         return available;
     }
 

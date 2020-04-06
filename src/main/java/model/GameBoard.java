@@ -25,6 +25,8 @@ public class GameBoard {
     Stack spadeStack = new Stack(3, 10);
     Stack clubStack = new Stack(4, 11);
 
+    int moveCOunter = 0;
+
 
     public GameBoard() {
         initRowList();
@@ -119,4 +121,5 @@ public class GameBoard {
 
         return max;
     }
+
 }
