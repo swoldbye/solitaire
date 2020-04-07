@@ -49,12 +49,12 @@ public class AILolController {
             }
         }
 
-        for(Row r: faceDownList){
+        for (Row r : faceDownList) {
             if (r.getCardList().isEmpty() || r.getFaceDownCards() == 0) {
                 continue;
             }
             c = r.getCardList().get(r.getFaceDownCards());
-            if(checkIfCardsForStack(c)){
+            if (checkIfCardsForStack(c)) {
                 System.out.println(c.getCard() + " can be moved to stack");
                 return movesToBeMade;
             } else {
@@ -156,26 +156,46 @@ public class AILolController {
                 break;
         }
 
-        if (cardsMissing == 0){
+        if (cardsMissing == 0) {
             return true;
         }
 
         while (cardsMissing > 0) {
             available = false;
             cardToFind = c.getLevel() - cardsMissing;
-            for (Row r : gameBoard.getRowList()) {
-                for (Card card2 : r.getCardList()) {
-                    if (card2.getSuit() == c.getSuit() && card2.getLevel() == cardToFind && card2.isFaceUp()) {
+            //Checks if cardmissing is the face up pile card
+            if (gameBoard.getCardPileRow().getTop().getSuit() == c.getSuit() && gameBoard.getCardPileRow().getTop().getLevel() == cardToFind) {
+                cardsMissing--;
+                available = true;
+            }
+            //if not, checks the rows if the missing card is there
+            if (!available) {
+                for (Row r : gameBoard.getRowList()) {
+                    for (Card card2 : r.getCardList()) {
+                        if (card2.getSuit() == c.getSuit() && card2.getLevel() == cardToFind && card2.isFaceUp()) {
+                            cardsMissing--;
+                            available = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            if(!available){
+                for(Card card3: gameBoard.getPile().getPileList()){
+                    if (card3.getSuit() == c.getSuit() && card3.getLevel() == cardToFind) {
                         cardsMissing--;
                         available = true;
                         break;
                     }
                 }
             }
-            if(!available){
+
+            if (!available) {
                 return false;
             }
         }
+
+
         return available;
     }
 
