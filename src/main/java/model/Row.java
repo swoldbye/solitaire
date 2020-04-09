@@ -14,9 +14,9 @@ public class Row {
         Card[][] deckList = Deck.getDeck().getCardList();
         ArrayList<Card> rowList = new ArrayList<Card>();
 
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 13; j++) {
-                if (deckList[i][j].getLocation() == rowLocation) {
+        for (int i = 0; i < 13; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (deckList[j][i].getLocation() == rowLocation) {
                     rowList.add(deckList[i][j]);
                 }
             }

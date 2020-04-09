@@ -5,6 +5,7 @@ public class Card {
     int suit;
     int level;
     int location;
+    int orientation;
 
     public Card(){}
 

@@ -19,6 +19,4 @@ public class GameBoard {
     Row row7 = new Row(11);
 
     public GameBoard(){}
-
-    
 }
