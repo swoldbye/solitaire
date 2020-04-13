@@ -87,7 +87,6 @@ public class MoveController {
         //no move can be made with cards on the table, so another card is flipped.
         gameController.flipCardPile();
 
-
         usedPileCardCounter++;
 
         //after all the cards in the pile have been around once, and no move has been made. Then we need
@@ -182,6 +181,7 @@ public class MoveController {
                 }
             }
         }
+        //Checks card pile
         if (!gameBoard.getCardPileRow().getCardList().isEmpty()) {
             if (gameBoard.getCardPileRow().getTop().getLevel() == 13) {
                 isKingAvailable = true;
@@ -242,6 +242,7 @@ public class MoveController {
                 for (Row r : gameBoard.getRowList()) {
                     if (!r.getTop().getColour().equals(c.getColour()) && r.getTop().getLevel() == c.getLevel() + 1) {
                         gameController.moveCardRowToRow(gameBoard.getCardPileRow(), r);
+                        break;
                     }
                 }
                 break;

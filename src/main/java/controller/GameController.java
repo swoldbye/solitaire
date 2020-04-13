@@ -161,9 +161,9 @@ public class GameController {
      */
 
     public void flipCard(Row r) {
-        if (r.getRowLocation() == 0) {
+        /*if (r.getRowLocation() == 0) {
             return;
-        }
+        }*/
         if (!r.getTop().isFaceUp()) {
             r.getTop().setFaceUp(true);
         }
@@ -199,21 +199,33 @@ public class GameController {
         return faceDownList;
     }
 
-
     public void flipCardPile() {
         if (gameBoard.getPile().getPileList().isEmpty()) {
+            if(gameBoard.getCardPileRow().getCardList().size() == 1) {
+                return;
+            }
+            for(int i = gameBoard.getCardPileRow().getCardList().size(); i > 0; i--){
+                Card c = gameBoard.getCardPileRow().getTop();
+                c.setFaceUp(false);
+                gameBoard.getPile().getPileList().add(c);
+                gameBoard.getCardPileRow().getCardList().remove(c);
+            }
             return;
         }
+        /*
         if (!gameBoard.getCardPileRow().getCardList().isEmpty()) {
             Card c = gameBoard.getCardPileRow().getTop();
             c.setFaceUp(false);
             gameBoard.getPile().getPileList().add(0, c);
             gameBoard.getCardPileRow().getCardList().remove(0);
         }
+        */
+        gameBoard.getCardPileRow().getTop().setFaceUp(false);
         gameBoard.getCardPileRow().addCard(gameBoard.getPile().takeTopCard());
         gameBoard.getCardPileRow().getTop().setFaceUp(true);
         moveMade = true;
     }
+
 
     public void victoryFormation() {
         view.victoryFormationBaby();
@@ -250,6 +262,30 @@ public class GameController {
     }
 
 }
-
-
-
+/*
+ if (!gameBoard.getCardPileRow().getCardList().isEmpty()) {
+         Card c = gameBoard.getCardPileRow().getTop();
+         c.setFaceUp(false);
+         gameBoard.getPile().getPileList().add(0, c);
+         gameBoard.getCardPileRow().getCardList().remove(0);
+         }
+*/
+/*
+    public void flipCardPile() {
+        if (gameBoard.getPile().getPileList().isEmpty()) {
+            if(gameBoard.getCardPileRow().getCardList().size() == 1) {
+                return;
+            }
+            for(int i = gameBoard.getCardPileRow().getCardList().size()-1; i != 0; i--){
+                Card c = gameBoard.getCardPileRow().getTop();
+                c.setFaceUp(false);
+                gameBoard.getPile().getPileList().add(c);
+                gameBoard.getCardPileRow().getCardList().remove(c);
+            }
+         return;
+        }
+        gameBoard.getCardPileRow().addCard(gameBoard.getPile().takeTopCard());
+        gameBoard.getCardPileRow().getTop().setFaceUp(true);
+        moveMade = true;
+    }
+    */
