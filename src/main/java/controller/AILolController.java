@@ -3,6 +3,7 @@ package controller;
 import model.Card;
 import model.GameBoard;
 import model.Row;
+import model.Stack;
 
 import java.util.ArrayList;
 
@@ -61,25 +62,17 @@ public class AILolController {
                 System.out.println(c.getCard() + " cant be moved to stack");
             }
         }
-
-        //Ses if theres a card in the card pile can be moved.
-
-       /* gameBoard.getCardPileRow().addCard(gameBoard.getCardPileRow().getTop());
-
-        for (int i = gameBoard.getCardPileRow().getCardList().size() - 1; i >= 0; i--) {
-            availableRows = findRowsForMove(gameBoard.getCardPileRow().getCardList().get(i));
-            for (Row r2 : availableRows) {
-                movesToBeMade = isMovePossible(gameBoard.getCardPileRow().getCardList().get(i), r2);
-                if (!movesToBeMade.isEmpty()) {
-                    return movesToBeMade;
-                }
-            }
-        }*/
-
         return movesToBeMade;
     }
 
 
+    /**
+     * Takes a card c, which is the top face up card in the row with most downcards that can be moved, finds which row
+     * it can be moved to
+     *
+     * @param c
+     * @return
+     */
     public ArrayList<Row> findRowsForMove(Card c) {
         ArrayList<Row> chosenRows = new ArrayList<Row>();
         int cardsInWayTemp = 0, cardsInWay = 0;
@@ -110,23 +103,31 @@ public class AILolController {
         return chosenRows;
     }
 
+    /**
+     * After finding which rows would be possible to move to, it sees if the cards can be moved to stack.
+     *
+     * @param cardToBeMoved
+     * @param receiver
+     * @return
+     */
 
     public ArrayList<String> isMovePossible(Card cardToBeMoved, Row receiver) {
 
         ArrayList<String> movesToBeMade = new ArrayList<String>();
         int i;
 
-
+        System.out.println("ORIGIN " + cardToBeMoved.getCard() + " to " + receiver.getRowLocation());
         for (i = receiver.getCardList().size() - 1; i > 0; i--) {
             Card c = receiver.getCardList().get(i);
             if (c.getLevel() > cardToBeMoved.getLevel()) {
                 return movesToBeMade;
             }
 
+
             System.out.println(cardToBeMoved.getCard() + " to " + receiver.getRowLocation());
 
             if (checkIfCardsForStack(c)) {
-                System.out.println("True fam init" + c.getCard());
+                System.out.println("True" + c.getCard());
                 movesToBeMade.add(c.getCard() + " to stack");
             } else {
                 movesToBeMade = new ArrayList<String>();
@@ -136,6 +137,13 @@ public class AILolController {
         }
         return movesToBeMade;
     }
+
+    /**
+     * Checks if the missing cards are face up or in the pile / can be used
+     *
+     * @param c
+     * @return
+     */
 
 
     public boolean checkIfCardsForStack(Card c) {
@@ -155,11 +163,9 @@ public class AILolController {
                 cardsMissing = c.getLevel() - gameBoard.getClubStack().getTop() - 1;
                 break;
         }
-
         if (cardsMissing == 0) {
             return true;
         }
-
         while (cardsMissing > 0) {
             available = false;
             cardToFind = c.getLevel() - cardsMissing;
@@ -180,8 +186,9 @@ public class AILolController {
                     }
                 }
             }
-            if(!available){
-                for(Card card3: gameBoard.getPile().getPileList()){
+            //Checks down pile
+            if (!available) {
+                for (Card card3 : gameBoard.getPile().getPileList()) {
                     if (card3.getSuit() == c.getSuit() && card3.getLevel() == cardToFind) {
                         cardsMissing--;
                         available = true;
@@ -189,37 +196,17 @@ public class AILolController {
                     }
                 }
             }
-
             if (!available) {
                 return false;
             }
         }
-
-
         return available;
     }
 
+    /*
+    public ArrayList<String> getMoves(Card c, Stack s){
+
+    }
+*/
+
 }
-
-
-//Ses if there is a card on the table that will free the downcard
-             /*for (Row r2 : faceDownList) {
-                if (r2 != r && !r2.getCardList().isEmpty()) {
-                    cardsInWayTemp = 0;
-                   for (int i = r2.getCardList().size() - 1; i >= 0; i--) {
-                        Card c2 = r2.getCardList().get(i);
-                        if (!c2.isFaceUp()) {
-                            break;
-                        }
-                        if (c2.getLevel() > c.getLevel() + 1) {
-                            break;
-                        }
-                        if (c.getLevel() == c2.getLevel() + 1 && !c.getColour().equals(c2.getColour()) && cardsInWay > cardsInWayTemp) {
-                            chosenRow = r2;
-                            cardsInWay = cardsInWayTemp;
-                        }
-                        cardsInWayTemp++;
-                    }
-                }
-            }
-        }*/
