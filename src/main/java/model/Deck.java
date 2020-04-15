@@ -2,15 +2,16 @@ package model;
 
 
 public class Deck {
-    private static Card[][] cardList = new Card[4][13];
 
-    private static Deck deck = new Deck();
+    private Card[][] cardList = new Card[4][13];
 
-    private Deck(){
+//    private Deck deck = new Deck();
+
+    public Deck(){
         createDeck();
     }
 
-    private static void createDeck(){
+    private void createDeck(){
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 13; j++){
                 cardList[i][j] = new Card(i, j+1, false);
@@ -18,11 +19,12 @@ public class Deck {
         }
     }
 
-    public static Deck getDeck() {
+    /*
+    public Deck getDeck() {
         return deck;
-    }
+    }*/
 
-    public static Card[][] getCardList() {
+    public Card[][] getCardList() {
         return cardList;
     }
 }

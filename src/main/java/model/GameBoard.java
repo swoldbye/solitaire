@@ -122,4 +122,18 @@ public class GameBoard {
         return max;
     }
 
+    public Stack getStack(int stackNumber) {
+        switch (stackNumber) {
+            case 0:
+                return diamondStack;
+            case 1:
+                return heartStack;
+            case 2:
+                return spadeStack;
+            case 3:
+                return clubStack;
+        }
+        return diamondStack;
+    }
+
 }

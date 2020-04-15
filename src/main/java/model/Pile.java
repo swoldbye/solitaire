@@ -7,11 +7,14 @@ import java.util.List;
 
 public class Pile {
 
+
+    Deck deck;
     int pileLocation;
     ArrayList<Card> pileList = new ArrayList<Card>();
 
 
     public Pile(int pileLocation){
+        this.deck = new Deck();
         this.pileLocation = pileLocation;
         initPile();
         Collections.shuffle(pileList);
@@ -45,7 +48,7 @@ public class Pile {
     }
 
     public void initPile(){
-        Card[][] deckList = Deck.getDeck().getCardList();
+        Card[][] deckList = deck.getCardList();
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 13; j++){
                 if(deckList[i][j].getLocation() == pileLocation){

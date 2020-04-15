@@ -17,6 +17,8 @@ public class AILolController {
 
     private GameBoard gameBoard;
 
+    private ArrayList<String> movesToBeMade = new ArrayList<String>();
+
     public AILolController(ArrayList<Row> faceDownList, GameBoard gameBoard) {
         this.faceDownList = faceDownList;
         this.gameBoard = gameBoard;
@@ -26,8 +28,6 @@ public class AILolController {
     public ArrayList<String> lookForMove() {
         Card c;
         ArrayList<Row> availableRows;
-        ArrayList<String> movesToBeMade = new ArrayList<String>();
-
 
         for (Row r : faceDownList) {
             if (r.getCardList().isEmpty() || r.getFaceDownCards() == 0) {
@@ -41,7 +41,8 @@ public class AILolController {
             //goes through the rows to see if they can be moved
             if (!availableRows.isEmpty()) {
                 for (Row r2 : availableRows) {
-                    movesToBeMade = isMovePossible(c, r2);
+                    getMoves(c, r2);
+                    //movesToBeMade = isMovePossible(c, r2);
                     if (!movesToBeMade.isEmpty()) {
                         System.out.println("Move Can be done!");
                         return movesToBeMade;
@@ -138,6 +139,18 @@ public class AILolController {
         return movesToBeMade;
     }
 
+    public void getMoves(Card cardToBeMoved, Row receiver) {
+        System.out.println("ORIGIN " + cardToBeMoved.getCard() + " to " + receiver.getRowLocation());
+        Card c = receiver.getTop();
+        while (c.getLevel() != cardToBeMoved.getLevel() + 1){
+
+        }
+
+
+            return;
+    }
+
+
     /**
      * Checks if the missing cards are face up or in the pile / can be used
      *
@@ -202,11 +215,4 @@ public class AILolController {
         }
         return available;
     }
-
-    /*
-    public ArrayList<String> getMoves(Card c, Stack s){
-
-    }
-*/
-
 }
