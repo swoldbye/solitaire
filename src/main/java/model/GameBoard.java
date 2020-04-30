@@ -136,4 +136,63 @@ public class GameBoard {
         return diamondStack;
     }
 
+    public void setPile(Pile pile) {
+        this.pile = pile;
+    }
+
+    public void setCardPileRow(Row cardPileRow) {
+        this.cardPileRow = cardPileRow;
+    }
+
+    public void setRow1(Row row1) {
+        this.row1 = row1;
+    }
+
+    public void setRow2(Row row2) {
+        this.row2 = row2;
+    }
+
+    public void setRow3(Row row3) {
+        this.row3 = row3;
+    }
+
+    public void setRow4(Row row4) {
+        this.row4 = row4;
+    }
+
+    public void setRow5(Row row5) {
+        this.row5 = row5;
+    }
+
+    public void setRow6(Row row6) {
+        this.row6 = row6;
+    }
+
+    public void setRow7(Row row7) {
+        this.row7 = row7;
+    }
+
+    public void setRowList(ArrayList<Row> rowList) {
+        this.rowList = rowList;
+    }
+
+    public void setDiamondStack(Stack diamondStack) {
+        this.diamondStack = diamondStack;
+    }
+
+    public void setHeartStack(Stack heartStack) {
+        this.heartStack = heartStack;
+    }
+
+    public void setSpadeStack(Stack spadeStack) {
+        this.spadeStack = spadeStack;
+    }
+
+    public void setClubStack(Stack clubStack) {
+        this.clubStack = clubStack;
+    }
+
+    public void setMoveCOunter(int moveCOunter) {
+        this.moveCOunter = moveCOunter;
+    }
 }

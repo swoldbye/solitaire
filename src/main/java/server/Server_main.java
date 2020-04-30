@@ -7,6 +7,7 @@ public class Server_main {
         try {
             server.startServer();
         } catch (Exception e) {
+            server.stopServer();
             e.printStackTrace();
         }
     }
