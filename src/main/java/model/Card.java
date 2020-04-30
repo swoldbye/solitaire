@@ -16,6 +16,8 @@ public class Card {
     int location;
     boolean isFaceUp;
 
+    // Rows = {{1,2,1,true},{2,2,1,true},{3,2,1,true}}
+
     public Card(int suit, int level, boolean isFaceUp) {
         this.suit = suit;
         this.level = level;
