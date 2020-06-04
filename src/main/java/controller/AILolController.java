@@ -41,8 +41,8 @@ public class AILolController {
             //goes through the rows to see if they can be moved
             if (!availableRows.isEmpty()) {
                 for (Row r2 : availableRows) {
-                    getMoves(c, r2);
-                    //movesToBeMade = isMovePossible(c, r2);
+                    //getMoves(c, r2);
+                    movesToBeMade = isMovePossible(c, r2);
                     if (!movesToBeMade.isEmpty()) {
                         System.out.println("Move Can be done!");
                         return movesToBeMade;
@@ -117,7 +117,9 @@ public class AILolController {
         ArrayList<String> movesToBeMade = new ArrayList<String>();
         int i;
 
+
         System.out.println("ORIGIN " + cardToBeMoved.getCard() + " to " + receiver.getRowLocation());
+
         for (i = receiver.getCardList().size() - 1; i > 0; i--) {
             Card c = receiver.getCardList().get(i);
             if (c.getLevel() > cardToBeMoved.getLevel()) {
@@ -142,12 +144,12 @@ public class AILolController {
     public void getMoves(Card cardToBeMoved, Row receiver) {
         System.out.println("ORIGIN " + cardToBeMoved.getCard() + " to " + receiver.getRowLocation());
         Card c = receiver.getTop();
-        while (c.getLevel() != cardToBeMoved.getLevel() + 1){
+        while (c.getLevel() != cardToBeMoved.getLevel() + 1) {
 
         }
 
 
-            return;
+        return;
     }
 
 
