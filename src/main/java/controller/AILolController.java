@@ -62,19 +62,21 @@ public class AILolController {
                 continue;
             }
             c = r.getCardList().get(r.getFaceDownCards());
+            System.out.println("********");
+            System.out.println("Trying to move " + c.getCard() + " directly to stack");
             ArrayList<String> moveDirectToStack = checkIfCardsForStack(c);
             if (moveDirectToStack.size() > 0) {
-                System.out.println(c.getCard() + " can DIRECT be moved to stack");
+                System.out.println(c.getCard() + " can directly be moved to stack");
                 AIpos.add(moveDirectToStack);
             } else {
-                System.out.println(c.getCard() + " cant DIRECT be moved to stack");
+                System.out.println(c.getCard() + " can NOT directly be moved to stack");
             }
         }
 
-        for (ArrayList<String> possibleMoves: AIpos){
+        for (ArrayList<String> possibleMoves : AIpos) {
             System.out.println("START CALCULATION OF MOVES");
             int counter = 0;
-            for(String move: possibleMoves){
+            for (String move : possibleMoves) {
                 System.out.println(move);
                 counter++;
             }
@@ -135,7 +137,7 @@ public class AILolController {
         int i;
 
 
-        System.out.println("ORIGIN " + cardToBeMoved.getCard() + " to " + receiver.getRowLocation());
+        System.out.println("ORIGIN card moving " + cardToBeMoved.getCard() + " to " + receiver.getRowLocation());
 
         for (i = receiver.getCardList().size() - 1; i > 0; i--) {
             Card c = receiver.getCardList().get(i);
@@ -148,18 +150,19 @@ public class AILolController {
             System.out.println(cardToBeMoved.getCard() + " to " + receiver.getRowLocation());
 
             ArrayList<String> checkForCards = checkIfCardsForStack(c);
-            System.out.println("AI MOVES");
-            for(String s: checkForCards){
-                System.out.println(s);
-            }
-                if (checkForCards.size() > 0) {
+
+            if (checkForCards.size() > 0) {
                 System.out.println("True" + c.getCard());
                 movesToBeMade.addAll(checkForCards);
             } else {
                 movesToBeMade = new ArrayList<String>();
-                System.out.println(c.getCard() + " move cannot be done");
+                System.out.println(cardToBeMoved.getCard() + " move cannot be done");
                 break;
             }
+        }
+        System.out.println("AI MOVES");
+        for (String s : movesToBeMade) {
+            System.out.println(s);
         }
         return movesToBeMade;
     }
@@ -185,7 +188,7 @@ public class AILolController {
 
 
     public ArrayList<String> checkIfCardsForStack(Card c) {
-        System.out.println("START check FOR CARDs " + c.getCard());
+        System.out.println("START check for moving " + c.getCard());
         ArrayList<String> extraMoves = new ArrayList<String>();
         int cardsMissing = 0, cardToFind;
         boolean available = false;
@@ -243,9 +246,9 @@ public class AILolController {
                                     break;
                                 }
                                 ArrayList nextCardMoves = checkIfCardsForStack(tempCard);
-                                        if(nextCardMoves.size() == 0){
-                                            return new ArrayList<String>();
-                                        }
+                                if (nextCardMoves.size() == 0) {
+                                    return new ArrayList<String>();
+                                }
                                 extraMoves.addAll(nextCardMoves);
                             }
                             break;
