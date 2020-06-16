@@ -5,6 +5,8 @@ import model.GameBoard;
 import model.Row;
 import model.Stack;
 
+import javax.management.openmbean.ArrayType;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -19,6 +21,8 @@ public class AILolController {
 
     private ArrayList<String> movesToBeMade = new ArrayList<String>();
 
+    private ArrayList<Card> movedCards = new ArrayList<Card>();
+
     public AILolController(ArrayList<Row> faceDownList, GameBoard gameBoard) {
         this.faceDownList = faceDownList;
         this.gameBoard = gameBoard;
@@ -26,6 +30,7 @@ public class AILolController {
 
 
     public ArrayList<String> lookForMove() {
+        ArrayList<ArrayList<String>> AIpos = new ArrayList<ArrayList<String>>();
         Card c;
         ArrayList<Row> availableRows;
 
@@ -42,28 +47,43 @@ public class AILolController {
             if (!availableRows.isEmpty()) {
                 for (Row r2 : availableRows) {
                     //getMoves(c, r2);
+                    movedCards = new ArrayList<Card>();
                     movesToBeMade = isMovePossible(c, r2);
                     if (!movesToBeMade.isEmpty()) {
                         System.out.println("Move Can be done!");
-                        return movesToBeMade;
+                        AIpos.add(movesToBeMade);
+                        //return movesToBeMade;
                     }
                 }
             }
         }
 
+        //Move directly to stack
         for (Row r : faceDownList) {
             if (r.getCardList().isEmpty() || r.getFaceDownCards() == 0) {
                 continue;
             }
+            movedCards = new ArrayList<Card>();
             c = r.getCardList().get(r.getFaceDownCards());
-            if (checkIfCardsForStack(c)) {
-                System.out.println(c.getCard() + " can be moved to stack");
-                return movesToBeMade;
+            ArrayList<String> moveDirectToStack = checkIfCardsForStack(c);
+            if (moveDirectToStack.size() > 0) {
+                System.out.println(c.getCard() + " can DIRECT be moved to stack");
+                AIpos.add(moveDirectToStack);
             } else {
-                System.out.println(c.getCard() + " cant be moved to stack");
+                System.out.println(c.getCard() + " cant DIRECT be moved to stack");
             }
         }
-        return movesToBeMade;
+
+        for (ArrayList<String> possibleMoves: AIpos){
+            System.out.println("START CALCULATION OF MOVES");
+            int counter = 0;
+            for(String move: possibleMoves){
+                System.out.println(move);
+                counter++;
+            }
+            System.out.println(counter);
+        }
+        return new ArrayList<String>();
     }
 
 
@@ -123,18 +143,24 @@ public class AILolController {
         for (i = receiver.getCardList().size() - 1; i > 0; i--) {
             Card c = receiver.getCardList().get(i);
             if (c.getLevel() > cardToBeMoved.getLevel()) {
+                movesToBeMade.add(cardToBeMoved.getCard() + " to " + receiver.getRowLocation());
                 return movesToBeMade;
             }
 
 
             System.out.println(cardToBeMoved.getCard() + " to " + receiver.getRowLocation());
 
-            if (checkIfCardsForStack(c)) {
+            ArrayList<String> checkForCards = checkIfCardsForStack(c);
+            System.out.println("AI MOVES");
+            for(String s: checkForCards){
+                System.out.println(s);
+            }
+                if (checkForCards.size() > 0) {
                 System.out.println("True" + c.getCard());
-                movesToBeMade.add(c.getCard() + " to stack");
+                movesToBeMade.addAll(checkForCards);
             } else {
                 movesToBeMade = new ArrayList<String>();
-                System.out.println(c.getCard() + " cannot be moved");
+                System.out.println(c.getCard() + " move cannot be done");
                 break;
             }
         }
@@ -161,7 +187,9 @@ public class AILolController {
      */
 
 
-    public boolean checkIfCardsForStack(Card c) {
+    public ArrayList<String> checkIfCardsForStack(Card c) {
+        System.out.println("START check FOR CARDs " + c.getCard());
+        ArrayList<String> extraMoves = new ArrayList<String>();
         int cardsMissing = 0, cardToFind;
         boolean available = false;
         switch (c.getSuit()) {
@@ -178,24 +206,54 @@ public class AILolController {
                 cardsMissing = c.getLevel() - gameBoard.getClubStack().getTop() - 1;
                 break;
         }
+        //if the card is free it can be moved
         if (cardsMissing == 0) {
-            return true;
+            System.out.println("EX STEP 1 " + c.getCard() + " TO STACK");
+            extraMoves.add(c.getCard() + " to stack");
+            movedCards.add(c);
+            return extraMoves;
         }
+        //Checks if the card they are looking for has already been moved
+
+
         while (cardsMissing > 0) {
             available = false;
             cardToFind = c.getLevel() - cardsMissing;
-            //Checks if cardmissing is the face up pile card
+            //Checks if card missing is the face up pile card
             if (gameBoard.getCardPileRow().getTop().getSuit() == c.getSuit() && gameBoard.getCardPileRow().getTop().getLevel() == cardToFind) {
                 cardsMissing--;
+                System.out.println("EX STEP 2 PILE CARD TO STACK");
+                extraMoves.add("PileCard to Stack");
+                movedCards.add(gameBoard.getCardPileRow().getTop());
                 available = true;
             }
             //if not, checks the rows if the missing card is there
             if (!available) {
+                //goes through each row
                 for (Row r : gameBoard.getRowList()) {
+                    //this is used to check the cards before the available card
+                    int cardPlacementCounter = -1;
                     for (Card card2 : r.getCardList()) {
+                        cardPlacementCounter++;
                         if (card2.getSuit() == c.getSuit() && card2.getLevel() == cardToFind && card2.isFaceUp()) {
                             cardsMissing--;
                             available = true;
+                            //next for loop check that there are no cards blocking 'card2'
+                            //if there are, they are checked if they can be move
+                            for (int i = r.getCardList().size() - 1; i > cardPlacementCounter; i--) {
+                                Card tempCard = r.getCardList().get(i);
+                                if (tempCard.getLevel() == card2.getLevel()) {
+                                    System.out.println("EX STEP 3 " + card2.getCard() + " TO STACK");
+                                    extraMoves.add(card2.getCard() + " to stack");
+                                    movedCards.add(card2);
+                                    break;
+                                }
+                                ArrayList nextCardMoves = checkIfCardsForStack(tempCard);
+                                        if(nextCardMoves.size() == 0){
+                                            return new ArrayList<String>();
+                                        }
+                                extraMoves.addAll(nextCardMoves);
+                            }
                             break;
                         }
                     }
@@ -207,14 +265,18 @@ public class AILolController {
                     if (card3.getSuit() == c.getSuit() && card3.getLevel() == cardToFind) {
                         cardsMissing--;
                         available = true;
+                        System.out.println("EX STEP 4 " + card3.getCard() + " TO STACK");
+                        extraMoves.add("PILE " + card3.getCard() + " to stack");
+                        movedCards.add(card3);
                         break;
                     }
                 }
             }
             if (!available) {
-                return false;
+                System.out.println("FAIL " + c.getCard() + " failed");
+                return new ArrayList<String>();
             }
         }
-        return available;
+        return extraMoves;
     }
 }

@@ -192,6 +192,7 @@ public class GameController {
                 faceDownList.add(position, gameBoard.getRowList().get(i));
             }
         }
+        System.out.println("FCDS --->>***" + faceDownList.size());
         return faceDownList;
     }
 

@@ -118,13 +118,13 @@ public class MoveController {
      */
 
     private void checkForAceDeuce() {
-        for (Row r : faceDownList) {
+        for (Row r : gameBoard.getRowList()) {
             if (r.getTop().getLevel() == 1) {
                 gameController.moveToStack(r.getTop(), r);
                 return;
             }
         }
-        for (Row r : faceDownList) {
+        for (Row r : gameBoard.getRowList()) {
             if (r.getTop().getLevel() == 2) {
                 gameController.moveToStack(r.getTop(), r);
                 return;
