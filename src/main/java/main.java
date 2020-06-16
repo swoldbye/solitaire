@@ -6,7 +6,6 @@ public class main {
     public static void main(String[] args) {
         boolean won;
 
-
             GameBoard gameBoard = new GameBoard();
             GameController gameController = new GameController(gameBoard);
             won = gameController.play();

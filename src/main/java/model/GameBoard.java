@@ -29,6 +29,7 @@ public class GameBoard {
 
 
     public GameBoard() {
+
         initRowList();
     }
 

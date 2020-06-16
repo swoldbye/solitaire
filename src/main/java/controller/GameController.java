@@ -6,6 +6,7 @@ import model.Row;
 import view.View;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * 'Main' Controller in charge of setting up the game and moving the cards. This class is only usefull for testing
@@ -17,6 +18,8 @@ public class GameController {
 
     private GameBoard gameBoard;
 
+    private dRESTController dRESTController;
+
     private MoveController moveController;
 
     private View view;
@@ -26,11 +29,15 @@ public class GameController {
     public GameController(GameBoard gameBoard) {
         this.gameBoard = gameBoard;
         this.moveController = new MoveController(gameBoard, this);
+        this.dRESTController = new dRESTController();
     }
 
     public boolean play() {
+        Scanner scan = new Scanner(System.in);
         setUpGame();
         initView();
+        scan.nextLine();
+        scan.close();
         startTurn();
         if (isGameWon) {
             return true;
@@ -54,10 +61,17 @@ public class GameController {
 
     public void setUpGame() {
         for (Row r : gameBoard.getRowList()) {
-            for (int i = 0; i < r.getRowLocation(); i++) {
+             /*for (int i = 0; i < r.getRowLocation(); i++) {
                 r.addCard(gameBoard.getPile().takeTopCard());
                 if (i + 1 == r.getRowLocation()) {
                     r.getCardList().get(i).setFaceUp(true);
+                }
+            }*/
+            for (int i = 0; i < r.getRowLocation(); i++) {
+                if (i + 1 == r.getRowLocation()) {
+                    r.addCard(dRESTController.getTopTableCard());
+                } else {
+                    r.addCard(new Card(4, 0, false));
                 }
             }
         }
@@ -73,6 +87,7 @@ public class GameController {
 
     public void startTurn() {
 
+        Scanner scan = new Scanner(System.in);
         moveMade = false;
         moveController.makeMove();
         if (isGameWon) {
@@ -160,9 +175,14 @@ public class GameController {
      */
 
     public void flipCard(Row r) {
-        if (!r.getTop().isFaceUp()) {
+       /* if (!r.getTop().isFaceUp()) {
             r.getTop().setFaceUp(true);
-        }
+        }*/
+       if(r.getCardList().size() == 0){
+
+       }
+        r.getCardList().remove(r.getCardList().size()-1);
+        r.getCardList().add(dRESTController.getTopTableCard());
     }
 
     /**
