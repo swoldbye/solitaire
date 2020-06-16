@@ -21,7 +21,6 @@ public class AILolController {
 
     private ArrayList<String> movesToBeMade = new ArrayList<String>();
 
-    private ArrayList<Card> movedCards = new ArrayList<Card>();
 
     public AILolController(ArrayList<Row> faceDownList, GameBoard gameBoard) {
         this.faceDownList = faceDownList;
@@ -47,7 +46,6 @@ public class AILolController {
             if (!availableRows.isEmpty()) {
                 for (Row r2 : availableRows) {
                     //getMoves(c, r2);
-                    movedCards = new ArrayList<Card>();
                     movesToBeMade = isMovePossible(c, r2);
                     if (!movesToBeMade.isEmpty()) {
                         System.out.println("Move Can be done!");
@@ -63,7 +61,6 @@ public class AILolController {
             if (r.getCardList().isEmpty() || r.getFaceDownCards() == 0) {
                 continue;
             }
-            movedCards = new ArrayList<Card>();
             c = r.getCardList().get(r.getFaceDownCards());
             ArrayList<String> moveDirectToStack = checkIfCardsForStack(c);
             if (moveDirectToStack.size() > 0) {
@@ -210,7 +207,6 @@ public class AILolController {
         if (cardsMissing == 0) {
             System.out.println("EX STEP 1 " + c.getCard() + " TO STACK");
             extraMoves.add(c.getCard() + " to stack");
-            movedCards.add(c);
             return extraMoves;
         }
         //Checks if the card they are looking for has already been moved
@@ -224,7 +220,6 @@ public class AILolController {
                 cardsMissing--;
                 System.out.println("EX STEP 2 PILE CARD TO STACK");
                 extraMoves.add("PileCard to Stack");
-                movedCards.add(gameBoard.getCardPileRow().getTop());
                 available = true;
             }
             //if not, checks the rows if the missing card is there
@@ -245,7 +240,6 @@ public class AILolController {
                                 if (tempCard.getLevel() == card2.getLevel()) {
                                     System.out.println("EX STEP 3 " + card2.getCard() + " TO STACK");
                                     extraMoves.add(card2.getCard() + " to stack");
-                                    movedCards.add(card2);
                                     break;
                                 }
                                 ArrayList nextCardMoves = checkIfCardsForStack(tempCard);
@@ -267,7 +261,6 @@ public class AILolController {
                         available = true;
                         System.out.println("EX STEP 4 " + card3.getCard() + " TO STACK");
                         extraMoves.add("PILE " + card3.getCard() + " to stack");
-                        movedCards.add(card3);
                         break;
                     }
                 }
