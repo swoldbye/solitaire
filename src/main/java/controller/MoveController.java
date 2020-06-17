@@ -121,13 +121,17 @@ public class MoveController {
         for (Row r : gameBoard.getRowList()) {
             if (r.getTop().getLevel() == 1) {
                 gameController.moveToStack(r.getTop(), r);
-                return;
+                if(gameController.isMoveMade()) {
+                    return;
+                }
             }
         }
         for (Row r : gameBoard.getRowList()) {
             if (r.getTop().getLevel() == 2) {
                 gameController.moveToStack(r.getTop(), r);
-                return;
+                if(gameController.isMoveMade()) {
+                    return;
+                }
             }
         }
     }
