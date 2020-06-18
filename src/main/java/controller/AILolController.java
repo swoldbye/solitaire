@@ -21,6 +21,8 @@ public class AILolController {
 
     private ArrayList<String> movesToBeMade = new ArrayList<String>();
 
+    private ArrayList<String> chosenMoves = new ArrayList<String>();
+
     private ArrayList<Card> cardsMoved = new ArrayList<Card>();
 
     public AILolController(ArrayList<Row> faceDownList, GameBoard gameBoard) {
@@ -51,16 +53,31 @@ public class AILolController {
             }
         }
 
+        //If there are available moves, chosenmoves is set to the first one
+        if(AIpos.size() > 0){
+            chosenMoves = AIpos.get(0);
+        }
+
+        //if there are more than one option, it chooses the shortest one
         for (ArrayList<String> possibleMoves : AIpos) {
+           if(possibleMoves.size() < chosenMoves.size()){
+               chosenMoves = possibleMoves;
+           }
+           //All for visual sake
             System.out.println("START CALCULATION OF MOVES");
             int counter = 0;
             for (String move : possibleMoves) {
-                System.out.println(move);
-                counter++;
+                if(move.substring(0,1).equalsIgnoreCase("0")){
+                    System.out.println("Removing " + move);
+                } else {
+                    System.out.println(move);
+                    counter++;
+                }
             }
             System.out.println(counter);
+            //Stop visual
         }
-        return new ArrayList<String>();
+        return chosenMoves;
     }
 
     /**
@@ -116,7 +133,7 @@ public class AILolController {
             for(Card movedCard: cardsMoved){
                 if(movedCard.getSuit() == c.getSuit() && movedCard.getLevel() == cardToFind){
                     System.out.println(movedCard.getCard() + " has already been moved");
-
+                    extraMoves.add("0 "+ movedCard.getCard() + "Already Moved");
                     cardsMissing--;
                     available = true;
                     break;
@@ -159,6 +176,7 @@ public class AILolController {
             //Checks down pile
             if (!available) {
                 for (Card card3 : gameBoard.getPile().getPileList()) {
+                    card3.setFaceUp(true);
                     if (card3.getSuit() == c.getSuit() && card3.getLevel() == cardToFind) {
                         cardsMissing--;
                         available = true;
@@ -169,6 +187,7 @@ public class AILolController {
                         card3.setFaceUp(false);
                         break;
                     }
+                    card3.setFaceUp(false);
                 }
             }
             if (!available) {
