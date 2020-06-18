@@ -198,6 +198,7 @@ public class GameController {
     }
 
     public void flipCardPile() {
+        System.out.println("*-*Flipping Card Pile*-*");
         if (gameBoard.getPile().getPileList().isEmpty()) {
             if (gameBoard.getCardPileRow().getCardList().size() == 1) {
                 return;
@@ -214,7 +215,6 @@ public class GameController {
         gameBoard.getCardPileRow().addCard(gameBoard.getPile().takeTopCard());
         gameBoard.getCardPileRow().getTop().setFaceUp(true);
         moveMade = true;
-        System.out.println("*-*Flipping Card Pile*-*");
     }
 
 
