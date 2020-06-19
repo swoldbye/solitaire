@@ -100,24 +100,28 @@ public class GameController {
             case 0:
                 if (gameBoard.getDiamondStack().getTop() == c.getLevel() - 1) {
                     gameBoard.getDiamondStack().addCard(c);
+                    System.out.println("*-* Moving " + c.getCard() + " to stack *-*");
                     moveMade = true;
                 }
                 break;
             case 1:
                 if (gameBoard.getHeartStack().getTop() == c.getLevel() - 1) {
                     gameBoard.getHeartStack().addCard(c);
+                    System.out.println("*-* Moving " + c.getCard() + " to stack *-*");
                     moveMade = true;
                 }
                 break;
             case 2:
                 if (gameBoard.getSpadeStack().getTop() == c.getLevel() - 1) {
                     gameBoard.getSpadeStack().addCard(c);
+                    System.out.println("*-* Moving " + c.getCard() + " to stack *-*");
                     moveMade = true;
                 }
                 break;
             case 3:
                 if (gameBoard.getClubStack().getTop() == c.getLevel() - 1) {
                     gameBoard.getClubStack().addCard(c);
+                    System.out.println("*-* Moving " + c.getCard() + " to stack *-*");
                     moveMade = true;
                 }
                 break;
@@ -126,7 +130,7 @@ public class GameController {
             r.getCardList().remove(c);
         }
         flipCard(r);
-        System.out.println("*-* Moving " + c.getCard() + " to stack *-*");
+
     }
 
 
@@ -251,6 +255,22 @@ public class GameController {
         for (String s : moves) {
             if (s.substring(0, 1).equalsIgnoreCase("0")) {
                 System.out.println("this card has already been moved");
+            } else if (s.substring(0, 8).equalsIgnoreCase("pilecard")) {
+                moveToStack(gameBoard.getCardPileRow().getTop(), gameBoard.getCardPileRow());
+            } else if (s.substring(0, 4).equalsIgnoreCase("PILE")) {
+                String pileCardToBeMoved = s.substring(5, 8);
+                System.out.println("PileCard To find " + pileCardToBeMoved);
+                while (true) {
+                    if (gameBoard.getCardPileRow().getCardList().isEmpty()) {
+                        flipCardPile();
+                    } else if (gameBoard.getCardPileRow().getTop().getCard().equalsIgnoreCase(pileCardToBeMoved)) {
+                        moveToStack(gameBoard.getCardPileRow().getTop(), gameBoard.getCardPileRow());
+                        break;
+                    } else {
+                        flipCardPile();
+                    }
+
+                }
             } else {
                 System.out.println(s);
                 String cardToBeMoved = s.substring(0, 3);
