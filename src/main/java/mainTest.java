@@ -17,7 +17,7 @@ public class mainTest {
         gameBoard = new GameBoard();
         gameController = new GameController(gameBoard);
         won = gameController.play();
-        assertTrue(!won);
+        assertTrue(won);
 
     }
 }

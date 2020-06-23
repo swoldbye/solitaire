@@ -74,6 +74,11 @@ public class MoveController {
 
         checkForMoveCard();
 
+        if (gameController.isMoveMade()) {
+            usedPileCardCounter = 0;
+            return;
+        }
+
         if (!gameBoard.getCardPileRow().getCardList().isEmpty()) {
             useFlipCard();
         }
@@ -85,25 +90,30 @@ public class MoveController {
 
 
         //no move can be made with cards on the table, so another card is flipped.
-        gameController.flipCardPile();
-
-        usedPileCardCounter++;
 
         //after all the cards in the pile have been around once, and no move has been made. Then we need
         //to make a multiple moves to free a downcard. To find out what to move we use AI lOL.
-
-        if ((gameBoard.getPile().getPileList().size() + 2)*2 > usedPileCardCounter  && usedPileCardCounter > gameBoard.getPile().getPileList().size() + 2) {
-            aiLolController = new AILolController(faceDownList,gameBoard);
+//(gameBoard.getPile().getPileList().size() + 2)*2 > usedPileCardCounter  &&
+        System.out.println("AI - Counter = " + usedPileCardCounter);
+        System.out.println("Size " + (gameBoard.getCardPileRow().getCardList().size() + gameBoard.getPile().getPileList().size()));
+        if (usedPileCardCounter > (gameBoard.getCardPileRow().getCardList().size() + gameBoard.getPile().getPileList().size())) {
+            aiLolController = new AILolController(faceDownList, gameBoard);
             aiMoves = aiLolController.lookForMove();
-            if (!aiMoves.isEmpty()){
+            if (!aiMoves.isEmpty()) {
                 gameController.doAIMoves(aiMoves);
+                usedPileCardCounter = 0;
+                return;
             }
         }
 
+        gameController.flipCardPile();
+        usedPileCardCounter++;
         //When all the cards in the deck have been at least once and no move has been made we are whats called
         //fucked
 
-        if (usedPileCardCounter > (gameBoard.getPile().getPileList().size() + 2)*2) {
+        System.out.println("Lose - Counter = " + usedPileCardCounter);
+        System.out.println("Size " + (gameBoard.getCardPileRow().getCardList().size() + gameBoard.getPile().getPileList().size()));
+        if (usedPileCardCounter > (gameBoard.getCardPileRow().getCardList().size() + gameBoard.getPile().getPileList().size())+1) {
             gameController.gameLost();
         }
 
@@ -121,7 +131,7 @@ public class MoveController {
         for (Row r : gameBoard.getRowList()) {
             if (r.getTop().getLevel() == 1) {
                 gameController.moveToStack(r.getTop(), r);
-                if(gameController.isMoveMade()) {
+                if (gameController.isMoveMade()) {
                     return;
                 }
             }
@@ -129,7 +139,7 @@ public class MoveController {
         for (Row r : gameBoard.getRowList()) {
             if (r.getTop().getLevel() == 2) {
                 gameController.moveToStack(r.getTop(), r);
-                if(gameController.isMoveMade()) {
+                if (gameController.isMoveMade()) {
                     return;
                 }
             }
