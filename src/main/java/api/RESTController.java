@@ -60,16 +60,17 @@ public class RESTController {
         */
 
         if (!URL.isEmpty()) {
+            String pythonResponse="";
             System.out.println("Received the url: " + URL);
             System.out.println("... Now sending to the python server for processing");
             simplehttp comm = new simplehttp();
             try {
-                comm.getPython(URL);
+                 pythonResponse = comm.getPython(URL);
             } catch (IOException e) {
                 e.printStackTrace();
             }
             //TODO: Create rest client and send
-            ctx.status(200).result("Server message: I received your url!!");
+            ctx.status(200).result("PYTHON RESPONSE: "+pythonResponse);
         } else {
             ctx.status(500).result("Server Error");
         }
