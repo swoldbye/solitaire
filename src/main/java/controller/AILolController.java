@@ -25,6 +25,8 @@ public class AILolController {
 
     private ArrayList<Card> cardsMoved = new ArrayList<Card>();
 
+    private int counter = 0;
+
     public AILolController(ArrayList<Row> faceDownList, GameBoard gameBoard) {
         this.faceDownList = faceDownList;
         this.gameBoard = gameBoard;
@@ -35,46 +37,92 @@ public class AILolController {
         ArrayList<ArrayList<String>> AIpos = new ArrayList<ArrayList<String>>();
         Card c;
         ArrayList<Row> availableRows;
+
+
         //Move directly to stack
         for (Row r : faceDownList) {
             if (r.getCardList().isEmpty() || r.getFaceDownCards() == 0) {
                 continue;
             }
             c = r.getCardList().get(r.getFaceDownCards());
-            System.out.println("********");
-            System.out.println("Trying to move " + c.getCard() + " directly to stack");
+            //           System.out.println("********");
+            //                  System.out.println("Trying to move " + c.getCard() + " directly to stack");
             cardsMoved = new ArrayList<Card>();
             ArrayList<String> moveDirectToStack = checkIfCardsForStack(c);
             if (moveDirectToStack.size() > 0) {
-                System.out.println(c.getCard() + " can directly be moved to stack");
+                //             System.out.println(c.getCard() + " can directly be moved to stack");
                 AIpos.add(moveDirectToStack);
             } else {
-                System.out.println(c.getCard() + " can NOT directly be moved to stack");
+                //             System.out.println(c.getCard() + " can NOT directly be moved to stack");
             }
         }
 
+        //If there is a king check for free space
+        boolean kingMove = false;
+        for (Row r2 : faceDownList) {
+            if (r2.getCardList().isEmpty() || r2.getFaceDownCards() == 0) {
+                continue;
+            }
+            c = r2.getCardList().get(r2.getFaceDownCards());
+            if (c.getLevel() == 13) {
+                for (Row r3 : faceDownList) {
+                    if (r3.getFaceDownCards() == 0 && r3.getTop().getLevel() != 0) {
+                        cardsMoved = new ArrayList<Card>();
+                        ArrayList<String> moveForKing = checkIfCardsForStack(r3.getCardList().get(0));
+                        if (moveForKing.size() > 0) {
+                            moveForKing.add("KR" + r2.getRowLocation() + "" + r3.getRowLocation());
+                            AIpos.add(moveForKing);
+                            kingMove = true;
+                        }
+                    }
+                }
+            }
+        }
+        //if king is in pile
+        //start check top card
+        if (!kingMove) {
+            for (Card pileCard : gameBoard.getPile().getPileList()) {
+                if (pileCard.getLevel() == 13) {
+                    for (Row searchingRow : gameBoard.getRowList()) {
+                        if (searchingRow.getFaceDownCards() == 0 && searchingRow.getTop().getLevel() != 0) {
+                            cardsMoved = new ArrayList<Card>();
+                            ArrayList<String> moveForKing = checkIfCardsForStack(searchingRow.getCardList().get(0));
+                            if (moveForKing.size() > 0) {
+      //                          pileCard.setFaceUp(true);
+      //                          System.out.println(pileCard.getCard());
+      //                          pileCard.setFaceUp(false);
+                                moveForKing.add("KP" + searchingRow.getRowLocation());
+                                AIpos.add(moveForKing);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
         //If there are available moves, chosenmoves is set to the first one
-        if(AIpos.size() > 0){
+        if (AIpos.size() > 0) {
             chosenMoves = AIpos.get(0);
         }
 
         //if there are more than one option, it chooses the shortest one
         for (ArrayList<String> possibleMoves : AIpos) {
-           if(possibleMoves.size() < chosenMoves.size()){
-               chosenMoves = possibleMoves;
-           }
-           //All for visual sake
-            System.out.println("START CALCULATION OF MOVES");
+            if (possibleMoves.size() < chosenMoves.size()) {
+                chosenMoves = possibleMoves;
+            }
+            //All for visual sake
+          /* System.out.println("START CALCULATION OF MOVES");
             int counter = 0;
             for (String move : possibleMoves) {
-                if(move.substring(0,1).equalsIgnoreCase("0")){
+                if (move.substring(0, 1).equalsIgnoreCase("0")) {
                     System.out.println("Removing " + move);
                 } else {
                     System.out.println(move);
                     counter++;
                 }
             }
-            System.out.println(counter);
+            System.out.println(counter);*/
             //Stop visual
         }
         return chosenMoves;
@@ -88,9 +136,10 @@ public class AILolController {
      */
 
 
-        public ArrayList<String> checkIfCardsForStack(Card c) {
-            //For overblik
-        System.out.println("START check for moving " + c.getCard());
+    public ArrayList<String> checkIfCardsForStack(Card c) {
+        counter++;
+        //For overblik
+//            System.out.println("START check for moving " + c.getCard());
         ArrayList<String> extraMoves = new ArrayList<String>();
         //Iterates to the top card on the row of the card wished to move
         Row tempRow = gameBoard.getRowList().get(c.getLocation() - 1);
@@ -98,9 +147,12 @@ public class AILolController {
         for (Card tempCard : tempRow.getCardList()) {
             if (tempCard.isFaceUp() && tempCard.getLevel() == c.getLevel()) {
                 if (cardPlacementCounter1 < tempRow.getCardList().size()) {
+                    if (counter > 1000) {
+                        return new ArrayList<>();
+                    }
                     extraMoves = checkIfCardsForStack(tempRow.getCardList().get(cardPlacementCounter1));
-                    if(extraMoves.size() == 0) {
-                        System.out.println("first step fail " + c.getCard());
+                    if (extraMoves.size() == 0) {
+//                        System.out.println("first step fail " + c.getCard());
                         return new ArrayList<String>();
                     }
                 }
@@ -128,12 +180,12 @@ public class AILolController {
         while (cardsMissing >= 0) {
             available = false;
             cardToFind = c.getLevel() - cardsMissing;
-            System.out.println("---" + cardToFind);
+//                System.out.println("---" + cardToFind);
             //Checks if the card they are looking for has already been moved
-            for(Card movedCard: cardsMoved){
-                if(movedCard.getSuit() == c.getSuit() && movedCard.getLevel() == cardToFind){
-                    System.out.println(movedCard.getCard() + " has already been moved");
-                    extraMoves.add("0 "+ movedCard.getCard() + "Already Moved");
+            for (Card movedCard : cardsMoved) {
+                if (movedCard.getSuit() == c.getSuit() && movedCard.getLevel() == cardToFind) {
+//                    System.out.println(movedCard.getCard() + " has already been moved");
+                    extraMoves.add("0 " + movedCard.getCard() + "Already Moved");
                     cardsMissing--;
                     available = true;
                     break;
@@ -141,7 +193,7 @@ public class AILolController {
             }
             //if the card is free it can be moved
             if (cardsMissing == 0 && !available) {
-                System.out.println("EX STEP 1 " + c.getCard() + " TO STACK");
+//                System.out.println("EX STEP 1 " + c.getCard() + " TO STACK");
                 extraMoves.add(c.getCard() + " to stack");
                 cardsMoved.add(c);
                 return extraMoves;
@@ -149,8 +201,8 @@ public class AILolController {
             //Checks if card missing is the face up pile card
             if (!available && gameBoard.getCardPileRow().getTop().getSuit() == c.getSuit() && gameBoard.getCardPileRow().getTop().getLevel() == cardToFind) {
                 cardsMissing--;
-                System.out.println("EX STEP 2 PILE CARD TO STACK");
-                extraMoves.add("PileCard to Stack");
+                //                      System.out.println("EX STEP 2 PILE CARD TO STACK");
+                extraMoves.add("PILE " + gameBoard.getCardPileRow().getTop().getCard() + " to stack");
                 cardsMoved.add(gameBoard.getCardPileRow().getTop());
                 available = true;
             }
@@ -162,7 +214,7 @@ public class AILolController {
                         if (card2.getSuit() == c.getSuit() && card2.getLevel() == cardToFind && card2.isFaceUp()) {
                             cardsMissing--;
                             ArrayList<String> rowMoves = checkIfCardsForStack(card2);
-                            if(rowMoves.size() == 0){
+                            if (rowMoves.size() == 0) {
                                 return new ArrayList<String>();
                             }
                             extraMoves.addAll(rowMoves);
@@ -181,7 +233,7 @@ public class AILolController {
                         cardsMissing--;
                         available = true;
                         card3.setFaceUp(true);
-                        System.out.println("EX STEP 4 " + card3.getCard() + " TO STACK");
+                        //                                       System.out.println("EX STEP 4 " + card3.getCard() + " TO STACK");
                         extraMoves.add("PILE " + card3.getCard() + " to stack");
                         cardsMoved.add(card3);
                         card3.setFaceUp(false);
@@ -191,7 +243,7 @@ public class AILolController {
                 }
             }
             if (!available) {
-                System.out.println("FAIL " + c.getCard());
+                //                        System.out.println("FAIL " + c.getCard());
                 return new ArrayList<String>();
             }
         }
@@ -249,7 +301,7 @@ public class AILolController {
         int i;
 
 
-        System.out.println("ORIGIN card moving " + cardToBeMoved.getCard() + " to " + receiver.getRowLocation());
+        //     System.out.println("ORIGIN card moving " + cardToBeMoved.getCard() + " to " + receiver.getRowLocation());
 
         for (i = receiver.getCardList().size() - 1; i > 0; i--) {
             Card c = receiver.getCardList().get(i);
@@ -259,28 +311,28 @@ public class AILolController {
             }
 
 
-            System.out.println(cardToBeMoved.getCard() + " to " + receiver.getRowLocation());
+            //         System.out.println(cardToBeMoved.getCard() + " to " + receiver.getRowLocation());
 
             ArrayList<String> checkForCards = checkIfCardsForStack(c);
 
             if (checkForCards.size() > 0) {
-                System.out.println("True" + c.getCard());
+                //             System.out.println("True" + c.getCard());
                 movesToBeMade.addAll(checkForCards);
             } else {
                 movesToBeMade = new ArrayList<String>();
-                System.out.println(cardToBeMoved.getCard() + " move cannot be done");
+                //             System.out.println(cardToBeMoved.getCard() + " move cannot be done");
                 break;
             }
         }
-        System.out.println("AI MOVES");
+        //     System.out.println("AI MOVES");
         for (String s : movesToBeMade) {
-            System.out.println(s);
+            //         System.out.println(s);
         }
         return movesToBeMade;
     }
 
     public void getMoves(Card cardToBeMoved, Row receiver) {
-        System.out.println("ORIGIN " + cardToBeMoved.getCard() + " to " + receiver.getRowLocation());
+        //     System.out.println("ORIGIN " + cardToBeMoved.getCard() + " to " + receiver.getRowLocation());
         Card c = receiver.getTop();
         while (c.getLevel() != cardToBeMoved.getLevel() + 1) {
 

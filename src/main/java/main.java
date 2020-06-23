@@ -11,7 +11,6 @@ public class main {
             GameController gameController = new GameController(gameBoard);
             won = gameController.play();
             System.out.println(won);
-
         System.exit(0);
     }
 

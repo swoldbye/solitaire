@@ -31,9 +31,12 @@ public class MoveController {
 
     private ArrayList<String> aiMoves = new ArrayList<String>();
 
+    int moveCounter;
+
     public MoveController(GameBoard gameBoard, GameController gameController) {
         this.gameBoard = gameBoard;
         this.gameController = gameController;
+        int moveCounter = 0;
 
     }
 
@@ -94,8 +97,8 @@ public class MoveController {
         //after all the cards in the pile have been around once, and no move has been made. Then we need
         //to make a multiple moves to free a downcard. To find out what to move we use AI lOL.
 //(gameBoard.getPile().getPileList().size() + 2)*2 > usedPileCardCounter  &&
-        System.out.println("AI - Counter = " + usedPileCardCounter);
-        System.out.println("Size " + (gameBoard.getCardPileRow().getCardList().size() + gameBoard.getPile().getPileList().size()));
+        //System.out.println("AI - Counter = " + usedPileCardCounter);
+        //System.out.println("Size " + (gameBoard.getCardPileRow().getCardList().size() + gameBoard.getPile().getPileList().size()));
         if (usedPileCardCounter > (gameBoard.getCardPileRow().getCardList().size() + gameBoard.getPile().getPileList().size())) {
             aiLolController = new AILolController(faceDownList, gameBoard);
             aiMoves = aiLolController.lookForMove();
@@ -111,8 +114,8 @@ public class MoveController {
         //When all the cards in the deck have been at least once and no move has been made we are whats called
         //fucked
 
-        System.out.println("Lose - Counter = " + usedPileCardCounter);
-        System.out.println("Size " + (gameBoard.getCardPileRow().getCardList().size() + gameBoard.getPile().getPileList().size()));
+       // System.out.println("Lose - Counter = " + usedPileCardCounter);
+       // System.out.println("Size " + (gameBoard.getCardPileRow().getCardList().size() + gameBoard.getPile().getPileList().size()));
         if (usedPileCardCounter > (gameBoard.getCardPileRow().getCardList().size() + gameBoard.getPile().getPileList().size())+1) {
             gameController.gameLost();
         }
