@@ -1,23 +1,17 @@
 package api;
 
-import com.google.gson.*;
+import com.google.gson.Gson;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 import model.PyCard;
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ExecutionException;
-
+//https://www.baeldung.com/java-http-request
 public class RESTController {
 
     public static Javalin server;
@@ -39,7 +33,7 @@ public class RESTController {
             });
             //TODO: lav endpoints (GET og POST)
             server.post("/ImageURL", ctx -> imageURL(ctx));
-            server.post("/Hello", ctx -> getFromPython(ctx));
+            //server.post("/Hello", ctx -> getFromPython(ctx));
         } catch (Exception e) {
             stop();
             e.printStackTrace();
@@ -66,6 +60,9 @@ public class RESTController {
             simplehttp comm = new simplehttp();
             try {
                  pythonResponse = comm.getPython(URL);
+                 if(!pythonResponse.isEmpty()){
+                     getFromPython(pythonResponse);
+                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -76,15 +73,14 @@ public class RESTController {
         }
     }
 
-    private void getFromPython(@NotNull Context ctx) throws ExecutionException, InterruptedException, IOException {
-        String gameString = ctx.body();
+    private void getFromPython(String pythonBody) throws ExecutionException, InterruptedException, IOException {
 
-        if (!gameString.isEmpty()) {
-            System.out.println("Received the gameString: \n" + gameString + "\n");
-            ctx.status(200).result("Server message: Received gameString: \n" + gameString);
+        if (!pythonBody.isEmpty()) {
+            System.out.println("Received the gameString: \n" + pythonBody + "\n");
+            //ctx.status(200).result("Server message: Received gameString: \n" + gameString);
 
             // Handling the JSON string
-            JSONArray rawJSONArray = new JSONArray(gameString);
+            JSONArray rawJSONArray = new JSONArray(pythonBody);
             System.out.println("Første array i JSON-Arrayet: \n" + rawJSONArray.get(0) + "\n");
 
             JSONArray JSONRow1 = new JSONArray(rawJSONArray.get(0).toString());
@@ -97,7 +93,6 @@ public class RESTController {
             System.out.println("Første objekt i første JSON-Array i JSON-Array'et \n" + JSONRow1.get(0) + "\n");
 
             System.out.println("*** ROWS ***");
-
             ArrayList<PyCard> row1 = PythonRowToJavaArrayList(JSONRow1);
             ArrayList<PyCard> row2 = PythonRowToJavaArrayList(JSONRow2);
             ArrayList<PyCard> row3 = PythonRowToJavaArrayList(JSONRow3);
@@ -128,6 +123,7 @@ public class RESTController {
                 PyCard extraCard = g.fromJson(String.valueOf(extraCardJSON), PyCard.class);
                 System.out.println("Extra Card: \n" + extraCardJSON);
             }
+
         }
     }
 
@@ -141,83 +137,5 @@ public class RESTController {
         return pyCards;
     }
 
-    public static String PythonHttpRequest(String url, String reqMethod, String body, String paramInput) throws IOException {
-        String inputLine;
-        String result;
-        //Selve URL og connection
-        URL url2 = new URL(url);
-        HttpURLConnection connection = (HttpURLConnection) url2.openConnection();
-        connection.setRequestMethod(reqMethod);
-        connection.setDoInput(true);
-        connection.setDoOutput(true);
 
-        //if body needs to be added
-        if (body.length() > 0) {
-            //Evt body
-            connection.setRequestProperty("Content-Type", "application/json");
-            connection.setRequestProperty("Accept", "application/json");
-            connection.setRequestProperty("Content-length", body.getBytes().length + "");
-            connection.setUseCaches(false);
-            OutputStream os = connection.getOutputStream();
-            os.write(body.getBytes("UTF-8"));
-            os.close();
-        }
-
-        //if params need to be added
-        if (paramInput.length() > 0) {
-            List<NameValuePair> params = new ArrayList<NameValuePair>();
-            params.add(new BasicNameValuePair("url", paramInput));
-            OutputStream os = connection.getOutputStream();
-            BufferedWriter writer = new BufferedWriter(
-                    new OutputStreamWriter(os, "UTF-8"));
-            writer.write(getQuery(params));
-            writer.flush();
-            writer.close();
-            os.close();
-        }
-
-        //Udfør
-        connection.connect();
-        InputStreamReader streamReader = new
-                InputStreamReader(connection.getInputStream());
-
-        int status = connection.getResponseCode();
-        System.out.println("Python Flask response status: "+status);
-        BufferedReader reader = new BufferedReader(streamReader);
-        StringBuilder stringBuilder = new StringBuilder();
-        //Check if the line we are reading is not null
-        while ((inputLine = reader.readLine()) != null) {
-            stringBuilder.append(inputLine);
-        }
-        reader.close();
-        streamReader.close();
-        result = stringBuilder.toString();
-        return result;
-    }
-
-    /**
-     * function needed for adding http params
-     *
-     * @param params
-     * @return
-     * @throws UnsupportedEncodingException
-     */
-
-    private static String getQuery(List<NameValuePair> params) throws UnsupportedEncodingException {
-        StringBuilder result = new StringBuilder();
-        boolean first = true;
-
-        for (NameValuePair pair : params) {
-            if (first)
-                first = false;
-            else
-                result.append("&");
-
-            result.append(URLEncoder.encode(pair.getName(), "UTF-8"));
-            result.append("=");
-            result.append(URLEncoder.encode(pair.getValue(), "UTF-8"));
-        }
-
-        return result.toString();
-    }
 }
