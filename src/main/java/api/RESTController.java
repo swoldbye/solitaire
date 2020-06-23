@@ -12,7 +12,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
-public class Rest_controller {
+public class RESTController {
 
     public static Javalin server;
     private JSONArray row;
@@ -59,27 +59,35 @@ public class Rest_controller {
     }
 
     private void getFromPython(@NotNull Context ctx) throws ExecutionException, InterruptedException, IOException {
-        String cardsString = ctx.body();
+        String gameString = ctx.body();
 
-        if (!cardsString.isEmpty()) {
-            System.out.println("Received the cardsString: \n" + cardsString + "\n");
-            ctx.status(200).result("Server message: Received cardsString: \n" + cardsString);
+        if (!gameString.isEmpty()) {
+            System.out.println("Received the gameString: \n" + gameString + "\n");
+            ctx.status(200).result("Server message: Received gameString: \n" + gameString);
 
             // Handling the JSON string
-            JSONArray rawJSONArray = new JSONArray(cardsString);
+            JSONArray rawJSONArray = new JSONArray(gameString);
             System.out.println("Første array i JSON-Arrayet: \n" + rawJSONArray.get(0) + "\n");
 
-            JSONArray row1 = new JSONArray(rawJSONArray.get(0).toString());
-            System.out.println("Første objekt i første JSON-Array i JSON-Array'et \n" + row1.get(0) + "\n");
+
+            JSONArray JSONRow1 = new JSONArray(rawJSONArray.get(0).toString());
+            JSONArray JSONRow2 = new JSONArray(rawJSONArray.get(1).toString());
+            JSONArray JSONRow3 = new JSONArray(rawJSONArray.get(2).toString());
+            JSONArray JSONRow4 = new JSONArray(rawJSONArray.get(3).toString());
+            JSONArray JSONRow5 = new JSONArray(rawJSONArray.get(4).toString());
+            JSONArray JSONRow6 = new JSONArray(rawJSONArray.get(5).toString());
+            JSONArray JSONRow7 = new JSONArray(rawJSONArray.get(6).toString());
+            System.out.println("Første objekt i første JSON-Array i JSON-Array'et \n" + JSONRow1.get(0) + "\n");
 
             System.out.println("*** ROWS ***");
-            PythonRowToJavaArrayList(row1);
-//            PythonRowToJavaArrayList(row2);
-//            PythonRowToJavaArrayList(row3);
-//            PythonRowToJavaArrayList(row4);
-//            PythonRowToJavaArrayList(row5);
-//            PythonRowToJavaArrayList(row6);
-//            PythonRowToJavaArrayList(row7);
+
+            ArrayList<PyCard> row1 = PythonRowToJavaArrayList(JSONRow1);
+            ArrayList<PyCard> row2 = PythonRowToJavaArrayList(JSONRow2);
+            ArrayList<PyCard> row3 = PythonRowToJavaArrayList(JSONRow3);
+            ArrayList<PyCard> row4 = PythonRowToJavaArrayList(JSONRow4);
+            ArrayList<PyCard> row5 = PythonRowToJavaArrayList(JSONRow5);
+            ArrayList<PyCard> row6 = PythonRowToJavaArrayList(JSONRow6);
+            ArrayList<PyCard> row7 = PythonRowToJavaArrayList(JSONRow7);
 
             boolean a1 = (boolean) rawJSONArray.get(7);
             boolean a2 = (boolean) rawJSONArray.get(8);
@@ -104,17 +112,15 @@ public class Rest_controller {
                 System.out.println("Extra Card: \n" + extraCardJSON);
             }
         }
-
-
     }
 
-    public void PythonRowToJavaArrayList(JSONArray row) {
+    public ArrayList<PyCard> PythonRowToJavaArrayList(JSONArray JSONRow) {
         pyCards.clear();
-        for (int i = 0; i < row.length(); i++) {
-            System.out.println("Objekt " + i + ": \n" + row.getJSONObject(i));
-            PyCard p = g.fromJson(String.valueOf(row.getJSONObject(i)), PyCard.class);
+        for (int i = 0; i < JSONRow.length(); i++) {
+            System.out.println("Objekt " + i + ": \n" + JSONRow.getJSONObject(i));
+            PyCard p = g.fromJson(String.valueOf(JSONRow.getJSONObject(i)), PyCard.class);
             pyCards.add(p);
         }
-
+        return pyCards;
     }
 }
