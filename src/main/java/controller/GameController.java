@@ -73,6 +73,7 @@ public class GameController {
 
     public void startTurn() {
 
+
         moveMade = false;
         moveController.makeMove();
         if (isGameWon) {
