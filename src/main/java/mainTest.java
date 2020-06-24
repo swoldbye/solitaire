@@ -26,7 +26,7 @@ public class mainTest {
      }/*/
     @Test
     void main() {
-        int number = 100000;
+        int number = 10000;
         int counter = 0;
         for (int i = 0; i < number; i++) {
             boolean won;
