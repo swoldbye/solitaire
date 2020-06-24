@@ -23,8 +23,6 @@ public class GameController {
 
     private boolean isGameWon = false, moveMade, isGameLost = false;
 
-    private int moveCOunter = 0;
-
     public GameController(GameBoard gameBoard) {
         this.gameBoard = gameBoard;
         this.moveController = new MoveController(gameBoard, this);
@@ -75,11 +73,7 @@ public class GameController {
 
     public void startTurn() {
 
-        moveCOunter++;
-       // System.out.println(moveCOunter);
-        if (moveCOunter > 500) {
-            return;
-        }
+
         moveMade = false;
         moveController.makeMove();
         if (isGameWon) {
@@ -271,12 +265,7 @@ public class GameController {
 
                 } else if (s.substring(1, 2).equalsIgnoreCase("P")) {
                     int rowReciever = Integer.valueOf(s.substring(2, 3));
-                    int pilecounter = 0;
                     while (true) {
-                        pilecounter++;
-                        if(pilecounter > 30){
-                            System.out.println("pile fucked");
-                        }
                         if (gameBoard.getCardPileRow().getCardList().isEmpty()) {
                             flipCardPile();
                         } else if (gameBoard.getCardPileRow().getTop().getLevel() == 13) {
@@ -290,12 +279,7 @@ public class GameController {
             } else if (s.substring(0, 4).equalsIgnoreCase("PILE")) {
                 String pileCardToBeMoved = s.substring(5, 8);
              //   System.out.println("PileCard To find " + pileCardToBeMoved);
-                int pilecounter = 0;
                 while (true) {
-                    pilecounter++;
-                    if(pilecounter > 30){
-                        System.out.println("pile fucked");
-                    }
                     if (gameBoard.getCardPileRow().getCardList().isEmpty()) {
                         flipCardPile();
                     } else if (gameBoard.getCardPileRow().getTop().getCard().equalsIgnoreCase(pileCardToBeMoved)) {

@@ -25,7 +25,6 @@ public class AILolController {
 
     private ArrayList<Card> cardsMoved = new ArrayList<Card>();
 
-    private int counter = 0;
 
     public AILolController(ArrayList<Row> faceDownList, GameBoard gameBoard) {
         this.faceDownList = faceDownList;
@@ -137,7 +136,6 @@ public class AILolController {
 
 
     public ArrayList<String> checkIfCardsForStack(Card c) {
-        counter++;
         //For overblik
 //            System.out.println("START check for moving " + c.getCard());
         ArrayList<String> extraMoves = new ArrayList<String>();
@@ -147,9 +145,6 @@ public class AILolController {
         for (Card tempCard : tempRow.getCardList()) {
             if (tempCard.isFaceUp() && tempCard.getLevel() == c.getLevel()) {
                 if (cardPlacementCounter1 < tempRow.getCardList().size()) {
-                    if (counter > 1000) {
-                        return new ArrayList<>();
-                    }
                     extraMoves = checkIfCardsForStack(tempRow.getCardList().get(cardPlacementCounter1));
                     if (extraMoves.size() == 0) {
 //                        System.out.println("first step fail " + c.getCard());

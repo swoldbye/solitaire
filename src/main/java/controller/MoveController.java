@@ -45,10 +45,10 @@ public class MoveController {
      */
 
     public void makeMove() {
-        //gets list with rows with most face down cards in decending order
+        //gets list with rows with most face down cards in descending order
         faceDownList = gameController.getFaceDownList();
 
-        //is the game won lol? no need to continue lol?
+        //is the game won no need to continue
         checkForWin();
 
         //lets get this dub !!
@@ -57,13 +57,16 @@ public class MoveController {
         }
 
         //Here starts the 'regular' moves
+        //Step 1
         checkForAceDeuce();
 
+        //If a move is made it needs to return to start algorithm again with new gameboard
         if (gameController.isMoveMade()) {
             usedPileCardCounter = 0;
             return;
         }
 
+        //Step 2-6
         checkForAvailableKing();
 
         if (isKingAvailable && kingCounter < 4) {
