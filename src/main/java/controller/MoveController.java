@@ -51,11 +51,9 @@ public class MoveController {
         //is the game won no need to continue
         checkForWin();
 
-        //lets get this dub !!
         if (gameWon && gameBoard.getCardPileRow().getCardList().isEmpty()) {
             gameController.victoryFormation();
         }
-
         //Here starts the 'regular' moves
         //Step 1
         checkForAceDeuce();
@@ -65,7 +63,6 @@ public class MoveController {
             usedPileCardCounter = 0;
             return;
         }
-
         //Step 2-6
         checkForAvailableKing();
 
@@ -94,14 +91,9 @@ public class MoveController {
             return;
         }
 
-
-        //no move can be made with cards on the table, so another card is flipped.
-
+        //step 7-8
         //after all the cards in the pile have been around once, and no move has been made. Then we need
-        //to make a multiple moves to free a downcard. To find out what to move we use AI lOL.
-//(gameBoard.getPile().getPileList().size() + 2)*2 > usedPileCardCounter  &&
-        //System.out.println("AI - Counter = " + usedPileCardCounter);
-        //System.out.println("Size " + (gameBoard.getCardPileRow().getCardList().size() + gameBoard.getPile().getPileList().size()));
+        //to make a multiple moves to free a downcard.
         if (usedPileCardCounter > (gameBoard.getCardPileRow().getCardList().size() + gameBoard.getPile().getPileList().size())) {
             aiLolController = new AILolController(faceDownList, gameBoard);
             aiMoves = aiLolController.lookForMove();
@@ -111,19 +103,14 @@ public class MoveController {
                 return;
             }
         }
-
+        //No move can be made with cards on the table, so another card is flipped.
         gameController.flipCardPile();
         usedPileCardCounter++;
         //When all the cards in the deck have been at least once and no move has been made we are whats called
-        //fucked
-
-       // System.out.println("Lose - Counter = " + usedPileCardCounter);
-       // System.out.println("Size " + (gameBoard.getCardPileRow().getCardList().size() + gameBoard.getPile().getPileList().size()));
+        //a loss
         if (usedPileCardCounter > (gameBoard.getCardPileRow().getCardList().size() + gameBoard.getPile().getPileList().size())+1) {
             gameController.gameLost();
         }
-
-
     }
 
     /**
