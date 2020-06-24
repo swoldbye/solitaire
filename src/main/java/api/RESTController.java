@@ -101,7 +101,7 @@ public class RESTController {
             ArrayList<PyCard> aceS = PythonRowToJavaArrayList(JSONSpade);
             ArrayList<PyCard> aceC = PythonRowToJavaArrayList(JSONClub);
 
-            ArrayList<PyCard> deck = new ArrayList(PythonRowToJavaArrayList(JSONDeck));
+            ArrayList<PyCard> deck = PythonRowToJavaArrayList(JSONDeck);
 
             System.out.println(row1.get(0).getSuitNumber());
 
