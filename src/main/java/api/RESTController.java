@@ -1,9 +1,11 @@
 package api;
 
-import com.google.gson.Gson;
+import com.google.gson.*;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
+import model.GameBoard;
 import model.PyCard;
+import model.Row;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -11,13 +13,13 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
-//https://www.baeldung.com/java-http-request
+
 public class RESTController {
 
     public static Javalin server;
     private JSONArray row;
     private Gson g = new Gson();
-    private ArrayList<PyCard> pyCards = new ArrayList<>();
+
 
     public void stop() {
         server.stop();
@@ -33,7 +35,7 @@ public class RESTController {
             });
             //TODO: lav endpoints (GET og POST)
             server.post("/ImageURL", ctx -> imageURL(ctx));
-            //server.post("/Hello", ctx -> getFromPython(ctx));
+            server.post("/Hello", ctx -> getFromPython(ctx));
         } catch (Exception e) {
             stop();
             e.printStackTrace();
@@ -73,15 +75,15 @@ public class RESTController {
         }
     }
 
-    private void getFromPython(String pythonBody) throws ExecutionException, InterruptedException, IOException {
+    private void getFromPython(@NotNull Context ctx) throws ExecutionException, InterruptedException, IOException {
+        String gameString = ctx.body();
 
-        if (!pythonBody.isEmpty()) {
-            System.out.println("Received the gameString: \n" + pythonBody + "\n");
-            //ctx.status(200).result("Server message: Received gameString: \n" + gameString);
+        if (!gameString.isEmpty()) {
+            System.out.println("Received the gameString: \n" + gameString + "\n");
+            ctx.status(200).result("Server message: Received gameString: \n" + gameString);
 
             // Handling the JSON string
-            JSONArray rawJSONArray = new JSONArray(pythonBody);
-            System.out.println("Første array i JSON-Arrayet: \n" + rawJSONArray.get(0) + "\n");
+            JSONArray rawJSONArray = new JSONArray(gameString);
 
             JSONArray JSONRow1 = new JSONArray(rawJSONArray.get(0).toString());
             JSONArray JSONRow2 = new JSONArray(rawJSONArray.get(1).toString());
@@ -90,9 +92,17 @@ public class RESTController {
             JSONArray JSONRow5 = new JSONArray(rawJSONArray.get(4).toString());
             JSONArray JSONRow6 = new JSONArray(rawJSONArray.get(5).toString());
             JSONArray JSONRow7 = new JSONArray(rawJSONArray.get(6).toString());
-            System.out.println("Første objekt i første JSON-Array i JSON-Array'et \n" + JSONRow1.get(0) + "\n");
 
-            System.out.println("*** ROWS ***");
+            System.out.println(JSONRow1);
+
+            JSONArray JSONDiamond = new JSONArray(rawJSONArray.get(7).toString());
+            JSONArray JSONHeart = new JSONArray(rawJSONArray.get(8).toString());
+            JSONArray JSONSpade = new JSONArray(rawJSONArray.get(9).toString());
+            JSONArray JSONClub = new JSONArray(rawJSONArray.get(10).toString());
+
+            JSONArray JSONDeck = new JSONArray(rawJSONArray.get(11).toString());
+            System.out.println(JSONDeck);
+
             ArrayList<PyCard> row1 = PythonRowToJavaArrayList(JSONRow1);
             ArrayList<PyCard> row2 = PythonRowToJavaArrayList(JSONRow2);
             ArrayList<PyCard> row3 = PythonRowToJavaArrayList(JSONRow3);
@@ -101,41 +111,35 @@ public class RESTController {
             ArrayList<PyCard> row6 = PythonRowToJavaArrayList(JSONRow6);
             ArrayList<PyCard> row7 = PythonRowToJavaArrayList(JSONRow7);
 
-            boolean a1 = (boolean) rawJSONArray.get(7);
-            boolean a2 = (boolean) rawJSONArray.get(8);
-            boolean a3 = (boolean) rawJSONArray.get(9);
-            boolean a4 = (boolean) rawJSONArray.get(10);
+            ArrayList<PyCard> aceD = PythonRowToJavaArrayList(JSONDiamond);
+            ArrayList<PyCard> aceH = PythonRowToJavaArrayList(JSONHeart);
+            ArrayList<PyCard> aceS = PythonRowToJavaArrayList(JSONSpade);
+            ArrayList<PyCard> aceC = PythonRowToJavaArrayList(JSONClub);
 
-            System.out.println("\n");
-            System.out.println("*** ESSERE ***");
-            System.out.println(a1);
-            System.out.println(a2);
-            System.out.println(a3);
-            System.out.println(a4);
-            System.out.println("\n");
+            ArrayList<PyCard> deck = PythonRowToJavaArrayList(JSONDeck);
 
-            System.out.println("*** DECK ***");
-            JSONArray deck = new JSONArray(rawJSONArray.get(11).toString());
-            PythonRowToJavaArrayList(deck);
+            System.out.println(row1.get(0).getSuitNumber());
 
-            JSONObject extraCardJSON = new JSONObject(rawJSONArray.get(12).toString());
-            if (!extraCardJSON.isEmpty()){
-                PyCard extraCard = g.fromJson(String.valueOf(extraCardJSON), PyCard.class);
-                System.out.println("Extra Card: \n" + extraCardJSON);
-            }
+            System.out.println(deck.get(0).getSuitNumber());
+
+            System.out.println(row1);
+            System.out.println(deck);
+
 
         }
     }
 
     public ArrayList<PyCard> PythonRowToJavaArrayList(JSONArray JSONRow) {
-        pyCards.clear();
+        ArrayList<PyCard> pyCards = new ArrayList<>();
         for (int i = 0; i < JSONRow.length(); i++) {
-            System.out.println("Objekt " + i + ": \n" + JSONRow.getJSONObject(i));
             PyCard p = g.fromJson(String.valueOf(JSONRow.getJSONObject(i)), PyCard.class);
             pyCards.add(p);
         }
         return pyCards;
     }
 
-
+//    public Row ArrayListToRow(ArrayList<PyCard> pyCards, int location){
+//
+//        return pyCards;
+//    }
 }
