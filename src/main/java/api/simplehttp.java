@@ -15,8 +15,8 @@ public class simplehttp {
         URL url = new URL("http://35.246.214.109:8080/testpicture?url="+imgur_url);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
-        //con.setConnectTimeout(5000);
-        //con.setReadTimeout(5000);
+        con.setConnectTimeout(5000);
+        con.setReadTimeout(22000);
         if(con.getResponseCode()==200){
             String response = con.getResponseMessage();
             System.out.println("PYTHON RESPONSE: "+response);

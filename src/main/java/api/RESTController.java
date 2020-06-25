@@ -33,6 +33,7 @@ public class RESTController {
                 e.printStackTrace();
             });
             //TODO: lav endpoints (GET og POST)
+            server.post("setNewGameStatus", ctx -> setGameStatus(ctx));
             server.post("/ImageURL", ctx -> imageURL(ctx));
             server.post("/Hello", ctx -> getFromPython(ctx));
         } catch (Exception e) {
@@ -41,6 +42,12 @@ public class RESTController {
         }
 
 
+    }
+
+    private void setGameStatus(@NotNull Context ctx){
+        Boolean status = Boolean.valueOf(ctx.queryParam("status"));
+        // TODO: SET BOOLEAN IN GAMECONTROLLER
+        System.out.println("Starting new game: "+status);
     }
 
     private void imageURL(@NotNull Context ctx) throws ExecutionException, InterruptedException, IOException {

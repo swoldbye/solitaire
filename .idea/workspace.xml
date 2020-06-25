@@ -19,13 +19,109 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84930234-fb07-42c4-bca6-ddd93407ef47" name="Default Changelist" comment="Fixing PyCard object and how to Javalin receives JSON-objects.">
+    <list default="true" id="5cdf6ded-7056-4444-84b3-93eaf2268c2b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/RESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/RESTController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/simplehttp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/simplehttp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api/RESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api/RESTController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/AILolController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/AILolController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/MoveController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MoveController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mainTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mainTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Row.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Row.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/View.class" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/api/REST.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="3" column="57" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/api/RESTController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="69" column="44" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/api/simplehttp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="21" column="61" lean-forward="true" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/PyCard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/GameBoard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="21" selection-start-line="20" selection-end-line="21" />
+              <folding>
+                <element signature="e#621#622#0" expanded="true" />
+                <element signature="e#650#651#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Row.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/GameController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="560">
+              <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/MoveController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="840">
+              <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -35,14 +131,111 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/api/RESTController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/api/simplehttp.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1125" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectId" id="1dV0xeDUw90yKs9mLGgb4um14mT" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="solitaire" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solitaire" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="solitaire" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solitaire" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="solitaire" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solitaire" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="solitaire" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solitaire" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="solitaire" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solitaire" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="solitaire" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solitaire" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="solitaire" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solitaire" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="solitaire" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solitaire" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="solitaire" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solitaire" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="solitaire" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solitaire" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -58,6 +251,19 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Application.REST">
     <configuration name="REST" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -94,7 +300,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="84930234-fb07-42c4-bca6-ddd93407ef47" name="Default Changelist" comment="" />
+      <changelist id="5cdf6ded-7056-4444-84b3-93eaf2268c2b" name="Default Changelist" comment="" />
       <created>1592495200646</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -105,6 +311,7 @@
       <workItem from="1592996998355" duration="508000" />
       <workItem from="1593015358333" duration="7093000" />
       <workItem from="1593073282275" duration="660000" />
+      <workItem from="1593085507140" duration="1235000" />
     </task>
     <task id="LOCAL-00001" summary="Added JSON communication from Python">
       <created>1592831830232</created>
@@ -151,20 +358,122 @@
     <option name="localTasksCounter" value="7" />
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="3771000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="643" y="0" width="900" height="838" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.23557048" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5566572" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3286119" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Tool Output" order="9" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="12" weight="0.42351276" />
+      <window_info anchor="bottom" id="Flutter Performance" order="13" side_tool="true" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="14" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="15" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.17181209" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Flutter Inspector" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Flutter Outline" order="8" />
+      <window_info anchor="right" id="Json Parser" order="9" weight="0.3295302" />
+      <window_info anchor="right" id="SciView" order="10" />
+      <window_info anchor="right" id="Palette&#9;" order="11" />
+      <window_info anchor="right" id="Theme Preview" order="12" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22550336" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.05382436" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3286119" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Tool Output" order="9" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="12" weight="0.42351276" />
+      <window_info anchor="bottom" id="Flutter Performance" order="13" side_tool="true" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="14" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="15" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.17181209" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Flutter Inspector" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Flutter Outline" order="8" />
+      <window_info anchor="right" id="Json Parser" order="9" weight="0.3295302" />
+      <window_info anchor="right" id="SciView" order="10" />
+      <window_info anchor="right" id="Palette&#9;" order="11" />
+      <window_info anchor="right" id="Theme Preview" order="12" />
+    </layout-to-restore>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added JSON communication from Python" />
@@ -175,81 +484,112 @@
     <option name="LAST_COMMIT_MESSAGE" value="Fixing PyCard object and how to Javalin receives JSON-objects." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="418" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592916622513">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="418" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592495209722" />
-    <state x="418" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1592916622513" />
-    <state x="768" y="212" width="374" height="557" key="#com.intellij.ide.util.MemberChooser" timestamp="1593022125575">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="768" y="203" width="374" height="621" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592502214405" />
-    <state x="768" y="212" width="374" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1593022125575" />
-    <state x="459" y="0" width="982" height="1030" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1592506229293">
-      <screen x="0" y="0" width="1920" height="1035" />
-    </state>
-    <state x="459" y="0" width="982" height="1030" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592506229293" />
-    <state x="182" y="78" width="1536" height="889" key="DiffContextDialog" timestamp="1593025545131">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="182" y="78" width="1536" height="889" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593025545131" />
-    <state width="1858" height="306" key="GridCell.Tab.0.bottom" timestamp="1593024095989">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="409" key="GridCell.Tab.0.bottom/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755522" />
-    <state width="1858" height="306" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1593024095989" />
-    <state width="1858" height="306" key="GridCell.Tab.0.center" timestamp="1593024095988">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="409" key="GridCell.Tab.0.center/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755522" />
-    <state width="1858" height="306" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1593024095988" />
-    <state width="1858" height="306" key="GridCell.Tab.0.left" timestamp="1593024095988">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="409" key="GridCell.Tab.0.left/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755521" />
-    <state width="1858" height="306" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1593024095988" />
-    <state width="1858" height="306" key="GridCell.Tab.0.right" timestamp="1593024095989">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="409" key="GridCell.Tab.0.right/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755522" />
-    <state width="1858" height="306" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1593024095989" />
-    <state width="1878" height="339" key="GridCell.Tab.1.bottom" timestamp="1592496457189">
-      <screen x="0" y="0" width="1920" height="1035" />
-    </state>
-    <state width="1878" height="339" key="GridCell.Tab.1.bottom/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592496457189" />
-    <state width="1878" height="339" key="GridCell.Tab.1.center" timestamp="1592496457189">
-      <screen x="0" y="0" width="1920" height="1035" />
-    </state>
-    <state width="1878" height="339" key="GridCell.Tab.1.center/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592496457189" />
-    <state width="1878" height="339" key="GridCell.Tab.1.left" timestamp="1592496457189">
-      <screen x="0" y="0" width="1920" height="1035" />
-    </state>
-    <state width="1878" height="339" key="GridCell.Tab.1.left/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592496457189" />
-    <state width="1878" height="339" key="GridCell.Tab.1.right" timestamp="1592496457189">
-      <screen x="0" y="0" width="1920" height="1035" />
-    </state>
-    <state width="1878" height="339" key="GridCell.Tab.1.right/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592496457189" />
-    <state x="443" y="98" width="1024" height="840" key="SettingsEditor" timestamp="1592916634937">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="443" y="94" width="1024" height="840" key="SettingsEditor/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592495365237" />
-    <state x="443" y="98" width="1024" height="840" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1592916634937" />
-    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1593025548190">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="555" y="252" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592831949764" />
-    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593025548190" />
-    <state x="676" y="308" width="568" height="412" key="git4idea.merge.GitPullDialog" timestamp="1592916450482">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="676" y="308" width="568" height="412" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1592916450482" />
-    <state x="664" y="267" width="582" height="494" key="refactoring.ChangeSignatureDialog" timestamp="1592829926988">
-      <screen x="0" y="0" width="1920" height="1035" />
-    </state>
-    <state x="664" y="267" width="582" height="494" key="refactoring.ChangeSignatureDialog/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592829926988" />
-    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1592916681254">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1592916681254" />
+    <state x="418" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
+    <state x="418" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state x="418" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" />
+    <state x="768" y="212" width="374" height="557" key="#com.intellij.ide.util.MemberChooser" />
+    <state x="768" y="203" width="374" height="621" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state x="768" y="212" width="374" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" />
+    <state x="459" y="0" width="982" height="1030" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" />
+    <state x="459" y="0" width="982" height="1030" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state x="182" y="78" width="1536" height="889" key="DiffContextDialog" />
+    <state x="182" y="78" width="1536" height="889" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" />
+    <state width="1858" height="306" key="GridCell.Tab.0.bottom" />
+    <state width="1878" height="409" key="GridCell.Tab.0.bottom/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state width="1858" height="306" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" />
+    <state width="1858" height="306" key="GridCell.Tab.0.center" />
+    <state width="1878" height="409" key="GridCell.Tab.0.center/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state width="1858" height="306" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" />
+    <state width="1858" height="306" key="GridCell.Tab.0.left" />
+    <state width="1878" height="409" key="GridCell.Tab.0.left/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state width="1858" height="306" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" />
+    <state width="1858" height="306" key="GridCell.Tab.0.right" />
+    <state width="1878" height="409" key="GridCell.Tab.0.right/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state width="1858" height="306" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" />
+    <state width="1878" height="339" key="GridCell.Tab.1.bottom" />
+    <state width="1878" height="339" key="GridCell.Tab.1.bottom/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state width="1878" height="339" key="GridCell.Tab.1.center" />
+    <state width="1878" height="339" key="GridCell.Tab.1.center/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state width="1878" height="339" key="GridCell.Tab.1.left" />
+    <state width="1878" height="339" key="GridCell.Tab.1.left/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state width="1878" height="339" key="GridCell.Tab.1.right" />
+    <state width="1878" height="339" key="GridCell.Tab.1.right/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state x="443" y="98" width="1024" height="840" key="SettingsEditor" />
+    <state x="443" y="94" width="1024" height="840" key="SettingsEditor/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state x="443" y="98" width="1024" height="840" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" />
+    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2" />
+    <state x="555" y="252" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" />
+    <state x="676" y="308" width="568" height="412" key="git4idea.merge.GitPullDialog" />
+    <state x="676" y="308" width="568" height="412" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" />
+    <state x="664" y="267" width="582" height="494" key="refactoring.ChangeSignatureDialog" />
+    <state x="664" y="267" width="582" height="494" key="refactoring.ChangeSignatureDialog/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup" />
+    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/api/REST.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="57" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/PyCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/GameBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="21" selection-start-line="20" selection-end-line="21" />
+          <folding>
+            <element signature="e#621#622#0" expanded="true" />
+            <element signature="e#650#651#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Row.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MoveController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/api/RESTController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="69" column="44" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/api/simplehttp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="21" column="61" lean-forward="true" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
