@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="solitaire:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -19,8 +24,24 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84930234-fb07-42c4-bca6-ddd93407ef47" name="Default Changelist" comment="Fixing PyCard object and how to Javalin receives JSON-objects.">
+    <list default="true" id="84930234-fb07-42c4-bca6-ddd93407ef47" name="Default Changelist" comment="Algorithm updated to take one card as input">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/solitaire_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/RESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/RESTController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Pile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Pile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api/RESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api/RESTController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/AILolController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/AILolController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/MoveController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MoveController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mainTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mainTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/GameBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/GameBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Pile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Pile.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,10 +75,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RunManager" selected="Application.REST">
     <configuration name="REST" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -148,7 +170,21 @@
       <option name="project" value="LOCAL" />
       <updated>1593025475171</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fixing PyCard object and how to Javalin receives JSON-objects.">
+      <created>1593074186824</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1593074186824</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fixing receiving of new object PyCard modelchange">
+      <created>1593075152676</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1593075152676</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,19 +208,29 @@
     <MESSAGE value="QOL merge" />
     <MESSAGE value="Fixing unversioned files" />
     <MESSAGE value="Fixing PyCard object and how to Javalin receives JSON-objects." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing PyCard object and how to Javalin receives JSON-objects." />
+    <MESSAGE value="Fixing receiving of new object PyCard modelchange" />
+    <MESSAGE value="Algorithm updated to take one card as input" />
+    <option name="LAST_COMMIT_MESSAGE" value="Algorithm updated to take one card as input" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="443" y="94" width="1024" height="840" key="#Project_Structure" timestamp="1593084718529">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="443" y="94" width="1024" height="840" key="#Project_Structure/0.0.1920.1080@0.0.1920.1080" timestamp="1593084718529" />
     <state x="418" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592916622513">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="418" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592495209722" />
     <state x="418" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1592916622513" />
-    <state x="768" y="212" width="374" height="557" key="#com.intellij.ide.util.MemberChooser" timestamp="1593022125575">
+    <state x="768" y="212" width="374" height="557" key="#com.intellij.ide.util.MemberChooser" timestamp="1593075049173">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="768" y="203" width="374" height="621" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592502214405" />
-    <state x="768" y="212" width="374" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1593022125575" />
+    <state x="768" y="212" width="374" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1593075049173" />
+    <state x="687" y="311" width="525" height="409" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1593084403618">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="687" y="311" width="525" height="409" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593084403618" />
     <state x="459" y="0" width="982" height="1030" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1592506229293">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
@@ -193,63 +239,88 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="182" y="78" width="1536" height="889" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593025545131" />
-    <state width="1858" height="306" key="GridCell.Tab.0.bottom" timestamp="1593024095989">
+    <state x="743" y="261" width="424" height="506" key="FileChooserDialogImpl" timestamp="1593084711354">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="743" y="261" width="424" height="506" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1593084711354" />
+    <state width="1878" height="306" key="GridCell.Tab.0.bottom" timestamp="1593086001551">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1878" height="409" key="GridCell.Tab.0.bottom/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755522" />
-    <state width="1858" height="306" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1593024095989" />
-    <state width="1858" height="306" key="GridCell.Tab.0.center" timestamp="1593024095988">
+    <state width="1878" height="306" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1593086001551" />
+    <state width="1878" height="306" key="GridCell.Tab.0.center" timestamp="1593086001550">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1878" height="409" key="GridCell.Tab.0.center/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755522" />
-    <state width="1858" height="306" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1593024095988" />
-    <state width="1858" height="306" key="GridCell.Tab.0.left" timestamp="1593024095988">
+    <state width="1878" height="306" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1593086001550" />
+    <state width="1878" height="306" key="GridCell.Tab.0.left" timestamp="1593086001550">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1878" height="409" key="GridCell.Tab.0.left/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755521" />
-    <state width="1858" height="306" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1593024095988" />
-    <state width="1858" height="306" key="GridCell.Tab.0.right" timestamp="1593024095989">
+    <state width="1878" height="306" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1593086001550" />
+    <state width="1878" height="306" key="GridCell.Tab.0.right" timestamp="1593086001550">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1878" height="409" key="GridCell.Tab.0.right/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755522" />
-    <state width="1858" height="306" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1593024095989" />
-    <state width="1878" height="339" key="GridCell.Tab.1.bottom" timestamp="1592496457189">
-      <screen x="0" y="0" width="1920" height="1035" />
+    <state width="1878" height="306" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1593086001550" />
+    <state width="1878" height="339" key="GridCell.Tab.1.bottom" timestamp="1593084238996">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1878" height="339" key="GridCell.Tab.1.bottom/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592496457189" />
-    <state width="1878" height="339" key="GridCell.Tab.1.center" timestamp="1592496457189">
-      <screen x="0" y="0" width="1920" height="1035" />
+    <state width="1878" height="339" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1593084238996" />
+    <state width="1878" height="339" key="GridCell.Tab.1.center" timestamp="1593084238996">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1878" height="339" key="GridCell.Tab.1.center/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592496457189" />
-    <state width="1878" height="339" key="GridCell.Tab.1.left" timestamp="1592496457189">
-      <screen x="0" y="0" width="1920" height="1035" />
+    <state width="1878" height="339" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1593084238996" />
+    <state width="1878" height="339" key="GridCell.Tab.1.left" timestamp="1593084238995">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1878" height="339" key="GridCell.Tab.1.left/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592496457189" />
-    <state width="1878" height="339" key="GridCell.Tab.1.right" timestamp="1592496457189">
-      <screen x="0" y="0" width="1920" height="1035" />
+    <state width="1878" height="339" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1593084238995" />
+    <state width="1878" height="339" key="GridCell.Tab.1.right" timestamp="1593084238996">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1878" height="339" key="GridCell.Tab.1.right/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592496457189" />
-    <state x="443" y="98" width="1024" height="840" key="SettingsEditor" timestamp="1592916634937">
+    <state width="1878" height="339" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1593084238996" />
+    <state x="443" y="98" width="1024" height="840" key="SettingsEditor" timestamp="1593086211007">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="443" y="94" width="1024" height="840" key="SettingsEditor/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592495365237" />
-    <state x="443" y="98" width="1024" height="840" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1592916634937" />
-    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1593025548190">
+    <state x="443" y="98" width="1024" height="840" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1593086211007" />
+    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1593085861295">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="555" y="252" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592831949764" />
-    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593025548190" />
-    <state x="676" y="308" width="568" height="412" key="git4idea.merge.GitPullDialog" timestamp="1592916450482">
+    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593085861295" />
+    <state x="676" y="308" width="568" height="412" key="git4idea.merge.GitPullDialog" timestamp="1593075122030">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="676" y="308" width="568" height="412" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1592916450482" />
+    <state x="676" y="308" width="568" height="412" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593075122030" />
     <state x="664" y="267" width="582" height="494" key="refactoring.ChangeSignatureDialog" timestamp="1592829926988">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state x="664" y="267" width="582" height="494" key="refactoring.ChangeSignatureDialog/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592829926988" />
-    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1592916681254">
+    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1593086204903">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1592916681254" />
+    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1593086204903" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/GameController.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="JSONRow5" />
+        <watch expression="visibleCards.get(6)" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

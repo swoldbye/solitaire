@@ -7,11 +7,11 @@ public class main {
         boolean won;
 
 
-            GameBoard gameBoard = new GameBoard();
-            GameController gameController = new GameController(gameBoard);
-            won = gameController.play();
-            System.out.println(won);
-        System.exit(0);
+           // GameBoard gameBoard = new GameBoard();
+//            GameController gameController = new GameController(gameBoard);
+//            won = gameController.play();
+//            System.out.println(won);
+//        System.exit(0);
     }
 
 }

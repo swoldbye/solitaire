@@ -14,10 +14,10 @@ public class Pile {
 
 
     public Pile(int pileLocation){
-        this.deck = new Deck();
+      //  this.deck = new Deck();
         this.pileLocation = pileLocation;
-        initPile();
-        Collections.shuffle(pileList);
+     //   initPile();
+       // Collections.shuffle(pileList);
 
     }
 
@@ -45,6 +45,11 @@ public class Pile {
 
     public void setPileLocation(int pileLocation) {
         this.pileLocation = pileLocation;
+    }
+
+    public void addCard(Card c){
+        pileList.add(c);
+        c.setLocation(pileLocation);
     }
 
     public void initPile(){

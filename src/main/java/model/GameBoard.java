@@ -25,11 +25,20 @@ public class GameBoard {
     Stack spadeStack = new Stack(3, 10);
     Stack clubStack = new Stack(4, 11);
 
-    int moveCOunter = 0;
-
-
-    public GameBoard() {
+    public GameBoard(ArrayList<Card> startingCards) {
         initRowList();
+        for (Row r: getRowList()){
+            for(int i = 0; i < r.getRowLocation(); i++){
+                if(i+1 == r.getRowLocation()){
+                    r.addCard(startingCards.get(i));
+                } else {
+                    r.addCard(new Card(4,0,false));
+                }
+            }
+        }
+        for(int i = 0; i < 24; i++){
+            pile.addCard(new Card(4,0,false));
+        }
     }
 
     private void initRowList() {

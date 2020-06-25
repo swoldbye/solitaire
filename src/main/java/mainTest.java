@@ -23,7 +23,7 @@ public class mainTest {
          assertTrue(won);
 
 
-     }/*/
+     }/*
     @Test
     void main() {
         int number = 10000;
@@ -48,5 +48,5 @@ public class mainTest {
         assertTrue(counter > (number * 0.3));
 
 
-    }
+    }*/
 }
