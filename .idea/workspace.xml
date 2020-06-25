@@ -24,15 +24,73 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84930234-fb07-42c4-bca6-ddd93407ef47" name="Default Changelist" comment="Small changes">
-      <change afterPath="$PROJECT_DIR$/target/classes/api/simplehttp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/original-solitaire-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/solitaire-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api/RESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api/RESTController.class" afterDir="false" />
+    <list default="true" id="84930234-fb07-42c4-bca6-ddd93407ef47" name="Default Changelist" comment="this commit should not be used">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/solitaire_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]/AILolController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]/Card.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]/Deck.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]/Pile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]/PyCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]/REST.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]/Row.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]/Stack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]/View.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]/mainTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]/original-solitaire-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]/simplehttp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]/solitaire-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]1/AILolController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]1/Card.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]1/Deck.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]1/Pile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]1/PyCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]1/REST.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]1/Row.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]1/Stack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]1/View.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]1/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]1/mainTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]1/original-solitaire-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]1/simplehttp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_47_PM_[Default_Changelist]1/solitaire-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/AILolController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/Pile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/PyCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/mainTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/original-solitaire-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/simplehttp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/solitaire-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20__8_47_PM__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20__8_47_PM__Default_Changelist_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20__8_48_PM__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api/REST.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api/RESTController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api/simplehttp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/AILolController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/GameController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/MoveController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mainTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Card.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Deck.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/GameBoard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Pile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/PyCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Row.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Stack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/View.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-solitaire-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/solitaire-1.0-SNAPSHOT.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +107,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="bigbang2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -254,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593102642545</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="this commit should not be used">
+      <created>1593111280081</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1593111280081</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +352,8 @@
     <MESSAGE value="Added files" />
     <MESSAGE value="Commit before pull" />
     <MESSAGE value="Small changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small changes" />
+    <MESSAGE value="this commit should not be used" />
+    <option name="LAST_COMMIT_MESSAGE" value="this commit should not be used" />
   </component>
   <component name="WindowStateProjectService">
     <state x="443" y="94" width="1024" height="840" key="#Project_Structure" timestamp="1593087310100">
@@ -321,29 +387,29 @@
     </state>
     <state x="743" y="250" key="FileChooserDialogImpl/0.0.1920.1035@0.0.1920.1035" timestamp="1593111061637" />
     <state x="743" y="261" width="637" height="506" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1593091331481" />
-    <state width="1878" height="349" key="GridCell.Tab.0.bottom" timestamp="1593111001900">
+    <state width="939" height="349" key="GridCell.Tab.0.bottom" timestamp="1593111186123">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state width="1878" height="409" key="GridCell.Tab.0.bottom/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755522" />
-    <state width="1878" height="349" key="GridCell.Tab.0.bottom/0.0.1920.1035@0.0.1920.1035" timestamp="1593111001900" />
+    <state width="939" height="349" key="GridCell.Tab.0.bottom/0.0.1920.1035@0.0.1920.1035" timestamp="1593111186123" />
     <state width="1878" height="349" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1593096791630" />
-    <state width="1878" height="349" key="GridCell.Tab.0.center" timestamp="1593111001900">
+    <state width="939" height="349" key="GridCell.Tab.0.center" timestamp="1593111186122">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state width="1878" height="409" key="GridCell.Tab.0.center/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755522" />
-    <state width="1878" height="349" key="GridCell.Tab.0.center/0.0.1920.1035@0.0.1920.1035" timestamp="1593111001900" />
+    <state width="939" height="349" key="GridCell.Tab.0.center/0.0.1920.1035@0.0.1920.1035" timestamp="1593111186122" />
     <state width="1878" height="349" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1593096791627" />
-    <state width="1878" height="349" key="GridCell.Tab.0.left" timestamp="1593111001899">
+    <state width="939" height="349" key="GridCell.Tab.0.left" timestamp="1593111186122">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state width="1878" height="409" key="GridCell.Tab.0.left/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755521" />
-    <state width="1878" height="349" key="GridCell.Tab.0.left/0.0.1920.1035@0.0.1920.1035" timestamp="1593111001899" />
+    <state width="939" height="349" key="GridCell.Tab.0.left/0.0.1920.1035@0.0.1920.1035" timestamp="1593111186122" />
     <state width="1878" height="349" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1593096791625" />
-    <state width="1878" height="349" key="GridCell.Tab.0.right" timestamp="1593111001900">
+    <state width="939" height="349" key="GridCell.Tab.0.right" timestamp="1593111186122">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state width="1878" height="409" key="GridCell.Tab.0.right/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755522" />
-    <state width="1878" height="349" key="GridCell.Tab.0.right/0.0.1920.1035@0.0.1920.1035" timestamp="1593111001900" />
+    <state width="939" height="349" key="GridCell.Tab.0.right/0.0.1920.1035@0.0.1920.1035" timestamp="1593111186122" />
     <state width="1878" height="349" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1593096791628" />
     <state width="1878" height="339" key="GridCell.Tab.1.bottom" timestamp="1593084238996">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -378,11 +444,11 @@
     </state>
     <state x="443" y="94" width="1024" height="840" key="SettingsEditor/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592495365237" />
     <state x="443" y="98" width="1024" height="840" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1593091461739" />
-    <state x="555" y="252" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1593102654715">
+    <state x="555" y="252" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1593111301724">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state x="555" y="252" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592831949764" />
-    <state x="555" y="252" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1035@0.0.1920.1035" timestamp="1593102654715" />
+    <state x="555" y="252" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1035@0.0.1920.1035" timestamp="1593111301724" />
     <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593098309203" />
     <state x="720" y="233" width="470" height="562" key="git4idea.branch.GitSmartOperationDialog" timestamp="1593111071860">
       <screen x="0" y="0" width="1920" height="1035" />
