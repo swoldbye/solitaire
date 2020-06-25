@@ -24,9 +24,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84930234-fb07-42c4-bca6-ddd93407ef47" name="Default Changelist" comment="Added files">
+    <list default="true" id="84930234-fb07-42c4-bca6-ddd93407ef47" name="Default Changelist" comment="Commit before pull">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/RESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/RESTController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/api/RESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api/RESTController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -234,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593096934958</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Commit before pull">
+      <created>1593098244780</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1593098244780</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,7 +271,8 @@
     <MESSAGE value="Added workspace.xml" />
     <MESSAGE value="added config files" />
     <MESSAGE value="Added files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added files" />
+    <MESSAGE value="Commit before pull" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit before pull" />
   </component>
   <component name="WindowStateProjectService">
     <state x="443" y="94" width="1024" height="840" key="#Project_Structure" timestamp="1593087310100">
@@ -290,10 +297,10 @@
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state x="459" y="0" width="982" height="1030" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592506229293" />
-    <state x="182" y="78" width="1536" height="889" key="DiffContextDialog" timestamp="1593096690579">
+    <state x="182" y="78" width="1536" height="889" key="DiffContextDialog" timestamp="1593098231305">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="182" y="78" width="1536" height="889" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593096690579" />
+    <state x="182" y="78" width="1536" height="889" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593098231305" />
     <state x="743" y="261" width="637" height="506" key="FileChooserDialogImpl" timestamp="1593091331481">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -338,24 +345,28 @@
     </state>
     <state width="1878" height="339" key="GridCell.Tab.1.right/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592496457189" />
     <state width="1878" height="339" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1593084238996" />
-    <state x="597" y="281" width="715" height="466" key="MultipleFileMergeDialog" timestamp="1593096768384">
+    <state x="182" y="67" width="1536" height="889" key="MergeDialog" timestamp="1593098273003">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="597" y="281" width="715" height="466" key="MultipleFileMergeDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593096768384" />
+    <state x="182" y="67" width="1536" height="889" key="MergeDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593098273003" />
+    <state x="597" y="281" width="715" height="466" key="MultipleFileMergeDialog" timestamp="1593098278300">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="597" y="281" width="715" height="466" key="MultipleFileMergeDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593098278300" />
     <state x="443" y="98" width="1024" height="840" key="SettingsEditor" timestamp="1593091461739">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="443" y="94" width="1024" height="840" key="SettingsEditor/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592495365237" />
     <state x="443" y="98" width="1024" height="840" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1593091461739" />
-    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1593096943858">
+    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1593098309203">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="555" y="252" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592831949764" />
-    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593096943858" />
-    <state x="676" y="308" width="568" height="412" key="git4idea.merge.GitPullDialog" timestamp="1593096855504">
+    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593098309203" />
+    <state x="676" y="308" width="568" height="412" key="git4idea.merge.GitPullDialog" timestamp="1593098248306">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="676" y="308" width="568" height="412" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593096855504" />
+    <state x="676" y="308" width="568" height="412" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593098248306" />
     <state x="664" y="267" width="582" height="494" key="refactoring.ChangeSignatureDialog" timestamp="1592829926988">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>

@@ -157,9 +157,10 @@ public class GameController {
         }
         if (moveMade) {
             r.getCardList().remove(c);
+            flipCard(r);
             return move;
         }
-        flipCard(r);
+
         return "";
     }
 
