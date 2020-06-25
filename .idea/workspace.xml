@@ -19,13 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84930234-fb07-42c4-bca6-ddd93407ef47" name="Default Changelist" comment="Fixing unversioned files">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="84930234-fb07-42c4-bca6-ddd93407ef47" name="Default Changelist" comment="Fixing PyCard object and how to Javalin receives JSON-objects.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/RESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/RESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/PyCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/PyCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api/RESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api/RESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/PyCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/PyCard.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +103,8 @@
       <workItem from="1592823566587" duration="12176000" />
       <workItem from="1592909397527" duration="9316000" />
       <workItem from="1592996998355" duration="508000" />
-      <workItem from="1593015358333" duration="5250000" />
+      <workItem from="1593015358333" duration="7093000" />
+      <workItem from="1593073282275" duration="660000" />
     </task>
     <task id="LOCAL-00001" summary="Added JSON communication from Python">
       <created>1592831830232</created>
@@ -138,7 +134,21 @@
       <option name="project" value="LOCAL" />
       <updated>1592916737027</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixing PyCard object and how to Javalin receives JSON-objects.">
+      <created>1593025249179</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1593025249179</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixing PyCard object and how to Javalin receives JSON-objects.">
+      <created>1593025475171</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1593025475171</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,7 +171,8 @@
     <MESSAGE value="QOL JSON delicious" />
     <MESSAGE value="QOL merge" />
     <MESSAGE value="Fixing unversioned files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing unversioned files" />
+    <MESSAGE value="Fixing PyCard object and how to Javalin receives JSON-objects." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing PyCard object and how to Javalin receives JSON-objects." />
   </component>
   <component name="WindowStateProjectService">
     <state x="418" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592916622513">
@@ -178,6 +189,10 @@
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state x="459" y="0" width="982" height="1030" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592506229293" />
+    <state x="182" y="78" width="1536" height="889" key="DiffContextDialog" timestamp="1593025545131">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="182" y="78" width="1536" height="889" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593025545131" />
     <state width="1858" height="306" key="GridCell.Tab.0.bottom" timestamp="1593024095989">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -219,11 +234,11 @@
     </state>
     <state x="443" y="94" width="1024" height="840" key="SettingsEditor/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592495365237" />
     <state x="443" y="98" width="1024" height="840" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1592916634937" />
-    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1592916740540">
+    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1593025548190">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="555" y="252" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592831949764" />
-    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1592916740540" />
+    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593025548190" />
     <state x="676" y="308" width="568" height="412" key="git4idea.merge.GitPullDialog" timestamp="1592916450482">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
