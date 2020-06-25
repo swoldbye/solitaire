@@ -44,7 +44,8 @@ public class MoveController {
      * Main make move method that calls other methods in this class in the order we want to check
      */
 
-    public void makeMove() {
+    public String makeMove() {
+        String move = "";
         //gets list with rows with most face down cards in descending order
         faceDownList = gameController.getFaceDownList();
 
@@ -56,39 +57,39 @@ public class MoveController {
         }
         //Here starts the 'regular' moves
         //Step 1
-        checkForAceDeuce();
+        move = checkForAceDeuce();
 
         //If a move is made it needs to return to start algorithm again with new gameboard
         if (gameController.isMoveMade()) {
             usedPileCardCounter = 0;
-            return;
+            return move;
         }
         //Step 2-6
         checkForAvailableKing();
 
         if (isKingAvailable && kingCounter < 4) {
-            moveKingToEmpty();
+            move = moveKingToEmpty();
         }
 
         if (gameController.isMoveMade()) {
             usedPileCardCounter = 0;
-            return;
+            return move;
         }
 
-        checkForMoveCard();
+        move = checkForMoveCard();
 
         if (gameController.isMoveMade()) {
             usedPileCardCounter = 0;
-            return;
+            return move;
         }
 
         if (!gameBoard.getCardPileRow().getCardList().isEmpty()) {
-            useFlipCard();
+            move = useFlipCard();
         }
 
         if (gameController.isMoveMade()) {
             usedPileCardCounter = 0;
-            return;
+            return move;
         }
 
         //step 7-8
@@ -98,19 +99,22 @@ public class MoveController {
             aiLolController = new AILolController(faceDownList, gameBoard);
             aiMoves = aiLolController.lookForMove();
             if (!aiMoves.isEmpty()) {
-                gameController.doAIMoves(aiMoves);
+                for(String aiMove: aiMoves){
+                    move += aiMove + "\n";
+                }
                 usedPileCardCounter = 0;
-                return;
+                return move;
             }
         }
         //No move can be made with cards on the table, so another card is flipped.
-        gameController.flipCardPile();
+        move = gameController.flipCardPile();
         usedPileCardCounter++;
         //When all the cards in the deck have been at least once and no move has been made we are whats called
         //a loss
-        if (usedPileCardCounter > (gameBoard.getCardPileRow().getCardList().size() + gameBoard.getPile().getPileList().size())+1) {
+        if (usedPileCardCounter > (gameBoard.getCardPileRow().getCardList().size() + gameBoard.getPile().getPileList().size()) + 1) {
             gameController.gameLost();
         }
+        return move;
     }
 
     /**
@@ -120,23 +124,25 @@ public class MoveController {
      * - Alex
      */
 
-    private void checkForAceDeuce() {
+    private String checkForAceDeuce() {
+        String move = "";
         for (Row r : gameBoard.getRowList()) {
             if (r.getTop().getLevel() == 1) {
-                gameController.moveToStack(r.getTop(), r);
+                move = gameController.moveToStack(r.getTop(), r);
                 if (gameController.isMoveMade()) {
-                    return;
+                    return move;
                 }
             }
         }
         for (Row r : gameBoard.getRowList()) {
             if (r.getTop().getLevel() == 2) {
-                gameController.moveToStack(r.getTop(), r);
+                move = gameController.moveToStack(r.getTop(), r);
                 if (gameController.isMoveMade()) {
-                    return;
+                    return move;
                 }
             }
         }
+        return move;
     }
 
     /**
@@ -145,8 +151,8 @@ public class MoveController {
      * <p>
      * - Alex
      */
-    public void checkForMoveCard() {
-
+    public String checkForMoveCard() {
+        String move = "";
         for (Row r : faceDownList) {
             if (r.getCardList().isEmpty()) {
                 continue;
@@ -163,12 +169,13 @@ public class MoveController {
 
                     //now looks to see if the above found card c can be moved
                     if (!r2.getTop().getColour().equals(c.getColour()) && r2.getTop().getLevel() == c.getLevel() + 1) {
-                        gameController.moveCardRowToRow(r, r2);
-                        return;
+                        move = gameController.moveCardRowToRow(r, r2);
+                        return move;
                     }
                 }
             }
         }
+        return move;
     }
 
     /**
@@ -199,9 +206,10 @@ public class MoveController {
         return;
     }
 
-    private void moveKingToEmpty() {
+    private String moveKingToEmpty() {
+        String move = "";
         if (gameBoard.getCardPileRow().getTop().getLevel() == 13) {
-            return;
+            return move;
         }
         for (Row r : gameBoard.getRowList()) {
             if (r.getTop().getLevel() == 0) {
@@ -209,28 +217,30 @@ public class MoveController {
                     if (r2 != r && !r2.getCardList().isEmpty()) {
                         Card c = r2.getCardList().get(r2.getCardList().size() - (r2.getCardList().size() - r2.getFaceDownCards()));
                         if (c.getLevel() == 13 && r2.getFaceDownCards() > 0) {
-                            gameController.moveCardRowToRow(r2, r);
+                            move = gameController.moveCardRowToRow(r2, r);
                             kingCounter++;
-                            return;
+                            return move;
                         }
                     }
                 }
             }
         }
+        return move;
     }
 
-    public void useFlipCard() {
+    public String useFlipCard() {
+        String move = "";
         Card c = gameBoard.getCardPileRow().getTop();
         switch (c.getLevel()) {
             case 1:
-                gameController.moveToStack(c, gameBoard.getCardPileRow());
+                move = gameController.moveToStack(c, gameBoard.getCardPileRow());
                 break;
             case 2:
-                gameController.moveToStack(c, gameBoard.getCardPileRow());
+                move = gameController.moveToStack(c, gameBoard.getCardPileRow());
                 if (!gameController.isMoveMade()) {
                     for (Row r : gameBoard.getRowList()) {
                         if (!r.getTop().getColour().equals(c.getColour()) && r.getTop().getLevel() == c.getLevel() + 1) {
-                            gameController.moveCardRowToRow(gameBoard.getCardPileRow(), r);
+                            move = gameController.moveCardRowToRow(gameBoard.getCardPileRow(), r);
                             break;
                         }
                     }
@@ -248,7 +258,7 @@ public class MoveController {
             case 12:
                 for (Row r : gameBoard.getRowList()) {
                     if (!r.getTop().getColour().equals(c.getColour()) && r.getTop().getLevel() == c.getLevel() + 1) {
-                        gameController.moveCardRowToRow(gameBoard.getCardPileRow(), r);
+                        move = gameController.moveCardRowToRow(gameBoard.getCardPileRow(), r);
                         break;
                     }
                 }
@@ -256,11 +266,12 @@ public class MoveController {
             case 13:
                 for (Row r : gameBoard.getRowList()) {
                     if (r.getTop().getLevel() == 0) {
-                        gameController.moveCardRowToRow(gameBoard.getCardPileRow(), r);
+                        move = gameController.moveCardRowToRow(gameBoard.getCardPileRow(), r);
                         break;
                     }
                 }
         }
+        return move;
     }
 
     public void checkForWin() {

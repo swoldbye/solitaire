@@ -76,7 +76,7 @@ public class RESTController {
                 pythonResponse = comm.getPython(URL);
                 if (!pythonResponse.isEmpty()) {
                     //getFromPython(pythonResponse);
-                    System.out.println("PYTHON RESPONSE : "+pythonResponse);
+                    System.out.println("PYTHON RESPONSE : " + pythonResponse);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -101,9 +101,13 @@ public class RESTController {
 
             // Handling the JSON string
             JSONArray rawJSONArray = new JSONArray(gameString);
-
             //boolean newGame = rawJSONArray.getBoolean(12);
             //System.out.println(newGame);
+
+            if (rawJSONArray.length() != 12) {
+                ctx.status(200).result("PYTHON RESPONSE: TAKE NEW PHOTO");
+                return;
+            }
 
             JSONArray JSONRow1 = new JSONArray(rawJSONArray.get(0).toString());
             JSONArray JSONRow2 = new JSONArray(rawJSONArray.get(1).toString());
@@ -156,45 +160,47 @@ public class RESTController {
 
 
             if (pyRow1.size() == 1 && pyRow2.size() == 1 && pyRow3.size() == 1 && pyRow4.size() == 1 && pyRow5.size() == 1 && pyRow6.size() == 1 && pyRow7.size() == 1
-            && dStack.isEmpty() && hStack.isEmpty() && sStack.isEmpty() && cStack.isEmpty() && deck.isEmpty()) {
-                for(Card c: visibleCards){
+                    && dStack.isEmpty() && hStack.isEmpty() && sStack.isEmpty() && cStack.isEmpty() && deck.isEmpty()) {
+                for (Card c : visibleCards) {
                     oldCards.add(c);
                 }
-                startNewGame(visibleCards);
+                String turn = startNewGame(visibleCards);
+                ctx.status(200).result(turn);
             } else {
-                for(Card c: oldCards){
-                    for(Card c2: visibleCards){
-                        if(c.getCard().equals(c2.getCard())){
+                for (Card c : oldCards) {
+                    for (Card c2 : visibleCards) {
+                        if (c.getCard().equals(c2.getCard())) {
                             visibleCards.remove(c2);
                             break;
                         }
                     }
                 }
-                Card newCard = new Card(4,0,false);
-                //visibleCards.trimToSize();
-                if(visibleCards.size() != 0) {
-                    newCard = visibleCards.get(0);
-                    oldCards.add(newCard);
-                }
-                int turn = gameController.startTurn(newCard);
-                System.out.println(turn);
-                if (turn == 1){
-                    System.out.println("GAME WON");
-                } if (turn == 2) {
-                    System.out.println("GAME LOST");
-                }
 
+                if (visibleCards.size() > 1) {
+                    ctx.status(200).result("PYTHON RESPONSE: TAKE NEW PHOTO");
+                } else {
+                    Card newCard = new Card(4, 0, false);
+                    //visibleCards.trimToSize();
+                    if (visibleCards.size() != 0) {
+                        newCard = visibleCards.get(0);
+                        oldCards.add(newCard);
+                    }
+                    String turn = gameController.startTurn(newCard);
+                    System.out.println(turn);
+                    ctx.status(200).result(turn);
+                }
             }
         }
     }
 
-    public void startNewGame(ArrayList<Card> cards){
+    public String startNewGame(ArrayList<Card> cards) {
         gameBoard = new GameBoard(cards);
         gameController = new GameController(gameBoard);
-        gameController.play();
+        String move = gameController.play();
+        return move;
     }
 
-    public void giveNewCard (){
+    public void giveNewCard() {
 
     }
 
