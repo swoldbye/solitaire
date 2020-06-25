@@ -7,10 +7,8 @@ import io.javalin.http.Context;
 import model.Card;
 import model.GameBoard;
 import model.PyCard;
-import model.Row;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;

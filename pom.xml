@@ -3,32 +3,35 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>solitaire</groupId>
     <artifactId>solitaire</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
         <plugins>
-
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
+                <version>3.8.1</version>
                 <configuration>
-                    <source>9</source>
-                    <target>9</target>
-                    <compilerArgs>
-                        <arg>--add-modules</arg>
-                        <arg>jdk.incubator.httpclient</arg>
-                    </compilerArgs>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
                 <configuration>
-                    <source>8</source>
-                    <target>8</target>
+                    <!-- put your configurations here -->
                 </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
@@ -36,9 +39,8 @@
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-            <version>2.8.6</version>
+            <version>2.3</version>
         </dependency>
-
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
@@ -86,20 +88,10 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.10.1</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.5.10</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.5.10</version>
-        </dependency>
-
-
     </dependencies>
-
-
 </project>
