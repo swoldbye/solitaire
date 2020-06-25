@@ -25,23 +25,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84930234-fb07-42c4-bca6-ddd93407ef47" name="Default Changelist" comment="Algorithm updated to take one card as input">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/solitaire_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/api/RESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/RESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mainTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Pile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Pile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/api/RESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api/RESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/AILolController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/AILolController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/MoveController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MoveController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mainTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mainTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/GameBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/GameBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Pile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Pile.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593075152676</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Algorithm updated to take one card as input">
+      <created>1593086318182</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1593086318182</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,26 +236,26 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="743" y="261" width="424" height="506" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1593084711354" />
-    <state width="1878" height="306" key="GridCell.Tab.0.bottom" timestamp="1593086001551">
+    <state width="1878" height="306" key="GridCell.Tab.0.bottom" timestamp="1593086642410">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1878" height="409" key="GridCell.Tab.0.bottom/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755522" />
-    <state width="1878" height="306" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1593086001551" />
-    <state width="1878" height="306" key="GridCell.Tab.0.center" timestamp="1593086001550">
+    <state width="1878" height="306" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1593086642410" />
+    <state width="1878" height="306" key="GridCell.Tab.0.center" timestamp="1593086642408">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1878" height="409" key="GridCell.Tab.0.center/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755522" />
-    <state width="1878" height="306" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1593086001550" />
-    <state width="1878" height="306" key="GridCell.Tab.0.left" timestamp="1593086001550">
+    <state width="1878" height="306" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1593086642408" />
+    <state width="1878" height="306" key="GridCell.Tab.0.left" timestamp="1593086642407">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1878" height="409" key="GridCell.Tab.0.left/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755521" />
-    <state width="1878" height="306" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1593086001550" />
-    <state width="1878" height="306" key="GridCell.Tab.0.right" timestamp="1593086001550">
+    <state width="1878" height="306" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1593086642407" />
+    <state width="1878" height="306" key="GridCell.Tab.0.right" timestamp="1593086642409">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1878" height="409" key="GridCell.Tab.0.right/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755522" />
-    <state width="1878" height="306" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1593086001550" />
+    <state width="1878" height="306" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1593086642409" />
     <state width="1878" height="339" key="GridCell.Tab.1.bottom" timestamp="1593084238996">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -288,11 +281,11 @@
     </state>
     <state x="443" y="94" width="1024" height="840" key="SettingsEditor/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592495365237" />
     <state x="443" y="98" width="1024" height="840" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1593086211007" />
-    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1593085861295">
+    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1593086322017">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="555" y="252" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592831949764" />
-    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593085861295" />
+    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593086322017" />
     <state x="676" y="308" width="568" height="412" key="git4idea.merge.GitPullDialog" timestamp="1593075122030">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -301,10 +294,10 @@
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state x="664" y="267" width="582" height="494" key="refactoring.ChangeSignatureDialog/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592829926988" />
-    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1593086204903">
+    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1593086357327">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1593086204903" />
+    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1593086357327" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

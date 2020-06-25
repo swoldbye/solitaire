@@ -104,8 +104,8 @@ public class RESTController {
             // Handling the JSON string
             JSONArray rawJSONArray = new JSONArray(gameString);
 
-            boolean newGame = rawJSONArray.getBoolean(12);
-            System.out.println(newGame);
+            //boolean newGame = rawJSONArray.getBoolean(12);
+            //System.out.println(newGame);
 
             JSONArray JSONRow1 = new JSONArray(rawJSONArray.get(0).toString());
             JSONArray JSONRow2 = new JSONArray(rawJSONArray.get(1).toString());
@@ -213,22 +213,7 @@ public class RESTController {
         ArrayList<Card> cards = new ArrayList<>();
         for (int i = 0; i < pyCards.size(); i++) {
             Card card = new Card(4, 0, true);
-            switch (pyCards.get(i).getSuit()) {
-                case "D":
-                    card.setSuit(0);
-                    break;
-                case "H":
-                    card.setSuit(1);
-                    break;
-                case "C":
-                    card.setSuit(2);
-                    break;
-                case "S":
-                    card.setSuit(3);
-                    break;
-                default:
-                    break;
-            }
+            card.setSuit(pyCards.get(i).getSuit());
             card.setLevel(pyCards.get(i).getValue());
             cards.add(card);
         }

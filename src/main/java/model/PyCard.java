@@ -5,11 +5,11 @@ public class PyCard {
     int x;
     int y;
     int picNumber;
-    String suit;
+    int suit;
     int value;
     int color;
 
-    public PyCard(String suitNumber, int x, int y, int picNumber, String suit, int value, int color) {
+    public PyCard(String suitNumber, int x, int y, int picNumber, int suit, int value, int color) {
         this.suitNumber = suitNumber;
         this.x = x;
         this.y = y;
@@ -51,11 +51,11 @@ public class PyCard {
         this.picNumber = picNumber;
     }
 
-    public String getSuit() {
+    public int getSuit() {
         return suit;
     }
 
-    public void setSuit(String suit) {
+    public void setSuit(int suit) {
         this.suit = suit;
     }
 
