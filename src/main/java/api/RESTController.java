@@ -41,7 +41,7 @@ public class RESTController {
             });
             //TODO: lav endpoints (GET og POST)
             server.post("/ImageURL", ctx -> imageURL(ctx));
-            server.post("/Hello", ctx -> getFromPython(ctx));
+            server.post("/JSON", ctx -> getFromPython(ctx));
             server.post("/Test", ctx -> testMethod(ctx));
         } catch (Exception e) {
             stop();
