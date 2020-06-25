@@ -158,7 +158,6 @@ public class RESTController {
             visibleCards.addAll(row7);
             visibleCards.addAll(deck);
 
-
             if (pyRow1.size() == 1 && pyRow2.size() == 1 && pyRow3.size() == 1 && pyRow4.size() == 1 && pyRow5.size() == 1 && pyRow6.size() == 1 && pyRow7.size() == 1
                     && dStack.isEmpty() && hStack.isEmpty() && sStack.isEmpty() && cStack.isEmpty() && deck.isEmpty()) {
                 for (Card c : visibleCards) {
