@@ -35,7 +35,7 @@ public class RESTController {
     public void start() {
         if (server != null) return;
         try {
-            server = Javalin.create().start(8081);
+            server = Javalin.create().start(3333);
             server.exception(Exception.class, (e, ctx) -> {
                 e.printStackTrace();
             });
