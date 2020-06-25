@@ -24,7 +24,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84930234-fb07-42c4-bca6-ddd93407ef47" name="Default Changelist" comment="Small changes" />
+    <list default="true" id="84930234-fb07-42c4-bca6-ddd93407ef47" name="Default Changelist" comment="Small changes">
+      <change afterPath="$PROJECT_DIR$/target/classes/api/simplehttp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/original-solitaire-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/solitaire-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api/RESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api/RESTController.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,7 +65,7 @@
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/gson-2.2.2.jar!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -91,6 +100,7 @@
         <item itemvalue="Application.main" />
         <item itemvalue="Application.REST" />
         <item itemvalue="Application.main" />
+        <item itemvalue="Application.REST" />
       </list>
     </recent_temporary>
   </component>
@@ -306,29 +316,34 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="182" y="78" width="1536" height="889" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593098231305" />
-    <state x="743" y="261" width="637" height="506" key="FileChooserDialogImpl" timestamp="1593091331481">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="743" y="250" width="637" height="506" key="FileChooserDialogImpl" timestamp="1593111061637">
+      <screen x="0" y="0" width="1920" height="1035" />
     </state>
+    <state x="743" y="250" key="FileChooserDialogImpl/0.0.1920.1035@0.0.1920.1035" timestamp="1593111061637" />
     <state x="743" y="261" width="637" height="506" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1593091331481" />
-    <state width="1878" height="349" key="GridCell.Tab.0.bottom" timestamp="1593096791630">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1878" height="349" key="GridCell.Tab.0.bottom" timestamp="1593111001900">
+      <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state width="1878" height="409" key="GridCell.Tab.0.bottom/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755522" />
+    <state width="1878" height="349" key="GridCell.Tab.0.bottom/0.0.1920.1035@0.0.1920.1035" timestamp="1593111001900" />
     <state width="1878" height="349" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1593096791630" />
-    <state width="1878" height="349" key="GridCell.Tab.0.center" timestamp="1593096791627">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1878" height="349" key="GridCell.Tab.0.center" timestamp="1593111001900">
+      <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state width="1878" height="409" key="GridCell.Tab.0.center/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755522" />
+    <state width="1878" height="349" key="GridCell.Tab.0.center/0.0.1920.1035@0.0.1920.1035" timestamp="1593111001900" />
     <state width="1878" height="349" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1593096791627" />
-    <state width="1878" height="349" key="GridCell.Tab.0.left" timestamp="1593096791625">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1878" height="349" key="GridCell.Tab.0.left" timestamp="1593111001899">
+      <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state width="1878" height="409" key="GridCell.Tab.0.left/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755521" />
+    <state width="1878" height="349" key="GridCell.Tab.0.left/0.0.1920.1035@0.0.1920.1035" timestamp="1593111001899" />
     <state width="1878" height="349" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1593096791625" />
-    <state width="1878" height="349" key="GridCell.Tab.0.right" timestamp="1593096791628">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1878" height="349" key="GridCell.Tab.0.right" timestamp="1593111001900">
+      <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state width="1878" height="409" key="GridCell.Tab.0.right/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755522" />
+    <state width="1878" height="349" key="GridCell.Tab.0.right/0.0.1920.1035@0.0.1920.1035" timestamp="1593111001900" />
     <state width="1878" height="349" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1593096791628" />
     <state width="1878" height="339" key="GridCell.Tab.1.bottom" timestamp="1593084238996">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -369,6 +384,10 @@
     <state x="555" y="252" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592831949764" />
     <state x="555" y="252" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1035@0.0.1920.1035" timestamp="1593102654715" />
     <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593098309203" />
+    <state x="720" y="233" width="470" height="562" key="git4idea.branch.GitSmartOperationDialog" timestamp="1593111071860">
+      <screen x="0" y="0" width="1920" height="1035" />
+    </state>
+    <state x="720" y="233" width="470" height="562" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1035@0.0.1920.1035" timestamp="1593111071860" />
     <state x="676" y="295" width="568" height="412" key="git4idea.merge.GitPullDialog" timestamp="1593102649042">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
@@ -378,9 +397,10 @@
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state x="664" y="267" width="582" height="494" key="refactoring.ChangeSignatureDialog/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592829926988" />
-    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1593091152628">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="623" y="217" width="672" height="650" key="search.everywhere.popup" timestamp="1593111055915">
+      <screen x="0" y="0" width="1920" height="1035" />
     </state>
+    <state x="623" y="217" width="672" height="650" key="search.everywhere.popup/0.0.1920.1035@0.0.1920.1035" timestamp="1593111055915" />
     <state x="623" y="226" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1593091152628" />
   </component>
   <component name="XDebuggerManager">
