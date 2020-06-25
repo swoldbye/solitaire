@@ -100,7 +100,9 @@ public class MoveController {
             aiMoves = aiLolController.lookForMove();
             if (!aiMoves.isEmpty()) {
                 for(String aiMove: aiMoves){
-                    move += aiMove + "\n";
+                    if(!aiMove.substring(0,1).equalsIgnoreCase("0")) {
+                        move += aiMove + "\n";
+                    }
                 }
                 usedPileCardCounter = 0;
                 return move;

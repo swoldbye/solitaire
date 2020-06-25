@@ -130,27 +130,27 @@ public class GameController {
                 if (gameBoard.getDiamondStack().getTop() == c.getLevel() - 1) {
                     gameBoard.getDiamondStack().addCard(c);
                     moveMade = true;
-                    move = "*-* Moving " + c.getCard() + " to stack *-*";
+                    move = "*-* Move " + c.getCard() + " to stack *-*";
                 }
                 break;
             case 1:
                 if (gameBoard.getHeartStack().getTop() == c.getLevel() - 1) {
                     gameBoard.getHeartStack().addCard(c);
-                    move = "*-* Moving " + c.getCard() + " to stack *-*";
+                    move = "*-* Move" + c.getCard() + " to stack *-*";
                     moveMade = true;
                 }
                 break;
             case 2:
                 if (gameBoard.getSpadeStack().getTop() == c.getLevel() - 1) {
                     gameBoard.getSpadeStack().addCard(c);
-                    move = "*-* Moving " + c.getCard() + " to stack *-*";
+                    move = "*-* Move " + c.getCard() + " to stack *-*";
                     moveMade = true;
                 }
                 break;
             case 3:
                 if (gameBoard.getClubStack().getTop() == c.getLevel() - 1) {
                     gameBoard.getClubStack().addCard(c);
-                    move = "*-* Moving " + c.getCard() + " to stack *-*";
+                    move = "*-* Move " + c.getCard() + " to stack *-*";
                     moveMade = true;
                 }
                 break;
@@ -172,7 +172,11 @@ public class GameController {
      */
     public String moveCardRowToRow(Row sender, Row receiver) {
         String move = "";
-        move = "*-* Moving " + sender.getRowLocation() + " to " + receiver.getRowLocation() + " *-*";
+        if (sender.getRowLocation() == 0) {
+            move = "*-* Move pilecard to " + receiver.getRowLocation() + "*-*";
+        } else {
+            move = "*-* Move all cards in row " + sender.getRowLocation() + " to " + receiver.getRowLocation() + " *-*";
+        }
         for (int i = 0; i < sender.getCardList().size(); i++) {
             if (sender.getCardList().get(i).isFaceUp()) {
                 receiver.addCard(sender.getCardList().get(i));
@@ -235,7 +239,7 @@ public class GameController {
     }
 
     public String flipCardPile() {
-        String move = "*-*Flipping Card Pile*-*";
+        String move = "*-*Flip Card Pile*-*";
         if (gameBoard.getPile().getPileList().isEmpty()) {
             if (gameBoard.getCardPileRow().getCardList().size() == 1) {
                 return move;
@@ -249,7 +253,7 @@ public class GameController {
             return move;
         }
         if (gameBoard.getPile().getTopCard().getLevel() == 0) {
-            if(gameBoard.getCardPileRow().getCardList().size() > 0){
+            if (gameBoard.getCardPileRow().getCardList().size() > 0) {
                 gameBoard.getCardPileRow().getTop().setFaceUp(false);
             }
             gameBoard.getPile().takeTopCard();
