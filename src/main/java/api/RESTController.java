@@ -41,7 +41,7 @@ public class RESTController {
             });
             //TODO: lav endpoints (GET og POST)
             server.post("/ImageURL", ctx -> imageURL(ctx));
-            server.post("/JSON", ctx -> getFromPython(ctx));
+            //server.post("/Hello", ctx -> getFromPython(ctx));
             server.post("/Test", ctx -> testMethod(ctx));
         } catch (Exception e) {
             stop();
@@ -69,6 +69,7 @@ public class RESTController {
 
         if (!URL.isEmpty()) {
             String pythonResponse = "";
+            String answer = "";
             System.out.println("Received the url: " + URL);
             System.out.println("... Now sending to the python server for processing");
             simplehttp comm = new simplehttp();
@@ -77,19 +78,20 @@ public class RESTController {
                 if (!pythonResponse.isEmpty()) {
                     //getFromPython(pythonResponse);
                     System.out.println("PYTHON RESPONSE : " + pythonResponse);
+                    answer = getFromPython(pythonResponse);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
             //TODO: Create rest client and send
-            ctx.status(200).result("PYTHON RESPONSE: " + pythonResponse);
+            ctx.status(200).result("PYTHON RESPONSE: " + answer);
         } else {
             ctx.status(500).result("Server Error");
         }
     }
 
-    private void getFromPython(@NotNull Context ctx) throws ExecutionException, InterruptedException, IOException {
-        String gameString = ctx.body();
+    private String getFromPython(String pythonBody) throws ExecutionException, InterruptedException, IOException {
+        String gameString = pythonBody;
 //        String oldString = "";
 //        if (!gameString.equals(oldString)){
 //
@@ -97,7 +99,7 @@ public class RESTController {
 
         if (!gameString.isEmpty()) {
             System.out.println("Received the gameString: \n" + gameString + "\n");
-            ctx.status(200).result("Server message: Received gameString: \n" + gameString);
+            //ctx.status(200).result("Server message: Received gameString: \n" + gameString);
 
             // Handling the JSON string
             JSONArray rawJSONArray = new JSONArray(gameString);
@@ -105,8 +107,8 @@ public class RESTController {
             //System.out.println(newGame);
 
             if (rawJSONArray.length() != 12) {
-                ctx.status(200).result("PYTHON RESPONSE: TAKE NEW PHOTO");
-                return;
+                //ctx.status(200).result("PYTHON RESPONSE: TAKE NEW PHOTO");
+                return "PYTHON RESPONSE: TAKE NEW PHOTO";
             }
 
             JSONArray JSONRow1 = new JSONArray(rawJSONArray.get(0).toString());
@@ -158,13 +160,15 @@ public class RESTController {
             visibleCards.addAll(row7);
             visibleCards.addAll(deck);
 
+
             if (pyRow1.size() == 1 && pyRow2.size() == 1 && pyRow3.size() == 1 && pyRow4.size() == 1 && pyRow5.size() == 1 && pyRow6.size() == 1 && pyRow7.size() == 1
                     && dStack.isEmpty() && hStack.isEmpty() && sStack.isEmpty() && cStack.isEmpty() && deck.isEmpty()) {
                 for (Card c : visibleCards) {
                     oldCards.add(c);
                 }
                 String turn = startNewGame(visibleCards);
-                ctx.status(200).result(turn);
+                //ctx.status(200).result(turn);
+                return turn;
             } else {
                 for (Card c : oldCards) {
                     for (Card c2 : visibleCards) {
@@ -176,7 +180,8 @@ public class RESTController {
                 }
 
                 if (visibleCards.size() > 1) {
-                    ctx.status(200).result("PYTHON RESPONSE: TAKE NEW PHOTO");
+                    //ctx.status(200).result("PYTHON RESPONSE: TAKE NEW PHOTO");
+                    return "PYTHON RESPONSE: TAKE NEW PHOTO";
                 } else {
                     Card newCard = new Card(4, 0, false);
                     //visibleCards.trimToSize();
@@ -186,10 +191,12 @@ public class RESTController {
                     }
                     String turn = gameController.startTurn(newCard);
                     System.out.println(turn);
-                    ctx.status(200).result(turn);
+                    //ctx.status(200).result(turn);
+                    return turn;
                 }
             }
         }
+        return "";
     }
 
     public String startNewGame(ArrayList<Card> cards) {
