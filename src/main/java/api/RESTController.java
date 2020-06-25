@@ -17,7 +17,6 @@ import java.util.concurrent.ExecutionException;
 public class RESTController {
 
     public static Javalin server;
-    private JSONArray row;
     private Gson g = new Gson();
 
 
@@ -63,7 +62,7 @@ public class RESTController {
             try {
                  pythonResponse = comm.getPython(URL);
                  if(!pythonResponse.isEmpty()){
-                     getFromPython(pythonResponse);
+                     //getFromPython(pythonResponse);
                  }
             } catch (IOException e) {
                 e.printStackTrace();
