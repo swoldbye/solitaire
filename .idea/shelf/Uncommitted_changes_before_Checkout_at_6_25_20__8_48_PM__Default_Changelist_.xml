@@ -1,0 +1,54 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]" date="1593110925418" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 6/25/20, 8:48 PM [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/model/PyCard.class" />
+    <option name="AFTER_PATH" value="target/classes/model/PyCard.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/PyCard.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/mainTest.class" />
+    <option name="AFTER_PATH" value="target/classes/mainTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/mainTest.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="target/original-solitaire-1.0-SNAPSHOT.jar" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/original-solitaire-1.0-SNAPSHOT.jar" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/createdFiles.lst" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="target/solitaire-1.0-SNAPSHOT.jar" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/solitaire-1.0-SNAPSHOT.jar" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/model/Pile.class" />
+    <option name="AFTER_PATH" value="target/classes/model/Pile.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/Pile.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/inputFiles.lst" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/main.class" />
+    <option name="AFTER_PATH" value="target/classes/main.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/main.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="target/classes/api/simplehttp.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/simplehttp.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/controller/AILolController.class" />
+    <option name="AFTER_PATH" value="target/classes/controller/AILolController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_25_20,_8_48_PM_[Default_Changelist]/AILolController.class" />
+  </binary>
+</changelist>

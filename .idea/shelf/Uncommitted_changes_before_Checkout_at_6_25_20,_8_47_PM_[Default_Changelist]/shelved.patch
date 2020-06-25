@@ -1,0 +1,48 @@
+Index: target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst	(date 1593102580768)
++++ target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst	(date 1593102580768)
+@@ -0,0 +1,16 @@
++model/Card.class
++model/PyCard.class
++view/View.class
++main.class
++controller/MoveController.class
++model/GameBoard.class
++api/REST.class
++api/simplehttp.class
++api/RESTController.class
++model/Deck.class
++model/Row.class
++controller/AILolController.class
++model/Stack.class
++mainTest.class
++controller/GameController.class
++model/Pile.class
+Index: target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(date 1593098327825)
++++ target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst	(date 1593098327825)
+@@ -0,0 +1,16 @@
++/home/harald/IdeaProjects/solitaire/src/main/java/api/simplehttp.java
++/home/harald/IdeaProjects/solitaire/src/main/java/controller/GameController.java
++/home/harald/IdeaProjects/solitaire/src/main/java/view/View.java
++/home/harald/IdeaProjects/solitaire/src/main/java/model/Deck.java
++/home/harald/IdeaProjects/solitaire/src/main/java/model/Card.java
++/home/harald/IdeaProjects/solitaire/src/main/java/api/RESTController.java
++/home/harald/IdeaProjects/solitaire/src/main/java/api/REST.java
++/home/harald/IdeaProjects/solitaire/src/main/java/model/PyCard.java
++/home/harald/IdeaProjects/solitaire/src/main/java/mainTest.java
++/home/harald/IdeaProjects/solitaire/src/main/java/model/Stack.java
++/home/harald/IdeaProjects/solitaire/src/main/java/model/GameBoard.java
++/home/harald/IdeaProjects/solitaire/src/main/java/main.java
++/home/harald/IdeaProjects/solitaire/src/main/java/controller/MoveController.java
++/home/harald/IdeaProjects/solitaire/src/main/java/controller/AILolController.java
++/home/harald/IdeaProjects/solitaire/src/main/java/model/Pile.java
++/home/harald/IdeaProjects/solitaire/src/main/java/model/Row.java
