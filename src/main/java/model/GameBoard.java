@@ -28,7 +28,8 @@ public class GameBoard {
     int moveCOunter = 0;
 
 
-    public GameBoard() {
+    public GameBoard(ArrayList<PyCard> newGameCards ) {
+
         initRowList();
     }
 

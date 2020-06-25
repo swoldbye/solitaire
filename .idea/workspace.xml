@@ -21,11 +21,105 @@
   <component name="ChangeListManager">
     <list default="true" id="84930234-fb07-42c4-bca6-ddd93407ef47" name="Default Changelist" comment="Fixing PyCard object and how to Javalin receives JSON-objects.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api/RESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api/RESTController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/AILolController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/AILolController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/MoveController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MoveController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mainTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mainTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Row.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Row.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/View.class" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1693997182">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.create.new" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="37" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="10" column="74" lean-forward="true" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/api/REST.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/api/RESTController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1268">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/GameBoard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="318">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Card.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/GameController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-14">
+              <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -35,31 +129,117 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/model/GameBoard.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="824" />
   </component>
   <component name="ProjectId" id="1dV0xeDUw90yKs9mLGgb4um14mT" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="solitaire" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solitaire" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="solitaire" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solitaire" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="solitaire" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solitaire" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="solitaire" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solitaire" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="solitaire" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solitaire" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="solitaire" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solitaire" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1593085689082" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
-  <component name="RunManager" selected="Application.REST">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.main">
     <configuration name="REST" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="api.REST" />
       <module name="solitaire" />
@@ -80,8 +260,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.REST" />
+      <item itemvalue="Application.main" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.main" />
         <item itemvalue="Application.REST" />
         <item itemvalue="Application.main" />
         <item itemvalue="Application.REST" />
@@ -105,6 +290,7 @@
       <workItem from="1592996998355" duration="508000" />
       <workItem from="1593015358333" duration="7093000" />
       <workItem from="1593073282275" duration="660000" />
+      <workItem from="1593075540016" duration="2067000" />
     </task>
     <task id="LOCAL-00001" summary="Added JSON communication from Python">
       <created>1592831830232</created>
@@ -151,20 +337,66 @@
     <option name="localTasksCounter" value="7" />
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2067000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1440" height="824" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329235" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added JSON communication from Python" />
@@ -175,81 +407,91 @@
     <option name="LAST_COMMIT_MESSAGE" value="Fixing PyCard object and how to Javalin receives JSON-objects." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="418" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592916622513">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="418" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592495209722" />
-    <state x="418" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1592916622513" />
-    <state x="768" y="212" width="374" height="557" key="#com.intellij.ide.util.MemberChooser" timestamp="1593022125575">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="768" y="203" width="374" height="621" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592502214405" />
-    <state x="768" y="212" width="374" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1593022125575" />
-    <state x="459" y="0" width="982" height="1030" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1592506229293">
-      <screen x="0" y="0" width="1920" height="1035" />
-    </state>
-    <state x="459" y="0" width="982" height="1030" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592506229293" />
-    <state x="182" y="78" width="1536" height="889" key="DiffContextDialog" timestamp="1593025545131">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="182" y="78" width="1536" height="889" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593025545131" />
-    <state width="1858" height="306" key="GridCell.Tab.0.bottom" timestamp="1593024095989">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="409" key="GridCell.Tab.0.bottom/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755522" />
-    <state width="1858" height="306" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1593024095989" />
-    <state width="1858" height="306" key="GridCell.Tab.0.center" timestamp="1593024095988">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="409" key="GridCell.Tab.0.center/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755522" />
-    <state width="1858" height="306" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1593024095988" />
-    <state width="1858" height="306" key="GridCell.Tab.0.left" timestamp="1593024095988">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="409" key="GridCell.Tab.0.left/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755521" />
-    <state width="1858" height="306" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1593024095988" />
-    <state width="1858" height="306" key="GridCell.Tab.0.right" timestamp="1593024095989">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="409" key="GridCell.Tab.0.right/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592837755522" />
-    <state width="1858" height="306" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1593024095989" />
-    <state width="1878" height="339" key="GridCell.Tab.1.bottom" timestamp="1592496457189">
-      <screen x="0" y="0" width="1920" height="1035" />
-    </state>
-    <state width="1878" height="339" key="GridCell.Tab.1.bottom/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592496457189" />
-    <state width="1878" height="339" key="GridCell.Tab.1.center" timestamp="1592496457189">
-      <screen x="0" y="0" width="1920" height="1035" />
-    </state>
-    <state width="1878" height="339" key="GridCell.Tab.1.center/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592496457189" />
-    <state width="1878" height="339" key="GridCell.Tab.1.left" timestamp="1592496457189">
-      <screen x="0" y="0" width="1920" height="1035" />
-    </state>
-    <state width="1878" height="339" key="GridCell.Tab.1.left/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592496457189" />
-    <state width="1878" height="339" key="GridCell.Tab.1.right" timestamp="1592496457189">
-      <screen x="0" y="0" width="1920" height="1035" />
-    </state>
-    <state width="1878" height="339" key="GridCell.Tab.1.right/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592496457189" />
-    <state x="443" y="98" width="1024" height="840" key="SettingsEditor" timestamp="1592916634937">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="443" y="94" width="1024" height="840" key="SettingsEditor/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592495365237" />
-    <state x="443" y="98" width="1024" height="840" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1592916634937" />
-    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1593025548190">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="555" y="252" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592831949764" />
-    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593025548190" />
-    <state x="676" y="308" width="568" height="412" key="git4idea.merge.GitPullDialog" timestamp="1592916450482">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="676" y="308" width="568" height="412" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1592916450482" />
-    <state x="664" y="267" width="582" height="494" key="refactoring.ChangeSignatureDialog" timestamp="1592829926988">
-      <screen x="0" y="0" width="1920" height="1035" />
-    </state>
-    <state x="664" y="267" width="582" height="494" key="refactoring.ChangeSignatureDialog/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592829926988" />
-    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1592916681254">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1592916681254" />
+    <state x="418" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
+    <state x="418" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state x="418" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" />
+    <state x="768" y="212" width="374" height="557" key="#com.intellij.ide.util.MemberChooser" />
+    <state x="768" y="203" width="374" height="621" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state x="768" y="212" width="374" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" />
+    <state x="459" y="0" width="982" height="1030" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" />
+    <state x="459" y="0" width="982" height="1030" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state x="182" y="78" width="1536" height="889" key="DiffContextDialog" />
+    <state x="182" y="78" width="1536" height="889" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" />
+    <state width="1858" height="306" key="GridCell.Tab.0.bottom" />
+    <state width="1878" height="409" key="GridCell.Tab.0.bottom/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state width="1858" height="306" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" />
+    <state width="1858" height="306" key="GridCell.Tab.0.center" />
+    <state width="1878" height="409" key="GridCell.Tab.0.center/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state width="1858" height="306" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" />
+    <state width="1858" height="306" key="GridCell.Tab.0.left" />
+    <state width="1878" height="409" key="GridCell.Tab.0.left/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state width="1858" height="306" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" />
+    <state width="1858" height="306" key="GridCell.Tab.0.right" />
+    <state width="1878" height="409" key="GridCell.Tab.0.right/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state width="1858" height="306" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" />
+    <state width="1878" height="339" key="GridCell.Tab.1.bottom" />
+    <state width="1878" height="339" key="GridCell.Tab.1.bottom/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state width="1878" height="339" key="GridCell.Tab.1.center" />
+    <state width="1878" height="339" key="GridCell.Tab.1.center/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state width="1878" height="339" key="GridCell.Tab.1.left" />
+    <state width="1878" height="339" key="GridCell.Tab.1.left/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state width="1878" height="339" key="GridCell.Tab.1.right" />
+    <state width="1878" height="339" key="GridCell.Tab.1.right/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state x="443" y="98" width="1024" height="840" key="SettingsEditor" />
+    <state x="443" y="94" width="1024" height="840" key="SettingsEditor/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state x="443" y="98" width="1024" height="840" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" />
+    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2" />
+    <state x="555" y="252" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" />
+    <state x="676" y="308" width="568" height="412" key="git4idea.merge.GitPullDialog" />
+    <state x="676" y="308" width="568" height="412" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" />
+    <state x="664" y="267" width="582" height="494" key="refactoring.ChangeSignatureDialog" />
+    <state x="664" y="267" width="582" height="494" key="refactoring.ChangeSignatureDialog/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" />
+    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup" />
+    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="74" lean-forward="true" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/api/REST.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/api/RESTController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1268">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/GameBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
