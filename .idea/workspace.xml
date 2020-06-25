@@ -24,10 +24,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84930234-fb07-42c4-bca6-ddd93407ef47" name="Default Changelist" comment="Commit before pull">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api/RESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api/RESTController.class" afterDir="false" />
-    </list>
+    <list default="true" id="84930234-fb07-42c4-bca6-ddd93407ef47" name="Default Changelist" comment="Small changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -240,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593098244780</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Small changes">
+      <created>1593102642545</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1593102642545</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +276,8 @@
     <MESSAGE value="added config files" />
     <MESSAGE value="Added files" />
     <MESSAGE value="Commit before pull" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit before pull" />
+    <MESSAGE value="Small changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small changes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="443" y="94" width="1024" height="840" key="#Project_Structure" timestamp="1593087310100">
@@ -358,14 +363,16 @@
     </state>
     <state x="443" y="94" width="1024" height="840" key="SettingsEditor/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592495365237" />
     <state x="443" y="98" width="1024" height="840" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1593091461739" />
-    <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1593098309203">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="555" y="252" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1593102654715">
+      <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state x="555" y="252" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1035/0.0.1920.1035@0.0.1920.1035" timestamp="1592831949764" />
+    <state x="555" y="252" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1035@0.0.1920.1035" timestamp="1593102654715" />
     <state x="555" y="263" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593098309203" />
-    <state x="676" y="308" width="568" height="412" key="git4idea.merge.GitPullDialog" timestamp="1593098248306">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="676" y="295" width="568" height="412" key="git4idea.merge.GitPullDialog" timestamp="1593102649042">
+      <screen x="0" y="0" width="1920" height="1035" />
     </state>
+    <state x="676" y="295" key="git4idea.merge.GitPullDialog/0.0.1920.1035@0.0.1920.1035" timestamp="1593102649042" />
     <state x="676" y="308" width="568" height="412" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593098248306" />
     <state x="664" y="267" width="582" height="494" key="refactoring.ChangeSignatureDialog" timestamp="1592829926988">
       <screen x="0" y="0" width="1920" height="1035" />
@@ -383,6 +390,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/controller/GameController.java</url>
           <line>83</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/GameController.java</url>
+          <line>137</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
